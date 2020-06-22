@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
     <title>Créer une excursion</title>
@@ -10,6 +10,8 @@
     </header>
     
     <main>
+        <?php include_once("dbconnect.php"); ?>
+
         <form action="formHandler/create_excursion.php" method="POST">
             <label>Nom de l'excursion
                 <input type="text" name="name">
@@ -68,7 +70,7 @@
                 ?>
             </fieldset>
             
-            <input type="submit" value="Créer l'excusion">
+            <input type="submit" value="Créer l'excursion">
         </form>
     </main>
 </body>
