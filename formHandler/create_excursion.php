@@ -1,12 +1,13 @@
 <?php
 require_once("functions.php");
+require_once("../dbconnect.php");
 var_dump($_POST);
 $params = [];
 
 //check name
 if (isset($_POST["name"])){
-    $name = $_POST["name"];
-    if (check_string($name)){
+    $name = check_string($_POST["name"]);
+    if ($name !== false){
         $params[":name"] = $name;
     }else{
         //non string name
@@ -47,10 +48,9 @@ if (isset($_POST["max_hikers"])){
 
 //check dates
 if (isset($_POST["departure_date"]) && isset($_POST["arrival_date"])){
-    if (check_date($_POST["departure_date"])!==false && check_date($_POST["arrival_date"]) !== false){
-        $departure_date = check_date($_POST["departure_date"]);
-        $arrival_date = check_date($_POST["arrival_date"]);
-    }else{
+    $departure_date = check_date($_POST["departure_date"]);
+    $arrival_date = check_date($_POST["arrival_date"]);
+    if ($departure_date === false || $arrival_date === false){
         //not convertible to future dates
         exit;
     }
@@ -63,6 +63,22 @@ if (isset($_POST["departure_date"]) && isset($_POST["arrival_date"])){
     }
 }else{
     //non set date
+    exit;
+}
+
+//check places
+if (isset($_POST["departure_place_id"]) && isset($_POST["arrival_place_id"])){
+    $departure_place_id = check_place($_POST["departure_place_id"],$pdo);
+    $arrival_place_id = check_place($_POST["arrival_place_id"],$pdo);
+    if ($departure_place_id !== false && $arrival_place_id !== false){
+        $params[":departure_place_id"] = $departure_place_id;
+        $params[":arrival_place_id"] = $arrival_place_id;
+    }else{
+        //non existing id
+        exit;
+    }
+}else{
+    //non set place
     exit;
 }
 

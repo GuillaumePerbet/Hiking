@@ -57,7 +57,7 @@
                 <legend>Région</legend>
 
                 <label>Point de départ
-                    <select name="departure_place">
+                    <select name="departure_place_id">
                         <?php
                             foreach($places as $place){
                                 echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
@@ -67,7 +67,7 @@
                 </label>
     
                 <label>Point d'arrivée
-                    <select name="arrival_place">
+                    <select name="arrival_place_id">
                         <?php
                             foreach($places as $place){
                                 echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
