@@ -56,7 +56,7 @@
                     <select name="departure_place_id" required>
                         <?php
                             foreach($places as $place){
-                                echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
+                                echo "<option value=' {$place['id']} '> {$place['name']} </option>";
                             }
                         ?>
                     </select>
@@ -66,7 +66,7 @@
                     <select name="arrival_place_id" required>
                         <?php
                             foreach($places as $place){
-                                echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
+                                echo "<option value=' {$place['id']} '> {$place['name']} </option>";
                             }
                         ?>
                     </select>
@@ -78,8 +78,8 @@
 
                 <?php
                 foreach($guides as $guide){
-                    echo "<label>" . $guide['first_name'] . " " . $guide['last_name'] .
-                    "<input type='checkbox' name='guide_ids[]' value='" . $guide['id'] . "'>";
+                    echo "<label> {$guide['first_name']} {$guide['last_name']}
+                    <input type='checkbox' name='guide_ids[]' value=' {$guide['id']} '>";
                 }
                 ?>
                 </label>

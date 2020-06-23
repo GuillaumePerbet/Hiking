@@ -35,6 +35,31 @@
 
             <input type="submit" value="Nouveau Membre">
         </form>
+
+
+        <form action="formHandler/inscription.php" method="POST">
+            <label>Randonneur
+                <select name="hiker_id" required>
+                    <?php
+                        foreach($hikers as $hiker){
+                            echo "<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
+                        }
+                    ?>
+                </select>
+            </label>
+
+            <label>Excursion
+                <select name="excursion_id" required>
+                    <?php
+                        foreach($excursions as $excursion){
+                            echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
+                        }
+                    ?>
+                </select>
+            </label>
+
+            <input type="submit" value="Inscrire">
+        </form>
     </main>
 </body>
 </html>
