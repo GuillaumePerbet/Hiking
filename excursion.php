@@ -30,26 +30,26 @@
 
         <form action="formHandler/create_excursion.php" method="POST">
             <label>Nom de l'excursion
-                <input type="text" name="name">
+                <input type="text" name="name" required>
             </label>
 
             <label>Prix de l'excursion
-                <input type="number" name="price">
+                <input type="number" name="price" required>
             </label>
 
             <label>Nombre de places
-                <input type="number" name="max_hikers">
+                <input type="number" name="max_hikers" required>
             </label>
 
             <fieldset>
                 <legend>Période</legend>
 
                 <label>Date de début
-                    <input type="date" name="departure_date">
+                    <input type="date" name="departure_date" required>
                 </label>
     
                 <label>Date de fin
-                    <input type="date" name="arrival_date">
+                    <input type="date" name="arrival_date" required>
                 </label>
             </fieldset>
 
@@ -57,7 +57,7 @@
                 <legend>Région</legend>
 
                 <label>Point de départ
-                    <select name="departure_place_id">
+                    <select name="departure_place_id" required>
                         <?php
                             foreach($places as $place){
                                 echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
@@ -67,7 +67,7 @@
                 </label>
     
                 <label>Point d'arrivée
-                    <select name="arrival_place_id">
+                    <select name="arrival_place_id" required>
                         <?php
                             foreach($places as $place){
                                 echo "<option value='" . $place['id'] . "'>" . $place['name'] . "</option>";
@@ -83,7 +83,7 @@
                 <?php
                 foreach($guides as $guide){
                     echo "<label>" . $guide['first_name'] . " " . $guide['last_name'] .
-                    "<input type='checkbox' name='guide[]' value='" . $guide['id'] . "'>";
+                    "<input type='checkbox' name='guide_ids[]' value='" . $guide['id'] . "'>";
                 }
                 ?>
                 </label>
