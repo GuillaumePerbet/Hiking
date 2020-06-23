@@ -11,17 +11,13 @@
     
     <main>
         <?php include_once("dbconnect.php");
-            //fetch array of places 'id' and 'name' in $places
-            $sql = "SELECT id,name FROM place";
-            $req = $pdo->prepare($sql);
-            $req -> execute();
+            //fetch array of place name and id
+            $req = $pdo->query("SELECT * FROM place");
             $places = $req->fetchAll();
             $req -> closeCursor();
 
-            //fetch array of guide name in $guides
-            $sql = "SELECT id,last_name,first_name FROM guide";
-            $req = $pdo->prepare($sql);
-            $req -> execute();
+            //fetch array of guide name and id
+            $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
             $guides = $req->fetchAll();
             $req -> closeCursor();
         ?>

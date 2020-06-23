@@ -9,11 +9,11 @@ if (isset($_POST["first_name"])){
     if ($first_name !== false){
         $params[":first_name"] = $first_name;
     }else{
-        //non string first name
+        echo "non string first name";
         exit;
     }
 }else{
-    //non set first name
+    echo "non set first name";
     exit;
 }
 
@@ -23,11 +23,11 @@ if (isset($_POST["last_name"])){
     if ($last_name !== false){
         $params[":last_name"] = $last_name;
     }else{
-        //non string last name
+        echo "non string last name";
         exit;
     }
 }else{
-    //non set last name
+    echo "non set last name";
     exit;
 }
 
