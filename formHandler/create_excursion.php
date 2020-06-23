@@ -31,7 +31,7 @@ if (isset($_POST["price"])){
     exit;
 }
 
-//check max_hikers
+//check max hikers
 if (isset($_POST["max_hikers"])){
     $max_hikers = check_number($_POST["max_hikers"]);
     if ($max_hikers !== false){
@@ -42,6 +42,27 @@ if (isset($_POST["max_hikers"])){
     }
 }else{
     //non set max_hikers
+    exit;
+}
+
+//check dates
+if (isset($_POST["departure_date"]) && isset($_POST["arrival_date"])){
+    if (check_date($_POST["departure_date"])!==false && check_date($_POST["arrival_date"]) !== false){
+        $departure_date = check_date($_POST["departure_date"]);
+        $arrival_date = check_date($_POST["arrival_date"]);
+    }else{
+        //not convertible to future dates
+        exit;
+    }
+    if ($departure_date <= $arrival_date){
+        $params[":departure_date"] = date('Y-m-d',$departure_date);
+        $params[":arrival_date"] = date('Y-m-d',$arrival_date);
+    }else{
+        //departure after arrival
+        exit;
+    }
+}else{
+    //non set date
     exit;
 }
 

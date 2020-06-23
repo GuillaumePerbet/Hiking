@@ -22,3 +22,14 @@ function check_number($param){
         return false;
     }
 }
+
+//check if $param is convertible to future date
+//return corresponding timestamp or false
+function check_date($param){
+    $param = strtotime($param);
+    if($param > time()){
+        return $param;
+    }else{
+        return false;
+    }
+}
