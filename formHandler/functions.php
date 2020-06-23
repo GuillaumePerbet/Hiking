@@ -41,7 +41,6 @@ function check_date($param){
 //check if $id correspond to an entry in $table of $pdo database
 //return id if found or false
 function check_id($id,$pdo,$table){
-    var_dump($id);
     $sql = "SELECT id FROM $table WHERE id=?";
     $req = $pdo->prepare($sql);
     $req -> execute([$id]);
