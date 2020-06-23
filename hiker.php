@@ -37,7 +37,7 @@
         </form>
 
 
-        <form action="formHandler/inscription.php" method="POST">
+        <form action="formHandler/registration.php" method="POST">
             <label>Randonneur
                 <select name="hiker_id" required>
                     <?php
