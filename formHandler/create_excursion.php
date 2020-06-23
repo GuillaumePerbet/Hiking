@@ -68,8 +68,8 @@ if (isset($_POST["departure_date"]) && isset($_POST["arrival_date"])){
 
 //check places
 if (isset($_POST["departure_place_id"]) && isset($_POST["arrival_place_id"])){
-    $departure_place_id = check_place($_POST["departure_place_id"],$pdo);
-    $arrival_place_id = check_place($_POST["arrival_place_id"],$pdo);
+    $departure_place_id = check_place_id($_POST["departure_place_id"],$pdo);
+    $arrival_place_id = check_place_id($_POST["arrival_place_id"],$pdo);
     if ($departure_place_id !== false && $arrival_place_id !== false){
         $params[":departure_place_id"] = $departure_place_id;
         $params[":arrival_place_id"] = $arrival_place_id;
@@ -82,4 +82,22 @@ if (isset($_POST["departure_place_id"]) && isset($_POST["arrival_place_id"])){
     exit;
 }
 
+//check guides
+if (isset($_POST["guide_ids"])){
+    $guide_ids = [];
+    foreach ($_POST["guide_ids"] as $guide_id){
+        $guide_id = check_guide_id($guide_id,$pdo);
+        if ($guide_id !== false ){
+            array_push($guide_ids,$guide_id);
+        }else{
+            //non existing id
+            exit;
+        }
+    }
+}else{
+    //no guide selected
+    exit;
+}
+
 var_dump($params);
+var_dump($guide_ids);
