@@ -27,7 +27,7 @@ function check_number($param){
     }
 }
 
-//check if $param is convertible to future date
+//check if $param is convertible to date in future
 //return corresponding timestamp or false
 function check_date($param){
     $param = strtotime($param);
@@ -38,27 +38,13 @@ function check_date($param){
     }
 }
 
-//check if $param correspond to a place id in $pdo database
-//return id or false
-function check_place_id($param,$pdo){
-    $sql = "SELECT id FROM place WHERE id=?";
+//check if $id correspond to an entry in $table of $pdo database
+//return id if found or false
+function check_id($id,$pdo,$table){
+    var_dump($id);
+    $sql = "SELECT id FROM $table WHERE id=?";
     $req = $pdo->prepare($sql);
-    $req -> execute([$param]);
-    $res = $req->fetch();
-    $req -> closeCursor();
-    if ($res !== false){
-        return $res["id"];
-    }else{
-        return false;
-    }
-}
-
-//check if $param correspond to a guide id in $pdo database
-//return id or false
-function check_guide_id($param,$pdo){
-    $sql = "SELECT id FROM guide WHERE id=?";
-    $req = $pdo->prepare($sql);
-    $req -> execute([$param]);
+    $req -> execute([$id]);
     $res = $req->fetch();
     $req -> closeCursor();
     if ($res !== false){
