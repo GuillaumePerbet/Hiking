@@ -1,8 +1,8 @@
 <?php
 require_once("functions.php");
 require_once("../dbconnect.php");
-var_dump($_POST);
 $params = [];
+$guide_ids = [];
 
 //check name
 if (isset($_POST["name"])){
@@ -84,7 +84,6 @@ if (isset($_POST["departure_place_id"]) && isset($_POST["arrival_place_id"])){
 
 //check guides
 if (isset($_POST["guide_ids"])){
-    $guide_ids = [];
     foreach ($_POST["guide_ids"] as $guide_id){
         $guide_id = check_guide_id($guide_id,$pdo);
         if ($guide_id !== false ){
@@ -99,5 +98,21 @@ if (isset($_POST["guide_ids"])){
     exit;
 }
 
-var_dump($params);
-var_dump($guide_ids);
+//insert new excursion in database
+$sql = "INSERT INTO excursion (name, price, max_hikers, departure_date, arrival_date, departure_place_id, arrival_place_id) VALUES (:name, :price, :max_hikers, :departure_date, :arrival_date, :departure_place_id, :arrival_place_id)";
+$req = $pdo ->prepare($sql);
+$req -> execute($params);
+$req -> closeCursor();
+
+//get the id of inserted excursion
+$req = $pdo -> query("SELECT id FROM excursion WHERE id=LAST_INSERT_ID()");
+$excursion_id = $req->fetch()["id"];
+$req -> closeCursor();
+
+//insert guides into accompany table
+foreach ($guide_ids as $guide_id){
+    $sql = "INSERT INTO accompany VALUES (?,?)";
+    $req = $pdo ->prepare($sql);
+    $req -> execute([$guide_id,$excursion_id]);
+    $req -> closeCursor();
+}
