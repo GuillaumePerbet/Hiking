@@ -20,9 +20,9 @@
     </header>
 
     <main>
-        <?php include_once("template/navbar.html"); ?>
-
-        <?php if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
+        <?php include_once("template/navbar.html");
+        
+        if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
             ?>
             <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
 

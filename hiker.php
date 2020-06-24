@@ -7,11 +7,21 @@
 </head>
 <body>
     <header>
-        <?php include_once("template/navbar.html"); ?>
+        <div id="user">
+            <div><span uk-icon="icon: user; ratio: 2"></span></div>
+            <?php
+            if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
+                echo "<p>".$_SESSION['user']."</p>";
+            }else{
+                echo "<p>Non connecté</p>";
+            }
+            ?>
+        </div>
     </header>
-    
+
     <main>
-        <?php
+        <?php include_once("template/navbar.html");
+
         if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
             echo "<p>Vous n'êtes pas connecté</p>";
         }else{
@@ -68,5 +78,7 @@
         }
         ?>
     </main>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>
