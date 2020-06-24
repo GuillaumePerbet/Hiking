@@ -1,6 +1,6 @@
 <?php session_start()?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
     <title>Accueil</title>
@@ -29,7 +29,7 @@
                     <input type="text" name="user">
                     <label for="password">Mot de passe</label>
                     <input type="password" name="password">
-                    <input class="uk-button-primary" type="submit" value="Connexion">
+                    <input type="submit" value="Connexion">
                 </form>
             <?php
             }

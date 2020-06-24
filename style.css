@@ -51,15 +51,39 @@ a {
   color: inherit;
 }
 
-input {
-  color: inherit;
-  font-size: 1.25rem;
+legend {
+  font-family: "Segoe-UI-Bold", sans-serif;
 }
-input[type=submit] {
+
+input, select {
+  color: #585B6E;
+  font-size: 1.25rem;
+  border: 1px solid #D7DAE2;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+}
+input[type=number], select[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button, select[type=number]::-webkit-outer-spin-button, select[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type=submit], select[type=submit] {
   font-family: "Segoe-UI-Bold", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  border-radius: 0.2rem;
+  letter-spacing: 0.15rem;
+  color: #585B6E;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+input[type=submit]:hover, select[type=submit]:hover {
+  background-color: #59F5BC;
+  color: #EFF1F2;
 }
 
 ul {

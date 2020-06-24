@@ -28,7 +28,7 @@
                         <input type="text" name="first_name" required>
                     </label>
     
-                    <label>Phone
+                    <label>Téléphone
                         <input type="tel" name="phone" required>
                     </label>
     
