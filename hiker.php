@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,6 +12,9 @@
     
     <main>
         <?php
+        if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
+            echo "<p>Vous n'êtes pas connecté</p>";
+        }else{
             include_once("dbconnect.php");
 
             //fetch array of hiker name and id
@@ -24,42 +28,45 @@
             $req -> closeCursor();
         ?>
 
-        <form action="formHandler/create_hiker.php" method="POST">
-            <label>Nom
-                <input type="text" name="last_name" required>
-            </label>
+            <form action="formHandler/create_hiker.php" method="POST">
+                <label>Nom
+                    <input type="text" name="last_name" required>
+                </label>
 
-            <label>Prénom
-                <input type="text" name="first_name" required>
-            </label>
+                <label>Prénom
+                    <input type="text" name="first_name" required>
+                </label>
 
-            <input type="submit" value="Nouveau Membre">
-        </form>
+                <input type="submit" value="Nouveau Membre">
+            </form>
 
 
-        <form action="formHandler/registration.php" method="POST">
-            <label>Randonneur
-                <select name="hiker_id" required>
-                    <?php
-                        foreach($hikers as $hiker){
-                            echo "<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
-                        }
-                    ?>
-                </select>
-            </label>
+            <form action="formHandler/registration.php" method="POST">
+                <label>Randonneur
+                    <select name="hiker_id" required>
+                        <?php
+                            foreach($hikers as $hiker){
+                                echo "<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
+                            }
+                        ?>
+                    </select>
+                </label>
 
-            <label>Excursion
-                <select name="excursion_id" required>
-                    <?php
-                        foreach($excursions as $excursion){
-                            echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
-                        }
-                    ?>
-                </select>
-            </label>
+                <label>Excursion
+                    <select name="excursion_id" required>
+                        <?php
+                            foreach($excursions as $excursion){
+                                echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
+                            }
+                        ?>
+                    </select>
+                </label>
 
-            <input type="submit" value="Inscrire">
-        </form>
+                <input type="submit" value="Inscrire">
+            </form>
+        <?php
+        }
+        ?>
     </main>
 </body>
 </html>

@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
+    echo "Vous n'êtes pas connecté";
+    exit;
+}
+
 require_once("functions.php");
 require_once("../dbconnect.php");
 $params = [];
