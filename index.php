@@ -16,7 +16,7 @@
             <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
 
             <form action="formHandler/logout.php" method="POST">
-                <input type="submit" value="Déconnexion">
+                <input class="uk-button-primary" type="submit" value="Déconnexion">
             </form>
         <?php
         }else{
@@ -26,11 +26,13 @@
                 <input type="text" name="user">
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password">
-                <input type="submit" value="Connexion">
+                <input class="uk-button-primary" type="submit" value="Connexion">
             </form>
         <?php
         }
         ?>
     </main>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>
