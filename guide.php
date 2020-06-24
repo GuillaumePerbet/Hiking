@@ -20,33 +20,35 @@
     </header>
 
     <main>
-        <?php include_once("template/navbar.html");
+        <?php include_once("template/navbar.html");?>
 
-        if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-            echo "<p>Vous n'êtes pas connecté</p>";
-        }else{
-            include_once("dbconnect.php");
-        ?>
-            <form action="formHandler/create_guide.php" method="POST">
-                <label>Nom
-                    <input type="text" name="last_name" required>
-                </label>
-
-                <label>Prénom
-                    <input type="text" name="first_name" required>
-                </label>
-
-                <label>Phone
-                    <input type="tel" name="phone" required>
-                </label>
-
-                <input type="submit" value="Nouveau Guide">
-            </form>
-        <?php
-        }
-        ?>
+        <section>
+            <?php
+            if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
+                echo "<p>Vous n'êtes pas connecté</p>";
+            }else{
+                include_once("dbconnect.php");
+            ?>
+                <form action="formHandler/create_guide.php" method="POST">
+                    <label>Nom
+                        <input type="text" name="last_name" required>
+                    </label>
+    
+                    <label>Prénom
+                        <input type="text" name="first_name" required>
+                    </label>
+    
+                    <label>Phone
+                        <input type="tel" name="phone" required>
+                    </label>
+    
+                    <input type="submit" value="Nouveau Guide">
+                </form>
+            <?php
+            }
+            ?>
+        </section>
     </main>
-    <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>

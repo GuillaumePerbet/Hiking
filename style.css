@@ -17,15 +17,28 @@
 body{
     font-family: 'Sergoe-UI', sans-serif;
     font-size: 1rem;
-    background-color: #EFF1F2;
     color: #122025;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    background-color: #EFF1F2;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    flex: 1;
+    position: relative;
+    top: -4rem;
+    margin-right: 1rem;
+    margin-bottom: -4rem;
 }
 
 p{
     margin: 0;
 }
 
-body>header{
+header{
     background-color: #122025;
     color: #EFF1F2;
     padding: 2rem 0;
@@ -50,6 +63,7 @@ body>header{
 
 main{
     display: flex;
+    flex: 1;
 }
 
 nav{
