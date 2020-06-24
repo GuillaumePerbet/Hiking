@@ -5,19 +5,9 @@
     <?php include_once("template/head.html"); ?>
     <title>Randonneurs</title>
 </head>
-<body>
-    <header>
-        <div id="user">
-            <div><span uk-icon="icon: user; ratio: 2"></span></div>
-            <?php
-            if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-                echo "<p>".$_SESSION['user']."</p>";
-            }else{
-                echo "<p>Non connecté</p>";
-            }
-            ?>
-        </div>
-    </header>
+<body class="flex column">
+
+    <?php include_once("template/header.php");?>
 
     <main>
         <?php include_once("template/navbar.html");?>
@@ -49,7 +39,7 @@
                         <input type="text" name="first_name" required>
                     </label>
     
-                    <input type="submit" value="Nouveau Membre">
+                    <input class="uk-button-primary" type="submit" value="Nouveau Membre">
                 </form>
     
     
@@ -74,7 +64,7 @@
                         </select>
                     </label>
     
-                    <input type="submit" value="Inscrire">
+                    <input class="uk-button-primary" type="submit" value="Inscrire">
                 </form>
             <?php
             }

@@ -5,22 +5,12 @@
     <?php include_once("template/head.html"); ?>
     <title>Accueil</title>
 </head>
-<body>
-    <header>
-        <div id="user">
-            <div><span uk-icon="icon: user; ratio: 2"></span></div>
-            <?php
-            if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-                echo "<p>".$_SESSION['user']."</p>";
-            }else{
-                echo "<p>Non connecté</p>";
-            }
-            ?>
-        </div>
-    </header>
+<body class="flex column">
+    
+    <?php include_once("template/header.php");?>
 
     <main>
-        <?php include_once("template/navbar.html");?>
+    <?php include_once("template/navbar.html");?>
         
         <section>
             <?php

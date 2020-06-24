@@ -13,13 +13,99 @@
   font-weight: normal;
   font-style: normal;
 }
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 body {
   font-family: "Sergoe-UI", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #122025;
   min-height: 100vh;
+  margin: 0;
+}
+
+main {
   display: flex;
-  flex-direction: column;
+  flex: 1;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  color: inherit;
+  font-size: 1.25rem;
+}
+input[type=submit] {
+  font-family: "Segoe-UI-Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 0.2rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  background-color: #122025;
+  color: #EFF1F2;
+  padding: 2rem 0;
+}
+header #user {
+  width: 18rem;
+}
+header #user div {
+  background-color: #9296AD;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  background-color: #122025;
+  color: #EFF1F2;
+  border-top: 1px solid #707070;
+  text-transform: uppercase;
+  font-family: "Segoe-UI-Bold", sans-serif;
+  letter-spacing: 0.1rem;
+}
+nav li {
+  width: 20rem;
+  margin: 2rem 0;
+}
+nav li a {
+  transition: 0.1s ease-in-out;
+  transition-property: color;
+}
+nav li a:hover {
+  color: #59F5BC;
+  text-decoration: none;
+}
+nav li a .uk-icon {
+  margin: 0 1rem 0 2rem;
 }
 
 section {
@@ -31,74 +117,6 @@ section {
   top: -4rem;
   margin-right: 1rem;
   margin-bottom: -4rem;
-}
-
-p {
-  margin: 0;
-}
-
-header {
-  background-color: #122025;
-  color: #EFF1F2;
-  padding: 2rem 0;
-}
-
-#user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 260px;
-}
-
-#user div {
-  background-color: #9296AD;
-  border-radius: 100%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-main {
-  display: flex;
-  flex: 1;
-}
-
-nav {
-  background-color: #122025;
-  color: #EFF1F2;
-  border-top: 1px solid #707070;
-}
-
-nav ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  flex-direction: column;
-  align-items: flex-start;
-  text-transform: uppercase;
-}
-
-nav li {
-  margin: 2rem 0;
-}
-
-nav a {
-  color: #EFF1F2;
-  transition: 0.1s ease-in-out;
-  transition-property: color;
-  padding: 2rem;
-}
-
-nav span {
-  margin-right: 1rem;
-}
-
-nav a:hover {
-  color: #59F5BC;
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

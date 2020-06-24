@@ -5,19 +5,9 @@
     <?php include_once("template/head.html"); ?>
     <title>Guides</title>
 </head>
-<body>
-    <header>
-        <div id="user">
-            <div><span uk-icon="icon: user; ratio: 2"></span></div>
-            <?php
-            if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-                echo "<p>".$_SESSION['user']."</p>";
-            }else{
-                echo "<p>Non connecté</p>";
-            }
-            ?>
-        </div>
-    </header>
+<body class="flex column">
+
+    <?php include_once("template/header.php");?>
 
     <main>
         <?php include_once("template/navbar.html");?>
@@ -42,7 +32,7 @@
                         <input type="tel" name="phone" required>
                     </label>
     
-                    <input type="submit" value="Nouveau Guide">
+                    <input class="uk-button-primary" type="submit" value="Nouveau Guide">
                 </form>
             <?php
             }
