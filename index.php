@@ -7,10 +7,21 @@
 </head>
 <body>
     <header>
-        <?php include_once("template/navbar.html"); ?>
+        <div id="user">
+            <div><span uk-icon="icon: user; ratio: 2"></span></div>
+            <?php
+            if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
+                echo "<p>".$_SESSION['user']."</p>";
+            }else{
+                echo "<p>Non connecté</p>";
+            }
+            ?>
+        </div>
     </header>
 
     <main>
+        <?php include_once("template/navbar.html"); ?>
+
         <?php if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
             ?>
             <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
@@ -22,7 +33,7 @@
         }else{
             ?>
             <form action="formHandler/login.php" method="POST">
-                <label for="user">Administrateur</label>
+                <label for="user">Utilisateur</label>
                 <input type="text" name="user">
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password">

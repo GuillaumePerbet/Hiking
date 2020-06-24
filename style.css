@@ -1,0 +1,89 @@
+@font-face {
+	font-family: 'Segoe-UI-Bold';
+	src: url('fonts/Segoe-UI-Bold.eot');
+	src: local('☺'), url('fonts/Segoe-UI-Bold.woff') format('woff'), url('fonts/Segoe-UI-Bold.ttf') format('truetype'), url('fonts/Segoe-UI-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe-UI';
+	src: url('fonts/Segoe-UI.eot');
+	src: local('☺'), url('fonts/Segoe-UI.woff') format('woff'), url('fonts/Segoe-UI.ttf') format('truetype'), url('fonts/Segoe-UI.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+    font-family: 'Sergoe-UI', sans-serif;
+    font-size: 1rem;
+    background-color: #EFF1F2;
+    color: #122025;
+}
+
+p{
+    margin: 0;
+}
+
+body>header{
+    background-color: #122025;
+    color: #EFF1F2;
+    padding: 2rem 0;
+}
+
+#user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+}
+
+#user div{
+    background-color: #9296AD;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+}
+
+nav{
+    background-color: #122025;
+    color: #EFF1F2;
+    border-top: 1px solid #707070;
+}
+
+nav ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+nav li{
+    margin: 2rem 0;
+}
+
+nav a{
+    color: #EFF1F2;
+    transition: .1s ease-in-out;
+    transition-property: color;
+    padding: 2rem;
+}
+
+nav span{
+    margin-right: 1rem;
+}
+
+nav a:hover{
+    color: #59F5BC;
+    text-decoration: none;
+}
