@@ -1,0 +1,19 @@
+{
+  "name": "hiking",
+  "version": "1.0.0",
+  "description": "Gestion des excursions et randonnées\r L’association « Natural Coach » est spécialisée dans l’organisation des excursions et randonnées dans la nature (montagnes, forêts, déserts…) dans différentes régions du Maroc (Nord, le Rif, le moyen Atlas, le Haut Atlas, les Oasis…).",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss:style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumePerbet/Hiking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuillaumePerbet/Hiking/issues"
+  },
+  "homepage": "https://github.com/GuillaumePerbet/Hiking#readme"
+}
