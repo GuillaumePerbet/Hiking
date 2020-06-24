@@ -34,7 +34,7 @@ $req -> execute([$user]);
 $response = $req -> fetch();
 if ($response){
     if(password_verify($password,$response["password"])){
-        $_SESSION["user"] = $user;
+        $_SESSION["user"] = $response["user"];
         $_SESSION["login"] = true;
     }
 }else{
