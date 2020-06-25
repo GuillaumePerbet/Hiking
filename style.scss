@@ -175,6 +175,10 @@ header{
         .not-connected{
             color: #585B6E
         }
+
+        @media only screen and (max-width:796px){
+            margin-left: 3rem;
+        }
     }
 
     h1{
@@ -232,7 +236,7 @@ section{
 
 //RESPONSIVE
 @media only screen  and (max-width:1172px){
-    //RESET SIZE OF EXCURSION FIELDSET TO KEEP 2 COLUMN VIEW
+    //RESIZE EXCURSION FORM TO KEEP 2 COLUMN VIEW
     #excursion{
         form{
             margin-left: 1rem;
@@ -277,13 +281,5 @@ section{
             }
         }
         
-    }
-}
-
-@media only screen and (max-width:894px){
-    header{
-        #user{
-            margin-left: 2rem;
-        }
     }
 }

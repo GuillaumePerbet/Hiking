@@ -157,6 +157,11 @@ header #user .user-name {
 header #user .not-connected {
   color: #585B6E;
 }
+@media only screen and (max-width: 796px) {
+  header #user {
+    margin-left: 3rem;
+  }
+}
 header h1 {
   font-family: "back-to-nature", serif;
   font-size: 5rem;
@@ -236,11 +241,6 @@ section {
   }
   section form input[type=submit] {
     margin-top: 1rem;
-  }
-}
-@media only screen and (max-width: 894px) {
-  header #user {
-    margin-left: 2rem;
   }
 }
 
