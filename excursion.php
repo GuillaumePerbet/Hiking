@@ -36,11 +36,13 @@
                             <label>Nom de l'excursion</label>
                             <input type="text" name="name" required>
             
-                            <label>Prix de l'excursion</label>
+                            <label class="flex between">Prix de l'excursion
                             <input type="number" name="price" required>
+                            </label>
             
-                            <label>Nombre de places</label>
+                            <label class="flex between">Nombre de places
                             <input type="number" name="max_hikers" required>
+                            </label>
                         </fieldset>
         
                         <fieldset class="flex column">

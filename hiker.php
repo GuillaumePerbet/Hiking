@@ -60,7 +60,7 @@
                         ?>
                     </select>
     
-                    <input class="uk-button-primary" type="submit" value="Inscrire">
+                    <input class="uk-button-primary" type="submit" value="Inscription">
                 </form>
             <?php
             }

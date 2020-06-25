@@ -67,6 +67,15 @@ main {
 
 p {
   margin: 0;
+  font-size: 2rem;
+}
+
+.user-name {
+  font-size: 1.25rem;
+}
+
+.not-connected {
+  color: #585B6E;
 }
 
 a {
@@ -88,6 +97,7 @@ input, select {
   margin-left: 1rem;
 }
 input[type=number], select[type=number] {
+  width: 5rem;
   -moz-appearance: textfield;
 }
 input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button, select[type=number]::-webkit-outer-spin-button, select[type=number]::-webkit-inner-spin-button {
@@ -102,7 +112,7 @@ input[type=submit], select[type=submit] {
   background-color: #59F5BC;
   border: none;
   padding: 0.75rem 1.75rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-left: 0;
   align-self: center;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
@@ -126,7 +136,7 @@ header {
 }
 header #user {
   width: 20rem;
-  padding: 2rem 0;
+  padding: 2.8rem 0;
 }
 header #user div {
   background-color: #9296AD;
@@ -140,7 +150,7 @@ header h1 {
   font-size: 5rem;
   flex: 1;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   color: #59F5BC;
 }
 
@@ -174,9 +184,9 @@ section {
   border-top-right-radius: 1rem;
   flex: 1;
   position: relative;
-  top: -3.5rem;
+  top: -4rem;
   margin-right: 1rem;
-  margin-bottom: -3.5rem;
+  margin-bottom: -4rem;
 }
 section form {
   margin: 2rem;

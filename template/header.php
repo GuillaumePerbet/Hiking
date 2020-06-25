@@ -5,9 +5,9 @@
         </div>
         <?php
         if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-            echo "<p>".$_SESSION['user']."</p>";
+            echo "<p class='user-name'>".$_SESSION['user']."</p>";
         }else{
-            echo "<p>Non connecté</p>";
+            echo "<p class='user-name not-connected'>Non connecté</p>";
         }
         ?>
     </div>
