@@ -73,6 +73,7 @@ main{
 p{
     margin: 0;
     font-size: 2rem;
+    text-align: center;
 }
 
 a{
@@ -226,22 +227,29 @@ section{
 }
 
 //RESPONSIVE
+@media only screen and (max-width:1172px){
+
+}
+
 @media only screen and (max-width:1040px){
     section{
         flex-direction: column;
 
         form{
-            margin-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+
 
             &:first-of-type{
                 margin-top: 4rem;
+            }
 
-                &::after{
-                    content: '';
-                    height: 1px;
-                    width: 100%;
-                    background-color: #585B6E;
-                }
+            &:not(:first-of-type)::before{
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: #585B6E;
+                margin-bottom: 1rem;
             }
     
             input[type=submit]{
