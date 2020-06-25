@@ -42,7 +42,7 @@
     
     
                 <form class="flex column" action="formHandler/registration.php" method="POST">
-                    <label>Randonneur</label>
+                    <label>Membre</label>
                     <select name="hiker_id" required>
                         <?php
                             foreach($hikers as $hiker){

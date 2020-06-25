@@ -56,7 +56,7 @@
     justify-content: center;
 }
 
-// GENERAL
+// GENERAL TAGS
 body{
     font-family: 'Sergoe-UI', sans-serif;
     font-size: 1.25rem;
@@ -75,19 +75,18 @@ p{
     font-size: 2rem;
 }
 
-.user-name{
-    font-size: 1.25rem;
-}
-
-.not-connected{
-    color: #585B6E
-}
-
 a{
 	text-decoration: none;
 	color: inherit;
 }
 
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+//FORMS
 legend{
     font-family: 'Segoe-UI-Bold', sans-serif;
 }
@@ -137,12 +136,6 @@ input, select{
     }
 }
 
-ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 // TOP BAR
 header{
     background-color: #122025;
@@ -158,6 +151,14 @@ header{
             width: 60px;
             height: 60px;
             margin-bottom: 0.5rem;
+        }
+
+        .user-name{
+            font-size: 1.25rem;
+        }
+        
+        .not-connected{
+            color: #585B6E
         }
     }
 
@@ -221,5 +222,32 @@ section{
             margin: 0 2rem 1rem;
             width: 18rem;
         }
+    }
+}
+
+//RESPONSIVE
+@media only screen and (max-width:1040px){
+    section{
+        flex-direction: column;
+
+        form{
+            margin-bottom: 0;
+
+            &:first-of-type{
+                margin-top: 4rem;
+
+                &::after{
+                    content: '';
+                    height: 1px;
+                    width: 100%;
+                    background-color: #585B6E;
+                }
+            }
+    
+            input[type=submit]{
+                margin-top: 1rem;
+            }
+        }
+        
     }
 }

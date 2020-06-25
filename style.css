@@ -70,17 +70,15 @@ p {
   font-size: 2rem;
 }
 
-.user-name {
-  font-size: 1.25rem;
-}
-
-.not-connected {
-  color: #585B6E;
-}
-
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 legend {
@@ -127,12 +125,6 @@ input[type=submit]:hover, select[type=submit]:hover {
   color: #EFF1F2;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 header {
   background-color: #122025;
   color: #EFF1F2;
@@ -147,6 +139,12 @@ header #user div {
   width: 60px;
   height: 60px;
   margin-bottom: 0.5rem;
+}
+header #user .user-name {
+  font-size: 1.25rem;
+}
+header #user .not-connected {
+  color: #585B6E;
 }
 header h1 {
   font-family: "back-to-nature", serif;
@@ -199,6 +197,27 @@ section form {
 section form fieldset {
   margin: 0 2rem 1rem;
   width: 18rem;
+}
+
+@media only screen and (max-width: 1040px) {
+  section {
+    flex-direction: column;
+  }
+  section form {
+    margin-bottom: 0;
+  }
+  section form:first-of-type {
+    margin-top: 4rem;
+  }
+  section form:first-of-type::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #585B6E;
+  }
+  section form input[type=submit] {
+    margin-top: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
