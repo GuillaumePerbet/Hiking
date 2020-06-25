@@ -71,7 +71,7 @@ main{
 }
 
 p{
-    margin: 0;
+    margin: 0 2rem;
     font-size: 2rem;
     text-align: center;
 }
@@ -170,6 +170,7 @@ header{
 
         .user-name{
             font-size: 1.25rem;
+            margin: 0;
         }
         
         .not-connected{

@@ -15,7 +15,7 @@
         <section class="flex evenly center">
             <?php
             if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-                echo "<p>Vous n'êtes pas connecté</p>";
+                echo "<p>Veuillez vous connecter pour gérer les guides</p>";
             }else{
                 include_once("dbconnect.php");
             ?>

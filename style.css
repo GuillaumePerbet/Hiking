@@ -66,7 +66,7 @@ main {
 }
 
 p {
-  margin: 0;
+  margin: 0 2rem;
   font-size: 2rem;
   text-align: center;
 }
@@ -153,6 +153,7 @@ header #user div {
 }
 header #user .user-name {
   font-size: 1.25rem;
+  margin: 0;
 }
 header #user .not-connected {
   color: #585B6E;
