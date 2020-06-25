@@ -12,25 +12,22 @@
     <main>
         <?php include_once("template/navbar.html");?>
 
-        <section>
+        <section class="flex evenly center">
             <?php
             if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
                 echo "<p>Vous n'êtes pas connecté</p>";
             }else{
                 include_once("dbconnect.php");
             ?>
-                <form action="formHandler/create_guide.php" method="POST">
-                    <label>Nom
-                        <input type="text" name="last_name" required>
-                    </label>
+                <form class="flex column" action="formHandler/create_guide.php" method="POST">
+                    <label>Nom</label>
+                    <input type="text" name="last_name" required>
     
-                    <label>Prénom
-                        <input type="text" name="first_name" required>
-                    </label>
+                    <label>Prénom</label>
+                    <input type="text" name="first_name" required>
     
-                    <label>Téléphone
-                        <input type="tel" name="phone" required>
-                    </label>
+                    <label>Téléphone</label>
+                    <input type="tel" name="phone" required>
     
                     <input class="uk-button-primary" type="submit" value="Nouveau Guide">
                 </form>

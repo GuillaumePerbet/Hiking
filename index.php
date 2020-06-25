@@ -12,19 +12,19 @@
     <main>
     <?php include_once("template/navbar.html");?>
         
-        <section>
+        <section class="flex evenly center">
             <?php
             if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
                 ?>
-                <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
     
-                <form action="formHandler/logout.php" method="POST">
+                <form class="flex column center justify-center" action="formHandler/logout.php" method="POST">
+                    <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
                     <input class="uk-button-primary" type="submit" value="Déconnexion">
                 </form>
             <?php
             }else{
                 ?>
-                <form action="formHandler/login.php" method="POST">
+                <form class="flex column justify-center" action="formHandler/login.php" method="POST">
                     <label for="user">Utilisateur</label>
                     <input type="text" name="user">
                     <label for="password">Mot de passe</label>
