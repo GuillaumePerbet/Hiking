@@ -88,54 +88,66 @@ ul{
 }
 
 //FORMS
-legend{
-    font-family: 'Segoe-UI-Bold', sans-serif;
-}
+form{
+    margin: 2rem;
+    max-width: 72rem;
+    min-width: 18rem;
 
-input, select{
-    color: #585B6E;
-    font-size: 1.25rem;
-    border: 1px solid #D7DAE2;
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 30px rgba(0,0,0,0.15);
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-
-    &[type=number]{
-        width: 5rem;
-        -moz-appearance: textfield;
-
-        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
-            -webkit-appearance: none;
-        }
+    fieldset{
+        margin: 0 2rem 1rem;
+        width: 18rem;
     }
 
-    &[type=date]{
-        width: 9.5rem;
-    }
-
-    &[type=submit]{
+    legend{
         font-family: 'Segoe-UI-Bold', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.15rem;
+    }
+    
+    input, select{
         color: #585B6E;
-        border-radius: 2rem;
-        background-color: #59F5BC;
-        border: none;
-        padding: 0.75rem 1.75rem;
-        margin-top: 2rem;
-        margin-left: 0;
-        align-self: center;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: 280ms cubic-bezier(0.4, 0, 0.2, 1);
-
-        &:hover{
-            background-color: rgb(62, 179, 136);
-            color: #EFF1F2;
+        font-size: 1.25rem;
+        border: 1px solid #D7DAE2;
+        border-radius: 0.25rem;
+        box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    
+        &[type=number]{
+            width: 5rem;
+            -moz-appearance: textfield;
+    
+            &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+            }
+        }
+    
+        &[type=date]{
+            width: 9.5rem;
+        }
+    
+        &[type=submit]{
+            font-family: 'Segoe-UI-Bold', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            color: #585B6E;
+            border-radius: 2rem;
+            background-color: #59F5BC;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            margin-top: 2rem;
+            margin-left: 0;
+            align-self: center;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+            &:hover{
+                background-color: rgb(62, 179, 136);
+                color: #EFF1F2;
+            }
         }
     }
 }
+
 
 // TOP BAR
 header{
@@ -143,8 +155,9 @@ header{
     color: #EFF1F2;
 
     #user{
-        width: 20rem;    
         padding: 2.8rem 0;
+        flex: 0 1;
+        margin-left: 6rem;
 
         div{
             background-color: #9296AD;
@@ -166,9 +179,10 @@ header{
     h1{
         font-family: 'back-to-nature', serif;
         font-size: 5rem;
-        flex: 1;
+        flex: 1 0;
         text-align: center;
         margin-top: 0.8rem;
+        margin-right: 1rem;
         color: #59F5BC;
     }
 }
@@ -213,32 +227,31 @@ section{
     top: -4rem;
     margin-right: 1rem;
     margin-bottom: -4rem;
+}
 
+//RESPONSIVE
+@media only screen and (min-width:1041px) and (max-width:1172px){
+    //RESET SIZE OF EXCURSION FIELDSET TO KEEP 2 COLUMN VIEW
     form{
-        margin: 2rem;
-        max-width: 72rem;
-        min-width: 18rem;
-
         fieldset{
-            margin: 0 2rem 1rem;
-            width: 18rem;
+            margin: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type=number]{
+            margin-left: 0;
         }
     }
 }
 
-//RESPONSIVE
-@media only screen and (max-width:1172px){
-
-}
-
 @media only screen and (max-width:1040px){
+    //PREVENT MULTI-COLUMN IN SECTION
     section{
         flex-direction: column;
 
         form{
             margin-top: 0;
             margin-bottom: 1rem;
-
 
             &:first-of-type{
                 margin-top: 4rem;
