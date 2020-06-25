@@ -12,7 +12,7 @@
     <main>
         <?php include_once("template/navbar.html");?>
 
-        <section class="flex evenly center">
+        <section id="excursion" class="flex evenly center">
             <?php
             if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
                 echo "<p>Vous n'êtes pas connecté</p>";

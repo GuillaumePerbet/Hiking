@@ -139,6 +139,7 @@ header {
   color: #EFF1F2;
 }
 header #user {
+  min-width: 8rem;
   padding: 2.8rem 0;
   flex: 0 1;
   margin-left: 6rem;
@@ -201,12 +202,17 @@ section {
   margin-bottom: -4rem;
 }
 
-@media only screen and (min-width: 1041px) and (max-width: 1172px) {
-  form fieldset {
-    margin: 1rem;
+@media only screen and (max-width: 1172px) {
+  #excursion form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  #excursion form fieldset {
+    margin-left: 1rem;
+    margin-right: 1rem;
     box-sizing: border-box;
   }
-  form input[type=number] {
+  #excursion form input[type=number] {
     margin-left: 0;
   }
 }
@@ -230,6 +236,11 @@ section {
   }
   section form input[type=submit] {
     margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 894px) {
+  header #user {
+    margin-left: 2rem;
   }
 }
 

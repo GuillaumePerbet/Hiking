@@ -155,6 +155,7 @@ header{
     color: #EFF1F2;
 
     #user{
+        min-width: 8rem;
         padding: 2.8rem 0;
         flex: 0 1;
         margin-left: 6rem;
@@ -230,16 +231,22 @@ section{
 }
 
 //RESPONSIVE
-@media only screen and (min-width:1041px) and (max-width:1172px){
+@media only screen  and (max-width:1172px){
     //RESET SIZE OF EXCURSION FIELDSET TO KEEP 2 COLUMN VIEW
-    form{
-        fieldset{
-            margin: 1rem;
-            box-sizing: border-box;
-        }
-
-        input[type=number]{
-            margin-left: 0;
+    #excursion{
+        form{
+            margin-left: 1rem;
+            margin-right: 1rem;
+    
+            fieldset{
+                margin-left: 1rem;
+                margin-right: 1rem;
+                box-sizing: border-box;
+            }
+    
+            input[type=number]{
+                margin-left: 0;
+            }
         }
     }
 }
@@ -270,5 +277,13 @@ section{
             }
         }
         
+    }
+}
+
+@media only screen and (max-width:894px){
+    header{
+        #user{
+            margin-left: 2rem;
+        }
     }
 }
