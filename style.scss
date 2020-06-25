@@ -110,6 +110,10 @@ input, select{
         }
     }
 
+    &[type=date]{
+        width: 9.5rem;
+    }
+
     &[type=submit]{
         font-family: 'Segoe-UI-Bold', sans-serif;
         text-transform: uppercase;
