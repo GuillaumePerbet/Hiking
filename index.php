@@ -12,11 +12,6 @@
 
     <main class="center">
         <section>
-                <form id="logout-form" class="column center justify-center" action="">
-                    <p id="user-connected"></p>
-                    <input class="uk-button-primary" type="submit" value="Déconnexion">
-                </form>
-                
                 <form id="login-form" class="column justify-center" action="">
                     <label for="user">Utilisateur</label>
                     <input type="text" name="user">
