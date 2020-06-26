@@ -255,6 +255,23 @@ section{
     }
 }
 
+//LOGIN
+#login{
+    background-color: #122025;
+
+    h1{
+        margin: 0;
+        padding-top: 2rem;
+    }
+
+    section{
+        position: initial;
+        border-radius: 1rem;
+        flex: 0;
+        margin: auto;
+    }
+}
+
 //RESPONSIVE
 @media only screen  and (max-width:1172px){
     //RESIZE EXCURSION FORM TO KEEP 2 COLUMN VIEW

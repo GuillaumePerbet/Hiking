@@ -222,6 +222,20 @@ section > div {
   margin-top: 5rem;
 }
 
+#login {
+  background-color: #122025;
+}
+#login h1 {
+  margin: 0;
+  padding-top: 2rem;
+}
+#login section {
+  position: initial;
+  border-radius: 1rem;
+  flex: 0;
+  margin: auto;
+}
+
 @media only screen and (max-width: 1172px) {
   #excursion form {
     margin-left: 1rem;

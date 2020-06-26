@@ -2,18 +2,16 @@
 <html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
-    <title>Accueil</title>
+    <title>Identification</title>
 </head>
-<body class="flex column">
+<body id="login" class="flex column">
     
-    <?php include_once("template/header.php");?>
+    <header>
+        <h1><span>Natural</span> Coach</h1>
+    </header>
 
-    <main>
-    <?php include_once("template/navbar.html");?>
-        
+    <main class="center">
         <section>
-            <div class="flex evenly wrap">
-
                 <form id="logout-form" class="column center justify-center" action="">
                     <p id="user-connected"></p>
                     <input class="uk-button-primary" type="submit" value="Déconnexion">
@@ -28,9 +26,9 @@
                     <div id="passwordError" class="error"></div>
                     <input type="submit" value="Connexion">
                 </form>
-            </div>
         </section>
     </main>
+
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
     <script src="js/uikit.min.js"></script>
