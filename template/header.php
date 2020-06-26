@@ -3,13 +3,8 @@
         <div class="flex center justify-center">
             <span uk-icon="icon: user; ratio: 2"></span>
         </div>
-        <?php
-        if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-            echo "<p class='user-name'>".$_SESSION['user']."</p>";
-        }else{
-            echo "<p class='user-name not-connected'>Non connecté</p>";
-        }
-        ?>
+
+        <p id="user-name"></p>
     </div>
 
     <div id="menu">

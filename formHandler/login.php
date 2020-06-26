@@ -39,8 +39,7 @@ $res = $req -> fetch();
 if ($res){
     //check password
     if(password_verify($password,$res["password"])){
-        $_SESSION["user"] = $res["user"];
-        $_SESSION["login"] = true;
+        $response["user"] = $res["user"];
     }else{
         $response["passwordError"] = "Mot de passe incorrect";
     }

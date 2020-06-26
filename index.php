@@ -1,4 +1,3 @@
-<?php session_start()?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,30 +13,21 @@
         
         <section>
             <div class="flex evenly wrap">
-                <?php
 
-                if(isset($_SESSION["login"]) && $_SESSION["login"]===true){
-                    ?>
-        
-                    <form class="flex column center justify-center" action="formHandler/logout.php" method="POST">
-                        <p>Vous êtes connecté en tant que <?=$_SESSION["user"]?></p>
-                        <input class="uk-button-primary" type="submit" value="Déconnexion">
-                    </form>
-                <?php
-                }else{
-                    ?>
-                    <form id="login-form" class="flex column justify-center" action="">
-                        <label for="user">Utilisateur</label>
-                        <input type="text" name="user">
-                        <div id="userError" class="error"></div>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password">
-                        <div id="passwordError" class="error"></div>
-                        <input type="submit" value="Connexion">
-                    </form>
-                <?php
-                }
-                ?>
+                <form id="logout-form" class="column center justify-center" action="">
+                    <p id="user-connected"></p>
+                    <input class="uk-button-primary" type="submit" value="Déconnexion">
+                </form>
+                
+                <form id="login-form" class="column justify-center" action="">
+                    <label for="user">Utilisateur</label>
+                    <input type="text" name="user">
+                    <div id="userError" class="error"></div>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password">
+                    <div id="passwordError" class="error"></div>
+                    <input type="submit" value="Connexion">
+                </form>
             </div>
         </section>
     </main>
