@@ -133,6 +133,12 @@ form input[type=submit]:hover, form select[type=submit]:hover {
   background-color: #3eb388;
   color: #EFF1F2;
 }
+form .error {
+  margin-left: 1rem;
+  color: #E43137;
+  font-size: 0.85rem;
+  transform: translateY(-1rem);
+}
 
 header {
   background-color: #122025;

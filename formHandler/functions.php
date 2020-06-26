@@ -1,7 +1,7 @@
 <?php
 
 //check if $param is a non empty string
-//retrun string or false
+//return string or false
 function check_string($param){
     if (!empty($param) && is_string($param)){
         return $param;
