@@ -163,6 +163,10 @@ header #user .not-connected {
     margin-left: 3rem;
   }
 }
+header #menu {
+  display: none;
+  color: #EFF1F2;
+}
 header h1 {
   font-family: "back-to-nature", serif;
   font-size: 5rem;
@@ -174,26 +178,26 @@ header h1 {
 }
 
 nav {
-  background-color: #122025;
   color: #EFF1F2;
+  background-color: #122025;
   border-top: 1px solid #707070;
   text-transform: uppercase;
   font-family: "Segoe-UI-Bold", sans-serif;
   letter-spacing: 0.1rem;
 }
-nav li {
+nav ul li {
   width: 20rem;
   margin: 2rem 0;
 }
-nav li a {
+nav ul li a {
   transition: 0.1s ease-in-out;
   transition-property: color;
 }
-nav li a:hover {
+nav ul li a:hover {
   color: #59F5BC;
   text-decoration: none;
 }
-nav li a .uk-icon {
+nav ul li a .uk-icon {
   margin: 0 1rem 0 2rem;
 }
 
@@ -239,6 +243,58 @@ section > div {
   }
   section > div form input[type=submit] {
     margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 688px) {
+  header #user {
+    display: none;
+  }
+  header h1 {
+    margin-bottom: 0;
+  }
+  header #menu {
+    display: block;
+    align-self: flex-end;
+    margin: 0 1rem;
+    flex-shrink: 0;
+  }
+
+  main {
+    position: relative;
+  }
+  main nav {
+    position: absolute;
+    border-bottom-right-radius: 1rem;
+  }
+  main nav ul li {
+    width: auto;
+    margin: 1.5rem 0;
+  }
+  main nav ul li a {
+    padding: 1rem;
+  }
+  main nav ul li .uk-icon {
+    display: none;
+  }
+  main section {
+    position: initial;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 368px) {
+  h1 span {
+    margin-left: -3rem;
+  }
+
+  form {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  #excursion form {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 

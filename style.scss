@@ -182,6 +182,11 @@ header{
         }
     }
 
+    #menu{
+        display: none;
+        color: #EFF1F2;
+    }
+
     h1{
         font-family: 'back-to-nature', serif;
         font-size: 5rem;
@@ -195,28 +200,31 @@ header{
 
 // NAV
 nav{
-    background-color: #122025;
     color: #EFF1F2;
+    background-color: #122025;
     border-top: 1px solid #707070;
     text-transform: uppercase;
     font-family: 'Segoe-UI-Bold', sans-serif;
     letter-spacing: 0.1rem;
 
-    li{
-        width: 20rem;
-        margin: 2rem 0;
+    ul{
 
-        a{
-            transition: .1s ease-in-out;
-            transition-property: color;
-            
-            &:hover{
-                color: #59F5BC;
-                text-decoration: none;
-            }
-
-            .uk-icon{
-                margin: 0 1rem 0 2rem;
+        li{
+            width: 20rem;
+            margin: 2rem 0;
+    
+            a{
+                transition: .1s ease-in-out;
+                transition-property: color;
+                
+                &:hover{
+                    color: #59F5BC;
+                    text-decoration: none;
+                }
+    
+                .uk-icon{
+                    margin: 0 1rem 0 2rem;
+                }
             }
         }
     }
@@ -284,5 +292,69 @@ section{
 }
 
 @media only screen and (max-width:688px){
+    header{
+        #user{
+            display: none;
+        }
 
+        h1{
+            margin-bottom: 0;
+        }
+
+        #menu{
+            display: block;
+            align-self: flex-end;
+            margin: 0 1rem;
+            flex-shrink: 0;
+        }
+    }
+
+    main{
+        position: relative;
+
+        nav{
+            position: absolute;
+            border-bottom-right-radius: 1rem;
+            // left: -100%;
+
+            ul {
+
+                li{
+                    width: auto;
+                    margin: 1.5rem 0;
+
+                    a{
+                        padding: 1rem;
+                    }
+
+                    .uk-icon{
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        section{
+            position: initial;
+            border-radius: 0;
+            margin: 0;
+        }
+    }
+}
+
+
+@media only screen and (max-width:368px){
+    h1 span{
+        margin-left: -3rem;
+    }
+
+    form{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    #excursion form{
+        margin-right: 0;
+        margin-left: 0;
+    }
 }

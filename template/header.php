@@ -12,5 +12,9 @@
         ?>
     </div>
 
-    <h1>Natural Coach</h1>
+    <div id="menu">
+        <span uk-icon="icon: menu; ratio: 2.56"></span>
+    </div>
+
+    <h1><span>Natural</span> Coach</h1>
 </header>
