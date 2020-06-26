@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,31 +13,30 @@
 
         <section>
             <div class="flex evenly wrap">
-                <?php
-                if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-                    echo "<p>Veuillez vous connecter pour gérer les guides</p>";
-                }else{
-                    include_once("dbconnect.php");
-                ?>
-                    <form class="flex column" action="formHandler/create_guide.php" method="POST">
-                        <label>Nom</label>
-                        <input type="text" name="last_name" required>
-        
-                        <label>Prénom</label>
-                        <input type="text" name="first_name" required>
-        
-                        <label>Téléphone</label>
-                        <input type="tel" name="phone" required>
-        
-                        <input class="uk-button-primary" type="submit" value="Nouveau Guide">
-                    </form>
-                <?php
-                }
-                ?>
+               
+                <p id="logout-message">Veuillez vous connecter pour gérer les guides</p>
+
+                <form id="create-form" class="flex column" action="">
+                    <label>Nom</label>
+                    <input type="text" name="last_name" required>
+                    <div id="lastNameError" class="error"></div>
+    
+                    <label>Prénom</label>
+                    <input type="text" name="first_name" required>
+                    <div id="firstNameError" class="error"></div>
+    
+                    <label>Téléphone</label>
+                    <input type="tel" name="phone" required>
+                    <div id="phoneError" class="error"></div>
+    
+                    <input class="uk-button-primary" type="submit" value="Nouveau Guide">
+                </form>
             </div>
         </section>
     </main>
+
     <script src="js/script.js"></script>
+    <script src="js/guide.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
 </body>
