@@ -265,6 +265,8 @@ section > div {
   main nav {
     position: absolute;
     border-bottom-right-radius: 1rem;
+    left: -100%;
+    transition: 0.8s;
   }
   main nav ul li {
     width: auto;

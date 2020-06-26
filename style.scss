@@ -315,7 +315,8 @@ section{
         nav{
             position: absolute;
             border-bottom-right-radius: 1rem;
-            // left: -100%;
+            left: -100%;
+            transition: 0.8s;
 
             ul {
 
