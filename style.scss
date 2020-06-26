@@ -233,6 +233,10 @@ section{
     top: -4rem;
     margin-right: 1rem;
     margin-bottom: -4rem;
+
+    >div{
+        margin-top: 5rem;
+    }
 }
 
 //RESPONSIVE
@@ -258,16 +262,11 @@ section{
 
 @media only screen and (max-width:1040px){
     //PREVENT MULTI-COLUMN IN SECTION
-    section{
-        flex-direction: column;
+    section>div{
 
         form{
             margin-top: 0;
             margin-bottom: 1rem;
-
-            &:first-of-type{
-                margin-top: 4rem;
-            }
 
             &:not(:first-of-type)::before{
                 content: '';
@@ -281,6 +280,9 @@ section{
                 margin-top: 1rem;
             }
         }
-        
     }
+}
+
+@media only screen and (max-width:688px){
+
 }

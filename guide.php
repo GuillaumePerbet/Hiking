@@ -12,28 +12,30 @@
     <main>
         <?php include_once("template/navbar.html");?>
 
-        <section class="flex evenly center">
-            <?php
-            if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-                echo "<p>Veuillez vous connecter pour gérer les guides</p>";
-            }else{
-                include_once("dbconnect.php");
-            ?>
-                <form class="flex column" action="formHandler/create_guide.php" method="POST">
-                    <label>Nom</label>
-                    <input type="text" name="last_name" required>
-    
-                    <label>Prénom</label>
-                    <input type="text" name="first_name" required>
-    
-                    <label>Téléphone</label>
-                    <input type="tel" name="phone" required>
-    
-                    <input class="uk-button-primary" type="submit" value="Nouveau Guide">
-                </form>
-            <?php
-            }
-            ?>
+        <section>
+            <div class="flex evenly wrap">
+                <?php
+                if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
+                    echo "<p>Veuillez vous connecter pour gérer les guides</p>";
+                }else{
+                    include_once("dbconnect.php");
+                ?>
+                    <form class="flex column" action="formHandler/create_guide.php" method="POST">
+                        <label>Nom</label>
+                        <input type="text" name="last_name" required>
+        
+                        <label>Prénom</label>
+                        <input type="text" name="first_name" required>
+        
+                        <label>Téléphone</label>
+                        <input type="tel" name="phone" required>
+        
+                        <input class="uk-button-primary" type="submit" value="Nouveau Guide">
+                    </form>
+                <?php
+                }
+                ?>
+            </div>
         </section>
     </main>
     <script src="js/uikit.min.js"></script>
