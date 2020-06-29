@@ -23,7 +23,7 @@ if(!isset($_SESSION["user"])){
                 include_once("dbconnect.php");
     
                 //fetch array of hiker name and id
-                $req = $pdo->query("SELECT * FROM hiker");
+                $req = $pdo->query("SELECT id,last_name,first_name FROM hiker");
                 $hikers = $req->fetchAll();
                 $req -> closeCursor();
     

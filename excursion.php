@@ -22,7 +22,7 @@ if(!isset($_SESSION["user"])){
                 <?php
                 include_once("dbconnect.php");
                 //fetch array of place name and id
-                $req = $pdo->query("SELECT * FROM place");
+                $req = $pdo->query("SELECT id,name FROM place");
                 $places = $req->fetchAll();
                 $req -> closeCursor();
     
