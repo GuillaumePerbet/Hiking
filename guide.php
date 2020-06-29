@@ -32,6 +32,7 @@ if(!isset($_SESSION["user"])){
                     <input type="tel" name="phone" required>
                     <div id="phoneError" class="error"></div>
     
+                    <div id="createSuccess" class="success"></div>
                     <input class="uk-button-primary" type="submit" value="Nouveau Guide">
                 </form>
             </div>
