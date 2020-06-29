@@ -18,7 +18,7 @@ if(isset($_SESSION["user"])){
 
     <main class="center">
         <section>
-                <form id="login-form" class="column justify-center" action="">
+                <form id="login-form" class="flex column justify-center" action="">
                     <label for="user">Utilisateur</label>
                     <input type="text" name="user">
                     <div id="userError" class="error"></div>
