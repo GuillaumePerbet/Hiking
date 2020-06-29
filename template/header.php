@@ -4,7 +4,7 @@
             <span uk-icon="icon: user; ratio: 2"></span>
         </div>
 
-        <p id="user-name"></p>
+        <p id="user-name"><?=$_SESSION["user"]?></p>
     </div>
 
     <div id="menu">

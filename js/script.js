@@ -6,18 +6,8 @@ menu.addEventListener("click", ()=>{
     nav.style.left=(left=="0px")?"-100%":"0px";
 });
 
-//Header username 
-const userName = document.getElementById("user-name");
-function checkLogin(){
-    //if user connected, print user name
-    if(sessionStorage.getItem("user")!==null){
-        userName.classList.remove("not-connected");
-        userName.innerHTML = sessionStorage.getItem("user");
-    }
-    //if user disconected, print "non connecté"
-    else{
-        userName.classList.add("not-connected");
-        userName.innerHTML = "Non connecté";
-    }
+//sign out link
+function disconnect(){
+   fetch("formHandler/logout.php")
+    .then(()=>document.location.href="index.php");
 }
-checkLogin();

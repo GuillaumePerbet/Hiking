@@ -19,9 +19,6 @@ if(!isset($_SESSION["user"])){
 
         <section>
             <div class="flex evenly wrap">
-               
-                <p id="logout-message">Veuillez vous connecter pour gérer les guides</p>
-
                 <form id="create-form" class="flex column" action="">
                     <label>Nom</label>
                     <input type="text" name="last_name" required>
