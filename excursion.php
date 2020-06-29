@@ -31,21 +31,25 @@ if(!isset($_SESSION["user"])){
                 $guides = $req->fetchAll();
                 $req -> closeCursor();
                 ?>
-                <form class="flex column center" action="formHandler/create_excursion.php" method="POST">
+
+                <form id="create-form" class="flex column center" action="formHandler/create_excursion.php" method="POST">
                     <div class="flex wrap evenly start">
                         <fieldset class="flex column">
                             <legend>Excursion</legend>
     
                             <label>Nom de l'excursion</label>
                             <input type="text" name="name">
+                            <div id="nameError" class="error"></div>
             
                             <label class="flex between">Prix de l'excursion
                             <input type="number" name="price">
                             </label>
+                            <div id="priceError" class="error"></div>
             
                             <label class="flex between">Nombre de places
                             <input type="number" name="max_hikers">
                             </label>
+                            <div id="maxHikersError" class="error"></div>
                         </fieldset>
         
                         <fieldset class="flex column">
@@ -56,6 +60,8 @@ if(!isset($_SESSION["user"])){
                 
                             <label>Date de fin</label>
                             <input type="date" name="arrival_date">
+
+                            <div id="dateError" class="error"></div>
                         </fieldset>
         
                         <fieldset class="flex column">
@@ -78,6 +84,7 @@ if(!isset($_SESSION["user"])){
                                     }
                                 ?>
                             </select>
+                            <div id="placeError" class="error"></div>
                         </fieldset>
         
                         <fieldset class="flex column">
@@ -93,15 +100,18 @@ if(!isset($_SESSION["user"])){
                             <?php
                             }
                             ?>
-                            
+                            <div id="guidesError" class="error"></div>
                         </fieldset>
                     </div>
                     
+                    <div id="createSuccess" class="success"></div>
                     <input class="uk-button-primary" type="submit" value="Créer l'excursion">
                 </form>
             </div>
         </section>
     </main>
+
+    <script src="js/excursion.js"></script>
     <script src="js/script.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>

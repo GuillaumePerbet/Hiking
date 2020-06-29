@@ -1,14 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-    echo "Vous n'êtes pas connecté";
-    exit;
+if (!isset($_SESSION["user"])){
+    header("Location:../index.php");
 }
 
 require_once("functions.php");
 require_once("../dbconnect.php");
 $params = [];
-$guide_ids = [];
+$response=[];
 
 //check name
 if (isset($_POST["name"])){
@@ -16,12 +15,10 @@ if (isset($_POST["name"])){
     if ($name !== false){
         $params[":name"] = $name;
     }else{
-        echo "non string name";
-        exit;
+        $response["nameError"] = "Veuillez préciser un nom";
     }
 }else{
-    echo "non set name";
-    exit;
+    $response["nameError"] = "Aucun nom n'a été soumis";
 }
 
 //check price
@@ -30,12 +27,10 @@ if (isset($_POST["price"])){
     if ($price !== false){
         $params[":price"] = $price;
     }else{
-        echo "non positive number price";
-        exit;
+        $response["priceError"] = "Veuillez entrer un prix valide";
     }
 }else{
-    echo "non set price";
-    exit;
+    $response["priceError"] = "Aucun prix n'a été soumis";
 }
 
 //check max hikers
@@ -44,12 +39,10 @@ if (isset($_POST["max_hikers"])){
     if ($max_hikers !== false){
         $params[":max_hikers"] = $max_hikers;
     }else{
-        echo "non positive number max_hikers";
-        exit;
+        $response["maxHikersError"] = "Veuillez entrer un nombre de places valide";
     }
 }else{
-    echo "non set max_hikers";
-    exit;
+    $response["maxHikersError"] = "Aucun nombre de places n'a été soumis";
 }
 
 //check dates
@@ -57,19 +50,16 @@ if (isset($_POST["departure_date"]) && isset($_POST["arrival_date"])){
     $departure_date = check_date($_POST["departure_date"]);
     $arrival_date = check_date($_POST["arrival_date"]);
     if ($departure_date === false || $arrival_date === false){
-        echo "not convertible to future dates";
-        exit;
+        $response["dateError"] = "Veuillez préciser des dates futures";
     }
     if ($departure_date <= $arrival_date){
         $params[":departure_date"] = date('Y-m-d',$departure_date);
         $params[":arrival_date"] = date('Y-m-d',$arrival_date);
     }else{
-        echo "departure after arrival";
-        exit;
+        $response["dateError"] = "L'arrivée doit se faire après le départ";
     }
 }else{
-    echo "non set date";
-    exit;
+    $response["dateError"] = "Aucune date n'a été soumise";
 }
 
 //check places
@@ -80,27 +70,30 @@ if (isset($_POST["departure_place_id"]) && isset($_POST["arrival_place_id"])){
         $params[":departure_place_id"] = $departure_place_id;
         $params[":arrival_place_id"] = $arrival_place_id;
     }else{
-        echo "non existing id";
-        exit;
+        $response["placeError"] = "Région inexistante";
     }
 }else{
-    echo "non set place";
-    exit;
+    $response["placeError"] = "Aucune région n'a été soumise";
 }
 
 //check guides
 if (isset($_POST["guide_ids"])){
+    $guide_ids = [];
     foreach ($_POST["guide_ids"] as $guide_id){
         $guide_id = check_id($guide_id,$pdo,"guide");
         if ($guide_id !== false ){
             array_push($guide_ids,$guide_id);
         }else{
-            echo "non existing id";
-            exit;
+            $response["guidesError"] = "Guide inexistant";
         }
     }
 }else{
-    echo "no guide selected";
+    $response["guidesError"] = "Aucun guide n'a été séléctionné";
+}
+
+//if errors in submitted values, stop algorithm here
+if (!empty($response)){
+    echo json_encode($response);
     exit;
 }
 
@@ -123,4 +116,6 @@ foreach ($guide_ids as $guide_id){
     $req -> closeCursor();
 }
 
-header("Location: ../excursion.php");
+$response["createSuccess"] = "Nouvelle excursion créée";
+
+echo json_encode($response);
