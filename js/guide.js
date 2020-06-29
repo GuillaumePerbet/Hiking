@@ -26,8 +26,9 @@ createForm.addEventListener("submit",(e)=>{
         if(data.phoneError){
             phoneError.innerHTML = data.phoneError;
         }
-        //print success
+        //print success and erase form fields
         if(data.createSuccess){
+            createForm.reset();
             createSuccess.innerHTML = data.createSuccess;
         }
     });
