@@ -37,14 +37,14 @@ if(!isset($_SESSION["user"])){
                             <legend>Excursion</legend>
     
                             <label>Nom de l'excursion</label>
-                            <input type="text" name="name" required>
+                            <input type="text" name="name">
             
                             <label class="flex between">Prix de l'excursion
-                            <input type="number" name="price" required>
+                            <input type="number" name="price">
                             </label>
             
                             <label class="flex between">Nombre de places
-                            <input type="number" name="max_hikers" required>
+                            <input type="number" name="max_hikers">
                             </label>
                         </fieldset>
         
@@ -52,17 +52,17 @@ if(!isset($_SESSION["user"])){
                             <legend>Période</legend>
         
                             <label>Date de début</label>
-                            <input type="date" name="departure_date" required>
+                            <input type="date" name="departure_date">
                 
                             <label>Date de fin</label>
-                            <input type="date" name="arrival_date" required>
+                            <input type="date" name="arrival_date">
                         </fieldset>
         
                         <fieldset class="flex column">
                             <legend>Région</legend>
         
                             <label>Point de départ</label>
-                            <select name="departure_place_id" required>
+                            <select name="departure_place_id">
                                 <?php
                                     foreach($places as $place){
                                         echo "<option value=' {$place['id']} '> {$place['name']} </option>";
@@ -71,7 +71,7 @@ if(!isset($_SESSION["user"])){
                             </select>
                 
                             <label>Point d'arrivée</label>
-                            <select name="arrival_place_id" required>
+                            <select name="arrival_place_id">
                                 <?php
                                     foreach($places as $place){
                                         echo "<option value=' {$place['id']} '> {$place['name']} </option>";

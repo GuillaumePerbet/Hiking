@@ -21,15 +21,15 @@ if(!isset($_SESSION["user"])){
             <div class="flex evenly wrap">
                 <form id="create-form" class="flex column" action="">
                     <label>Nom</label>
-                    <input type="text" name="last_name" required>
+                    <input type="text" name="last_name">
                     <div id="lastNameError" class="error"></div>
     
                     <label>Prénom</label>
-                    <input type="text" name="first_name" required>
+                    <input type="text" name="first_name">
                     <div id="firstNameError" class="error"></div>
     
                     <label>Téléphone</label>
-                    <input type="tel" name="phone" required>
+                    <input type="tel" name="phone">
                     <div id="phoneError" class="error"></div>
     
                     <div id="createSuccess" class="success"></div>

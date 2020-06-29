@@ -35,11 +35,11 @@ if(!isset($_SESSION["user"])){
 
                 <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
                     <label>Nom</label>
-                    <input type="text" name="last_name" required>
+                    <input type="text" name="last_name">
                     <div id="lastNameError" class="error"></div>
 
                     <label>Prénom</label>
-                    <input type="text" name="first_name" required>
+                    <input type="text" name="first_name">
                     <div id="firstNameError" class="error"></div>
                     
                     <div id="createSuccess" class="success"></div>
@@ -49,7 +49,7 @@ if(!isset($_SESSION["user"])){
     
                 <form class="flex column" action="formHandler/registration.php" method="POST">
                     <label>Membre</label>
-                    <select name="hiker_id" required>
+                    <select name="hiker_id">
                         <?php
                             foreach($hikers as $hiker){
                                 echo "<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
@@ -58,7 +58,7 @@ if(!isset($_SESSION["user"])){
                     </select>
     
                     <label>Excursion</label>
-                    <select name="excursion_id" required>
+                    <select name="excursion_id">
                         <?php
                             foreach($excursions as $excursion){
                                 echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
