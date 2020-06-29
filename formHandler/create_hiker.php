@@ -15,7 +15,7 @@ if (isset($_POST["first_name"])){
     if ($first_name !== false){
         $params[":first_name"] = $first_name;
     }else{
-        $response["firstNameError"] = "Le prénom ne doit pas être vide";
+        $response["firstNameError"] = "Veuillez préciser un prénom";
     }
 }else{
     $response["firstNameError"] = "Aucun prénom n'a été soumis";
@@ -27,7 +27,7 @@ if (isset($_POST["last_name"])){
     if ($last_name !== false){
         $params[":last_name"] = $last_name;
     }else{
-        $response["lastNameError"] = "Le nom ne doit pas être vide";
+        $response["lastNameError"] = "Veuillez préciser un nom";
     }
 }else{
     $response["lastNameError"] = "Aucun nom n'a été soumis";

@@ -8,7 +8,7 @@ $response = [];
 if (isset($_POST["user"])){
     $user = check_string($_POST["user"]);
     if ($user === false){
-        $response["userError"] = "Le nom d'utilisateur ne doit pas être vide";
+        $response["userError"] = "Veuillez préciser un nom d'utilisateur";
     }
 }else{
     $response["userError"] = "Aucun nom d'utilisateur n'a été soumis";
@@ -18,7 +18,7 @@ if (isset($_POST["user"])){
 if (isset($_POST["password"])){
     $password = check_string($_POST["password"]);
     if ($password === false){
-        $response["passwordError"] = "Le mot de passe ne doit pas être vide";
+        $response["passwordError"] = "Veuillez entrer le mot de passe";
     }
 }else{
     $response["passwordError"] = "Aucun mot de passe n'a été soumis";

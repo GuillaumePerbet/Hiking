@@ -15,7 +15,7 @@ if (isset($_POST["first_name"])){
     if ($first_name !== false){
         $params[":first_name"] = $first_name;
     }else{
-        $response["firstNameError"] = "Le prénom ne doit pas être vide";
+        $response["firstNameError"] = "Veuillez préciser un prénom";
     }
 }else{
     $response["firstNameError"] = "Aucun prénom n'a été soumis";
@@ -27,7 +27,7 @@ if (isset($_POST["last_name"])){
     if ($last_name !== false){
         $params[":last_name"] = $last_name;
     }else{
-        $response["lastNameError"] = "Le nom ne doit pas être vide";
+        $response["lastNameError"] = "Veuillez préciser un nom";
     }
 }else{
     $response["lastNameError"] = "Aucun nom n'a été soumis";
@@ -39,7 +39,7 @@ if (isset($_POST["phone"])){
     if ($phone !== false){
         $params[":phone"] = $phone;
     }else{
-        $response["phoneError"] = "Le numéro de téléphone ne doit pas être vide";
+        $response["phoneError"] = "Veuillez préciser un numéro de téléphone";
     }
 }else{
     $response["phoneError"] = "Aucun numéro de téléphone n'a été soumis";
@@ -57,6 +57,6 @@ $req = $pdo ->prepare($sql);
 $req -> execute($params);
 $req -> closeCursor();
 
-$response["createSuccess"] = "Le guide $first_name $last_name a été créé";
+$response["createSuccess"] = "Nouveau guide : $first_name $last_name";
 
 echo json_encode($response);

@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"]) || $_SESSION["login"]===false){
-    echo "Vous n'êtes pas connecté";
-    exit;
+if (!isset($_SESSION["user"])){
+    header("Location:../index.php");
 }
 
 require_once("functions.php");
 require_once("../dbconnect.php");
 $params = [];
+$response=[];
 
 //check hiker
 if (isset($_POST["hiker_id"])){
@@ -16,12 +16,10 @@ if (isset($_POST["hiker_id"])){
     if ($hiker_id !== false){
         $params[":hiker_id"] = $hiker_id;
     }else{
-        echo "non existing id";
-        exit;
+        $response["hikerError"] = "Membre inexistant";
     }
 }else{
-    echo "non set hiker";
-    exit;
+    $response["hikerError"] = "veuillez préciser le membre";
 }
 
 //check excursion
@@ -31,11 +29,15 @@ if (isset($_POST["excursion_id"])){
     if ($excursion_id !== false){
         $params[":excursion_id"] = $excursion_id;
     }else{
-        echo "non existing id";
-        exit;
+        $response["excursionError"] = "Excursion inexistante";
     }
 }else{
-    echo "non set excursion";
+    $response["excursionError"] = "Veuillez préciser l'excursion";
+}
+
+//if errors in submitted values, stop algorithm here
+if (!empty($response)){
+    echo json_encode($response);
     exit;
 }
 
@@ -44,8 +46,10 @@ $req = $pdo ->query("SELECT hiker_id FROM registration WHERE excursion_id=$excur
 $registrations = $req -> fetchAll();
 foreach($registrations as $registration){
     if ($registration["hiker_id"]==$hiker_id){
-        echo "already registered hiker";
-        exit;
+        $response["hikerError"] = "Membre déjà inscrit à cette excursion";
+        echo json_encode($response);
+        $req -> closeCursor();
+        exit();
     }
 }
 $req -> closeCursor();
@@ -61,8 +65,10 @@ $max_hikers = $req -> fetch()["max_hikers"];
 $req -> closeCursor();
 //compare numbers
 if ($hikers_number >= $max_hikers){
-    echo "excursion is full";
-    exit;
+    $response["excursionError"] = "Cette excursion est pleine";
+    echo json_encode($response);
+    $req -> closeCursor();
+    exit();
 }
 
 //insert new registration in database
@@ -70,5 +76,6 @@ $sql = "INSERT INTO registration (hiker_id, excursion_id) VALUES (:hiker_id, :ex
 $req = $pdo ->prepare($sql);
 $req -> execute($params);
 $req -> closeCursor();
+$response["registrationSuccess"] = "Inscription réussie";
 
-header("Location: ../hiker.php");
+echo json_encode($response);

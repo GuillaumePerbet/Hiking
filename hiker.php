@@ -47,7 +47,7 @@ if(!isset($_SESSION["user"])){
                 </form>
     
     
-                <form class="flex column" action="formHandler/registration.php" method="POST">
+                <form id="registration-form" class="flex column" action="formHandler/registration.php" method="POST">
                     <label>Membre</label>
                     <select name="hiker_id">
                         <?php
@@ -56,6 +56,8 @@ if(!isset($_SESSION["user"])){
                             }
                         ?>
                     </select>
+                    <div id="hikerError" class="error"></div>
+
     
                     <label>Excursion</label>
                     <select name="excursion_id">
@@ -65,6 +67,8 @@ if(!isset($_SESSION["user"])){
                             }
                         ?>
                     </select>
+                    <div id="excursionError" class="error"></div>
+
 
                     <div id="registrationSuccess" class="success"></div>
                     <input class="uk-button-primary" type="submit" value="Inscription">
