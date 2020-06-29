@@ -32,13 +32,17 @@ if(!isset($_SESSION["user"])){
                 $excursions = $req->fetchAll();
                 $req -> closeCursor();
                 ?>
-                <form class="flex column" action="formHandler/create_hiker.php" method="POST">
+
+                <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
                     <label>Nom</label>
                     <input type="text" name="last_name" required>
-    
+                    <div id="lastNameError" class="error"></div>
+
                     <label>Prénom</label>
                     <input type="text" name="first_name" required>
-    
+                    <div id="firstNameError" class="error"></div>
+                    
+                    <div id="createSuccess" class="success"></div>
                     <input class="uk-button-primary" type="submit" value="Nouveau Membre">
                 </form>
     
@@ -61,11 +65,15 @@ if(!isset($_SESSION["user"])){
                             }
                         ?>
                     </select>
+
+                    <div id="registrationSuccess" class="success"></div>
                     <input class="uk-button-primary" type="submit" value="Inscription">
                 </form>
             </div>
         </section>
     </main>
+
+    <script src="js/hiker.js"></script>
     <script src="js/script.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>

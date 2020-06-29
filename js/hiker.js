@@ -2,18 +2,16 @@
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");
-const phoneError = document.getElementById("phoneError");
 const createSuccess = document.getElementById("createSuccess");
 
-//create guide form handler
+//create hiker form handler
 createForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     const formData = new FormData(createForm);
-    fetch("formHandler/create_guide.php",{method:"POST", body: formData}).then(res=>res.json()).then(data=>{
+    fetch("formHandler/create_hiker.php",{method:"POST", body: formData}).then(res=>res.json()).then(data=>{
         //reset error fields
         lastNameError.innerHTML = "";
         firstNameError.innerHTML = "";
-        phoneError.innerHTML = "";
         createSuccess.innerHTML = "";
         //print errors
         if(data.lastNameError){
@@ -21,9 +19,6 @@ createForm.addEventListener("submit",(e)=>{
         }
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
-        }
-        if(data.phoneError){
-            phoneError.innerHTML = data.phoneError;
         }
         //print success and reset form fields
         if(data.createSuccess){
