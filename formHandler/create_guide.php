@@ -35,11 +35,11 @@ if (isset($_POST["last_name"])){
 
 //check phone
 if (isset($_POST["phone"])){
-    $phone = check_string($_POST["phone"]);
+    $phone = check_phone($_POST["phone"]);
     if ($phone !== false){
         $params[":phone"] = $phone;
     }else{
-        $response["phoneError"] = "Veuillez préciser un numéro de téléphone";
+        $response["phoneError"] = "Veuillez entrer un numéro de téléphone valide";
     }
 }else{
     $response["phoneError"] = "Aucun numéro de téléphone n'a été soumis";

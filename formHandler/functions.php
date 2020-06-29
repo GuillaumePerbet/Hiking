@@ -27,6 +27,18 @@ function check_number($param){
     }
 }
 
+//check if $param matches a phone number format
+//return string of numbers or false
+function check_phone($param){
+    $regex = "#^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$#";
+    if (preg_match($regex,$param)){
+        return $param;
+    }else{
+        return false;
+    }
+
+}
+
 //check if $param is convertible to date in future
 //return corresponding timestamp or false
 function check_date($param){
