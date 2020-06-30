@@ -4,7 +4,7 @@ if (!isset($_SESSION["user"])){
     header("Location:../index.php");
 }
 
-require_once("functions.php");
+require_once("check_data.php");
 require_once("dbconnect.php");
 $params = [];
 $response=[];
