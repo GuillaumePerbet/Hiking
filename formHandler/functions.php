@@ -28,11 +28,11 @@ function check_number($param){
 }
 
 //check if $param matches a phone number format
-//return string of numbers or false
+//return formated phone number or false
 function check_phone($param){
-    $regex = "#^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$#";
+    $regex = "#^[+]?[(]?[0-9]{0,4}[)]?[-\s\./0-9]*$#";
     if (preg_match($regex,$param)){
-        return $param;
+        return preg_replace("#[()-\s\./]#","",$param);
     }else{
         return false;
     }
