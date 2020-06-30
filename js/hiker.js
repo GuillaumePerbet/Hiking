@@ -1,4 +1,24 @@
-//Get create_hiker DOM elements
+//Get list hikers DOM elements
+const hikersList = document.getElementById("hikers-list");
+const selectHiker = document.getElementById("select-hiker");
+
+//update list guides section and select options
+function updateHikersList(){
+    fetch("formHandler/list_hikers.php").then(res=>res.json()).then(data=>{
+        hikersList.innerHTML = data.list;
+        selectHiker.innerHTML = data.select;
+    });
+}
+updateHikersList();
+
+//delete hiker function
+function deleteHiker(id){
+    const formData = new FormData();
+    formData.append("id",id);
+    fetch("formHandler/delete_hiker.php",{method: "POST", body: formData}).then(()=>updateHikersList());
+}
+
+//get create_hiker DOM elements
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");
@@ -20,10 +40,11 @@ createForm.addEventListener("submit",(e)=>{
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
         }
-        //print success and reset form fields
+        //on success, print message, reset form fields, update list
         if(data.createSuccess){
             createForm.reset();
             createSuccess.innerHTML = data.createSuccess;
+            updateHikersList();
         }
     });
 });
@@ -51,6 +72,7 @@ registrationForm.addEventListener("submit",(e)=>{
         //print success field
         if(data.registrationSuccess){
             registrationSuccess.innerHTML = data.registrationSuccess;
+            updateHikersList();
         }
     });
 });

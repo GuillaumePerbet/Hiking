@@ -18,7 +18,23 @@ if(!isset($_SESSION["user"])){
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <div class="flex evenly wrap">
+            <div class="flex column">
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom du membre</th>
+                                <th scope="col">Excursions</th>
+                                <th scope="col">Editer</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="hikers-list">
+
+                        </tbody>
+                    </table>
+                </section>
+
                 <?php
                 include_once("formHandler/dbconnect.php");
     
@@ -33,46 +49,46 @@ if(!isset($_SESSION["user"])){
                 $req -> closeCursor();
                 ?>
 
-                <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
-                    <label>Nom</label>
-                    <input type="text" name="last_name">
-                    <div id="lastNameError" class="error"></div>
-
-                    <label>Prénom</label>
-                    <input type="text" name="first_name">
-                    <div id="firstNameError" class="error"></div>
-                    
-                    <div id="createSuccess" class="success"></div>
-                    <input class="uk-button-primary" type="submit" value="Nouveau Membre">
-                </form>
+                <section>
+                    <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
+                        <label>Nom</label>
+                        <input type="text" name="last_name">
+                        <div id="lastNameError" class="error"></div>
+    
+                        <label>Prénom</label>
+                        <input type="text" name="first_name">
+                        <div id="firstNameError" class="error"></div>
+                        
+                        <div id="createSuccess" class="success"></div>
+                        <input class="uk-button-primary" type="submit" value="Nouveau Membre">
+                    </form>
+                </section>
     
     
-                <form id="registration-form" class="flex column" action="formHandler/registration.php" method="POST">
-                    <label>Membre</label>
-                    <select name="hiker_id">
-                        <?php
-                            foreach($hikers as $hiker){
-                                echo "<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
-                            }
-                        ?>
-                    </select>
-                    <div id="hikerError" class="error"></div>
+                <section>
+                    <form id="registration-form" class="flex column" action="formHandler/registration.php" method="POST">
+                        <label>Membre</label>
+                        <select id="select-hiker" name="hiker_id">
 
+                        </select>
+                        <div id="hikerError" class="error"></div>
     
-                    <label>Excursion</label>
-                    <select name="excursion_id">
-                        <?php
-                            foreach($excursions as $excursion){
-                                echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
-                            }
-                        ?>
-                    </select>
-                    <div id="excursionError" class="error"></div>
-
-
-                    <div id="registrationSuccess" class="success"></div>
-                    <input class="uk-button-primary" type="submit" value="Inscription">
-                </form>
+        
+                        <label>Excursion</label>
+                        <select name="excursion_id">
+                            <?php
+                                foreach($excursions as $excursion){
+                                    echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
+                                }
+                            ?>
+                        </select>
+                        <div id="excursionError" class="error"></div>
+    
+    
+                        <div id="registrationSuccess" class="success"></div>
+                        <input class="uk-button-primary" type="submit" value="Inscription">
+                    </form>
+                </section>
             </div>
         </section>
     </main>
