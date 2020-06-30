@@ -9,7 +9,7 @@ $req -> closeCursor();
 
 $response["content"] = "";
 foreach($guides as $guide){
-    //get excursions accompany by guide
+    //get excursions accompany by this guide
     $req = $pdo->prepare(
         "SELECT e.name
         FROM accompany as a
@@ -19,6 +19,7 @@ foreach($guides as $guide){
     $req->execute([$guide['id']]);
     $excursions = $req->fetchAll();
     $req -> closeCursor();
+    //create html list of excursions
     $excursionList = "<ul>";
     foreach($excursions as $excursion){
         $excursionList.="<li>{$excursion['name']}</li>";
@@ -31,7 +32,7 @@ foreach($guides as $guide){
             <td>{$guide['last_name']} {$guide['first_name']}</td>
             <td>{$guide['phone']}</td>
             <td>$excursionList</td>
-            <td><button>Supprimer {$guide['id']}</button><button>Modifier {$guide['id']}</button></td>
+            <td><button onclick='deleteGuide({$guide['id']})'>Supprimer</button><button>Modifier {$guide['id']}</button></td>
         </tr>";
 }
 
