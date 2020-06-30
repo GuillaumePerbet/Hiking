@@ -20,7 +20,7 @@ if(!isset($_SESSION["user"])){
         <section>
             <div class="flex evenly wrap">
                 <?php
-                include_once("dbconnect.php");
+                include_once("formHandler/dbconnect.php");
     
                 //fetch array of hiker name and id
                 $req = $pdo->query("SELECT id,last_name,first_name FROM hiker");

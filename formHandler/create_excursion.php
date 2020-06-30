@@ -5,7 +5,7 @@ if (!isset($_SESSION["user"])){
 }
 
 require_once("functions.php");
-require_once("../dbconnect.php");
+require_once("dbconnect.php");
 $params = [];
 $response=[];
 

@@ -20,7 +20,7 @@ if(!isset($_SESSION["user"])){
         <section id="excursion">
             <div class="flex evenly wrap">
                 <?php
-                include_once("dbconnect.php");
+                include_once("formHandler/dbconnect.php");
                 //fetch array of place name and id
                 $req = $pdo->query("SELECT id,name FROM place");
                 $places = $req->fetchAll();
