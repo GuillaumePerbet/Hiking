@@ -11,7 +11,7 @@ $response=[];
 
 //check first name
 if (isset($_POST["first_name"])){
-    $first_name = check_string($_POST["first_name"]);
+    $first_name = check_name($_POST["first_name"]);
     if ($first_name !== false){
         $params[":first_name"] = $first_name;
     }else{
@@ -23,7 +23,7 @@ if (isset($_POST["first_name"])){
 
 //check last name
 if (isset($_POST["last_name"])){
-    $last_name = check_string($_POST["last_name"]);
+    $last_name = check_name($_POST["last_name"]);
     if ($last_name !== false){
         $params[":last_name"] = $last_name;
     }else{
@@ -48,8 +48,7 @@ if (isset($_POST["phone"])){
 //if errors in submitted values, stop algorithm here
 if (!empty($response)){
     echo json_encode($response);
-    exit;
-}
+    ename
 
 //insert new guide in database
 $sql = "INSERT INTO guide (first_name, last_name,phone) VALUES (:first_name, :last_name, :phone)";

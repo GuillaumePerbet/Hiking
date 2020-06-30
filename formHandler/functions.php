@@ -10,8 +10,18 @@ function check_string($param){
     }
 }
 
+//check if $param is a non empty string
+//return formated name or false
+function check_name($param){
+    if (!empty($param) && is_string($param)){
+        return ucfirst(strtolower($param));
+    }else{
+        return false;
+    }
+}
+
 //check if $param is convertible to a positive integer
-//return integer or false
+//return rounded integer or false
 function check_number($param){
     if (is_numeric($param)){
         //convert to rounded integer
