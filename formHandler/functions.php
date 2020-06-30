@@ -42,7 +42,7 @@ function check_number($param){
 function check_phone($param){
     $regex = "#^[+]?[(]?[0-9]{0,4}[)]?[-\s\./0-9]*$#";
     if (preg_match($regex,$param)){
-        return preg_replace("#[()-\s\./]#","",$param);
+        return preg_replace("#[\(\)\-\s\./]#","",$param);
     }else{
         return false;
     }

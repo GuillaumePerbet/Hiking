@@ -1,4 +1,16 @@
-//Get DOM elements
+//Get list guides DOM elements
+const guidesList = document.getElementById("guides-list");
+
+//update list guides section
+function updateGuidesList(){
+    fetch("formHandler/list-guides.php").then(res=>res.json()).then(data=>{
+        guidesList.innerHTML = data.content;
+    });
+}
+updateGuidesList();
+
+
+//Get create from DOM elements
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");
@@ -25,10 +37,11 @@ createForm.addEventListener("submit",(e)=>{
         if(data.phoneError){
             phoneError.innerHTML = data.phoneError;
         }
-        //print success and reset form fields
+        //on success: print message, reset form fields, update guides list
         if(data.createSuccess){
             createForm.reset();
             createSuccess.innerHTML = data.createSuccess;
+            updateGuidesList();
         }
     });
 });

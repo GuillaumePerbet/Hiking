@@ -48,7 +48,8 @@ if (isset($_POST["phone"])){
 //if errors in submitted values, stop algorithm here
 if (!empty($response)){
     echo json_encode($response);
-    ename
+    exit;
+}
 
 //insert new guide in database
 $sql = "INSERT INTO guide (first_name, last_name,phone) VALUES (:first_name, :last_name, :phone)";

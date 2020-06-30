@@ -213,7 +213,7 @@ nav ul li a .uk-icon {
   margin: 0 1rem 0 2rem;
 }
 
-section {
+main > section {
   background-color: #EFF1F2;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -223,7 +223,7 @@ section {
   margin-right: 1rem;
   margin-bottom: -4rem;
 }
-section > div {
+main > section > div {
   margin-top: 5rem;
 }
 
