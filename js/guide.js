@@ -11,9 +11,11 @@ updateGuidesList();
 
 //delete guide function
 function deleteGuide(id){
-    const formData = new FormData();
-    formData.append("id",id);
-    fetch("formHandler/delete_guide.php",{method: "POST", body: formData}).then(()=>updateGuidesList());
+    if(window.confirm("Confirmer la suppression?")){
+        const formData = new FormData();
+        formData.append("id",id);
+        fetch("formHandler/delete_guide.php",{method: "POST", body: formData}).then(()=>updateGuidesList());
+    }
 }
 
 //Get create from DOM elements

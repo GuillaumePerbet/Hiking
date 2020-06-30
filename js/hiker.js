@@ -13,9 +13,11 @@ updateHikersList();
 
 //delete hiker function
 function deleteHiker(id){
-    const formData = new FormData();
+    if(window.confirm("Confirmer la suppression?")){
+        const formData = new FormData();
     formData.append("id",id);
     fetch("formHandler/delete_hiker.php",{method: "POST", body: formData}).then(()=>updateHikersList());
+    }
 }
 
 //get create_hiker DOM elements
