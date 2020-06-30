@@ -3,7 +3,7 @@ const guidesList = document.getElementById("guides-list");
 
 //update list guides section
 function updateGuidesList(){
-    fetch("formHandler/list-guides.php").then(res=>res.json()).then(data=>{
+    fetch("formHandler/list_guides.php").then(res=>res.json()).then(data=>{
         guidesList.innerHTML = data.content;
     });
 }
