@@ -35,20 +35,6 @@ if(!isset($_SESSION["user"])){
                     </table>
                 </section>
 
-                <?php
-                include_once("formHandler/dbconnect.php");
-    
-                //fetch array of hiker name and id
-                $req = $pdo->query("SELECT id,last_name,first_name FROM hiker");
-                $hikers = $req->fetchAll();
-                $req -> closeCursor();
-    
-                //fetch array of excursion name and id
-                $req = $pdo->query("SELECT id,name FROM excursion");
-                $excursions = $req->fetchAll();
-                $req -> closeCursor();
-                ?>
-
                 <section>
                     <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
                         <label>Nom</label>
@@ -68,23 +54,29 @@ if(!isset($_SESSION["user"])){
                 <section>
                     <form id="registration-form" class="flex column" action="formHandler/registration.php" method="POST">
                         <label>Membre</label>
-                        <select id="select-hiker" name="hiker_id">
-
-                        </select>
+                        <select id="select-hiker" name="hiker_id"></select>
                         <div id="hikerError" class="error"></div>
     
         
                         <label>Excursion</label>
                         <select name="excursion_id">
                             <?php
-                                foreach($excursions as $excursion){
-                                    echo "<option value=' {$excursion['id']} '> {$excursion['name']} </option>";
-                                }
+                            //fetch array of excursion name and id
+                            include_once("formHandler/dbconnect.php");
+                            $req = $pdo->query("SELECT id,name FROM excursion");
+                            $excursions = $req->fetchAll();
+                            $req -> closeCursor();
+                            foreach($excursions as $excursion){
+                            ?>
+                                <option value="<?=$excursion['id']?>">
+                                    <?= $excursion['name']?>
+                                </option>
+                            <?php
+                            }
                             ?>
                         </select>
                         <div id="excursionError" class="error"></div>
-    
-    
+
                         <div id="registrationSuccess" class="success"></div>
                         <input class="uk-button-primary" type="submit" value="Inscription">
                     </form>

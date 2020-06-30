@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION["user"])){
     header("Location: index.php");
 }
+include_once("formHandler/dbconnect.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,19 +20,7 @@ if(!isset($_SESSION["user"])){
 
         <section id="excursion">
             <div class="flex evenly wrap">
-                <?php
-                include_once("formHandler/dbconnect.php");
-                //fetch array of place name and id
-                $req = $pdo->query("SELECT id,name FROM place");
-                $places = $req->fetchAll();
-                $req -> closeCursor();
-    
-                //fetch array of guide name and id
-                $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
-                $guides = $req->fetchAll();
-                $req -> closeCursor();
-                ?>
-
+                
                 <form id="create-form" class="flex column center" action="formHandler/create_excursion.php" method="POST">
                     <div class="flex wrap evenly start">
                         <fieldset class="flex column">
@@ -66,22 +55,37 @@ if(!isset($_SESSION["user"])){
         
                         <fieldset class="flex column">
                             <legend>Région</legend>
+
+                            <?php
+                            //fetch array of place name and id
+                            $req = $pdo->query("SELECT id,name FROM place");
+                            $places = $req->fetchAll();
+                            $req -> closeCursor();
+                            ?>
         
                             <label>Point de départ</label>
                             <select name="departure_place_id">
                                 <?php
-                                    foreach($places as $place){
-                                        echo "<option value=' {$place['id']} '> {$place['name']} </option>";
-                                    }
+                                foreach($places as $place){
+                                ?>
+                                    <option value="<?=$place['id']?>">
+                                        <?=$place['name']?>
+                                    </option>
+                                <?php
+                                }
                                 ?>
                             </select>
                 
                             <label>Point d'arrivée</label>
                             <select name="arrival_place_id">
                                 <?php
-                                    foreach($places as $place){
-                                        echo "<option value=' {$place['id']} '> {$place['name']} </option>";
-                                    }
+                                foreach($places as $place){
+                                ?>
+                                    <option value="<?=$place['id']?>">
+                                        <?=$place['name']?>
+                                    </option>
+                                <?php
+                                }
                                 ?>
                             </select>
                             <div id="placeError" class="error"></div>
@@ -91,6 +95,10 @@ if(!isset($_SESSION["user"])){
                             <legend>Guides</legend>
         
                             <?php
+                            //fetch array of guide name and id
+                            $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
+                            $guides = $req->fetchAll();
+                            $req -> closeCursor();
                             foreach($guides as $guide){
                             ?>
                                 <label>
