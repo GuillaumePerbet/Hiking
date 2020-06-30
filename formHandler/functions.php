@@ -14,7 +14,7 @@ function check_string($param){
 //return formated name or false
 function check_name($param){
     if (!empty($param) && is_string($param)){
-        return ucfirst(strtolower($param));
+        return ucwords(strtolower($param)," -_.\t\r\n\f\v");
     }else{
         return false;
     }
