@@ -1,4 +1,24 @@
-//Get create_excursion DOM elements
+//get excursions list DOM elements
+const excursionsList = document.getElementById("excursions-list");
+
+//update excursions list section
+function updateExcursionsList(){
+    fetch("formHandler/list_excursions.php").then(res=>res.json()).then(data=>{
+        excursionsList.innerHTML = data.list;
+    });
+}
+updateExcursionsList();
+
+//delete excursion function
+function deleteExcursion(id){
+    if(window.confirm("Confirmer la suppression?")){
+        const formData = new FormData();
+    formData.append("id",id);
+    fetch("formHandler/delete_excursion.php",{method: "POST", body: formData}).then(()=>updateExcursionsList());
+    }
+}
+
+//get create_excursion DOM elements
 const createForm = document.getElementById("create-form");
 const nameError = document.getElementById("nameError");
 const priceError = document.getElementById("priceError");
