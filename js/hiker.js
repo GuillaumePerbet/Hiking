@@ -1,52 +1,42 @@
-//Get list hikers DOM elements
+//UPDATE HIKERS LISTS_____________________________________________________
+//get DOM elements
 const hikersList = document.getElementById("hikers-list");
 const selectHiker = document.getElementById("select-hiker");
-
-//update list guides section and select options
+//create function
 function updateHikersList(){
     fetch("formHandler/list_hikers.php").then(res=>res.json()).then(data=>{
+        //update table
         hikersList.innerHTML = data.list;
+        //update select options
         selectHiker.innerHTML = data.select;
     });
 }
+//update once
 updateHikersList();
 
-//modal confirm
-confirm.addEventListener('click',()=>{
-    let id = confirm.getAttribute("data-id");
-    deleteHiker(id);
-    hideModal();
-});
 
-//delete hiker function
-function deleteHiker(id){
-    const formData = new FormData();
-    formData.append("id",id);
-    fetch("formHandler/delete_hiker.php",{method: "POST", body: formData}).then(()=>updateHikersList());
-}
-
-//get create_hiker DOM elements
+//CREATE HIKER___________________________________________________________
+//get DOM elements
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");
-const createSuccess = document.getElementById("createSuccess");
-
-//create_hiker form handler
+//form submission
 createForm.addEventListener("submit",(e)=>{
     e.preventDefault();
+    //send AJAX request
     const formData = new FormData(createForm);
-    fetch("formHandler/create_hiker.php",{method:"POST", body: formData}).then(res=>res.json()).then(data=>{
+    fetch("formHandler/create_hiker.php",{method:"POST", body: formData}).then(res=>res.json())
+    .then(data=>{
         //reset error fields
         lastNameError.innerHTML = "";
         firstNameError.innerHTML = "";
-        //print errors
         if(data.lastNameError){
             lastNameError.innerHTML = data.lastNameError;
         }
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
         }
-        //on success, reset form fields, update list, hide modal
+        //on success: reset form fields, update hikers lists, hide modal
         if(data.createSuccess){
             createForm.reset();
             updateHikersList();
@@ -55,30 +45,48 @@ createForm.addEventListener("submit",(e)=>{
     });
 });
 
-//get registration DOM elements
-const registrationForm = document.getElementById("registration-form");
-const registrationSuccess = document.getElementById("registrationSuccess");
 
-//registration form handler
+//DELETE HIKER_____________________________________________________
+//on delete button confirmation
+confirm.addEventListener('click',()=>{
+    //get hiker id
+    let id = confirm.getAttribute("data-id");
+    //send AJAX request
+    const formData = new FormData();
+    formData.append("id",id);
+    fetch("formHandler/delete_hiker.php",{method: "POST", body: formData})
+    .then(()=>{
+        //on success: update hikers list, hide modal
+        updateHikersList();
+        hideModal();
+    });
+});
+
+
+
+//HIKER REGISTRATION TO EXCURSION______________________________________
+//ge DOM elements
+const registrationForm = document.getElementById("registration-form");
+//form submission
 registrationForm.addEventListener("submit",(e)=>{
     e.preventDefault();
+    //send AJAX request
     const formData = new FormData(registrationForm);
-    fetch("formHandler/registration.php",{method:"POST", body: formData}).then(res=>res.json()).then(data=>{
-        //reset error and success fields
+    fetch("formHandler/registration.php",{method:"POST", body: formData}).then(res=>res.json())
+    .then(data=>{
+        //reset error fields
         hikerError.innerHTML = "";
         excursionError.innerHTML = "";
-        registrationSuccess.innerHTML = "";
-        //print errors
         if(data.hikerError){
             hikerError.innerHTML = data.hikerError;
         }
         if(data.excursionError){
             excursionError.innerHTML = data.excursionError;
         }
-        //print success field
+        //on success: update hikers list, hide modal
         if(data.registrationSuccess){
-            registrationSuccess.innerHTML = data.registrationSuccess;
             updateHikersList();
+            hideModal();
         }
     });
 });
