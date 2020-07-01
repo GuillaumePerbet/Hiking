@@ -11,13 +11,18 @@ function updateHikersList(){
 }
 updateHikersList();
 
+//modal confirm
+confirm.addEventListener('click',()=>{
+    let id = confirm.getAttribute("data-id");
+    deleteHiker(id);
+    modal.classList.add('hidden');
+});
+
 //delete hiker function
 function deleteHiker(id){
-    if(window.confirm("Confirmer la suppression?")){
-        const formData = new FormData();
+    const formData = new FormData();
     formData.append("id",id);
     fetch("formHandler/delete_hiker.php",{method: "POST", body: formData}).then(()=>updateHikersList());
-    }
 }
 
 //get create_hiker DOM elements
@@ -42,7 +47,7 @@ createForm.addEventListener("submit",(e)=>{
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
         }
-        //on success, print message, reset form fields, update list
+        //on success: print message, reset form fields, update list
         if(data.createSuccess){
             createForm.reset();
             createSuccess.innerHTML = data.createSuccess;

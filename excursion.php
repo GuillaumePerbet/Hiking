@@ -24,7 +24,7 @@ include_once("formHandler/dbconnect.php");
                 </section>
                 
                 <section>
-                    <form id="create-form" class="flex column center" action="formHandler/create_excursion.php" method="POST">
+                    <form id="create-form" class="flex column center">
                         <div class="flex wrap evenly start">
                             <fieldset class="flex column">
                                 <legend>Excursion</legend>
@@ -123,8 +123,18 @@ include_once("formHandler/dbconnect.php");
         </section>
     </main>
 
-    <script src="js/excursion.js"></script>
+    <div id="modal" class="flex center justify-center hidden">
+        <div class="flex column center">
+            <p>Etes vous sûr de vouloir supprimer cette excursion?</p>
+            <div>
+                <button id="confirm">oui</button>
+                <button id="decline" onclick="decline()">non</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/excursion.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
 </body>

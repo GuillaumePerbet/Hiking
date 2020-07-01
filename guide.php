@@ -37,7 +37,7 @@ if(!isset($_SESSION["user"])){
                 </section>
 
                 <section>
-                    <form id="create-form" class="flex column" action="">
+                    <form id="create-form" class="flex column">
                         <label>Nom</label>
                         <input type="text" name="last_name">
                         <div id="lastNameError" class="error"></div>
@@ -57,6 +57,16 @@ if(!isset($_SESSION["user"])){
             </div>
         </section>
     </main>
+
+    <div id="modal" class="flex center justify-center hidden">
+        <div class="flex column center">
+            <p>Etes vous sûr de vouloir supprimer ce guide?</p>
+            <div>
+                <button id="confirm">oui</button>
+                <button id="decline" onclick="decline()">non</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
     <script src="js/guide.js"></script>

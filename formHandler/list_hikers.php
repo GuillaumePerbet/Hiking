@@ -33,7 +33,7 @@ foreach($hikers as $hiker){
         "<tr>
             <td>{$hiker['last_name']} {$hiker['first_name']}</td>
             <td>$excursionList</td>
-            <td><button onclick='deleteHiker({$hiker['id']})'>Supprimer</button></td>
+            <td><button onclick='showModal({$hiker['id']})'>Supprimer</button></td>
         </tr>";
 
     //create select option

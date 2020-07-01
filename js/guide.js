@@ -9,16 +9,21 @@ function updateGuidesList(){
 }
 updateGuidesList();
 
+//modal confirm
+confirm.addEventListener('click',()=>{
+    let id = confirm.getAttribute("data-id");
+    deleteGuide(id);
+    modal.classList.add('hidden');
+});
+
 //delete guide function
 function deleteGuide(id){
-    if(window.confirm("Confirmer la suppression?")){
-        const formData = new FormData();
-        formData.append("id",id);
-        fetch("formHandler/delete_guide.php",{method: "POST", body: formData}).then(()=>updateGuidesList());
-    }
+    const formData = new FormData();
+    formData.append("id",id);
+    fetch("formHandler/delete_guide.php",{method: "POST", body: formData}).then(()=>updateGuidesList());
 }
 
-//Get create from DOM elements
+//get create from DOM elements
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");

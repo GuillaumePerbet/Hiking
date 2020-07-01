@@ -36,7 +36,7 @@ if(!isset($_SESSION["user"])){
                 </section>
 
                 <section>
-                    <form id="create-form" class="flex column" action="formHandler/create_hiker.php" method="POST">
+                    <form id="create-form" class="flex column">
                         <label>Nom</label>
                         <input type="text" name="last_name">
                         <div id="lastNameError" class="error"></div>
@@ -52,7 +52,7 @@ if(!isset($_SESSION["user"])){
     
     
                 <section>
-                    <form id="registration-form" class="flex column" action="formHandler/registration.php" method="POST">
+                    <form id="registration-form" class="flex column">
                         <label>Membre</label>
                         <select id="select-hiker" name="hiker_id"></select>
                         <div id="hikerError" class="error"></div>
@@ -85,8 +85,18 @@ if(!isset($_SESSION["user"])){
         </section>
     </main>
 
-    <script src="js/hiker.js"></script>
+    <div id="modal" class="flex center justify-center hidden">
+        <div class="flex column center">
+            <p>Etes vous sûr de vouloir supprimer ce membre?</p>
+            <div>
+                <button id="confirm">oui</button>
+                <button id="decline" onclick="decline()">non</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/hiker.js"></script>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
 </body>

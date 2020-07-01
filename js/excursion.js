@@ -9,13 +9,18 @@ function updateExcursionsList(){
 }
 updateExcursionsList();
 
+//modal confirm
+confirm.addEventListener('click',()=>{
+    let id = confirm.getAttribute("data-id");
+    deleteExcursion(id);
+    modal.classList.add('hidden');
+});
+
 //delete excursion function
 function deleteExcursion(id){
-    if(window.confirm("Confirmer la suppression?")){
-        const formData = new FormData();
+    const formData = new FormData();
     formData.append("id",id);
     fetch("formHandler/delete_excursion.php",{method: "POST", body: formData}).then(()=>updateExcursionsList());
-    }
 }
 
 //get create_excursion DOM elements

@@ -54,7 +54,8 @@ foreach($excursions as $excursion){
             .$excursion['price']
             .$hikers_number
             .$excursion['max_hikers']
-        ."</div>";
+            ."<button onclick='showModal({$excursion['id']})'>Supprimer</button>
+        </div>";
 }
 
 echo json_encode($response);
