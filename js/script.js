@@ -9,27 +9,31 @@ menu.addEventListener("click", ()=>{
     nav.style.left=(left=="0px")?"-100%":"0px";
 });
 
+
 //SIGN OUT____________________________________________
 function disconnect(){
     document.location.href="logout.php";
 }
 
-//show delete modal
+
+//SHOW DELETE MODAL________________________________________
 const deleteModal = document.getElementById("delete-modal");
 const confirm = document.getElementById("confirm");
 function showDeleteModal(id){
-    deleteModal.classList.remove("hidden");
     //add id of element to delete
     confirm.setAttribute("data-id",id);
+    deleteModal.classList.remove("hidden");
 }
 
-//show create modal
+
+//SHOW CREATE MODAL_____________________________________
 const createModal = document.getElementById("create-modal");
 function showCreateModal(){
     createModal.classList.remove("hidden");
 }
 
-//hide all modals
+
+//HIDE MODALS__________________________________________
 const modals = document.getElementsByClassName("modal");
 function hideModal(){
     for(let modal of modals){

@@ -54,9 +54,30 @@ if(!isset($_SESSION["user"])){
                 <label>Téléphone</label>
                 <input type="tel" name="phone">
                 <div id="phoneError" class="error"></div>
-        
-                <div id="createSuccess" class="success"></div>
+
                 <input class="uk-button-primary" type="submit" value="Nouveau Guide">
+            </form>
+        </div>
+    </div>
+
+    <div id="update-modal" class="hidden modal flex center justify-center">
+        <div class="flex column center">
+            <button onclick="hideModal()">retour</button>
+            <form id="update-form" class="flex column">
+                <label>Nom</label>
+                <input id="last-name-update" type="text" name="last_name">
+                <div id="update-lastNameError" class="error"></div>
+        
+                <label>Prénom</label>
+                <input id="first-name-update" type="text" name="first_name">
+                <div id="update-firstNameError" class="error"></div>
+        
+                <label>Téléphone</label>
+                <input id="phone-update" type="tel" name="phone">
+                <div id="update-phoneError" class="error"></div>
+
+                <input class="uk-button-primary" type="submit" value="Modifier">
+                <div id="update-idError" class="error"></div>
             </form>
         </div>
     </div>

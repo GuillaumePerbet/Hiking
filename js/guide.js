@@ -48,6 +48,64 @@ createForm.addEventListener("submit",(e)=>{
 });
 
 
+//UPDATE GUIDE___________________________________________________________
+//get DOM elements
+const updateForm = document.getElementById("update-form");
+const lastNameInput = document.getElementById("last-name-update");
+const updateLastNameError = document.getElementById("update-lastNameError");
+const firstNameInput = document.getElementById("first-name-update");
+const updateFirstNameError = document.getElementById("update-firstNameError");
+const phoneInput = document.getElementById("phone-update");
+const updatePhoneError = document.getElementById("update-phoneError");
+const updateIdError = document.getElementById("update-idError");
+const updateModal = document.getElementById("update-modal");
+//show update-modal
+function showUpdateModal(id,lastName,firstName,phone){
+    //add id of element to update
+    updateForm.setAttribute("data-id",id);
+    //fill form fields
+    lastNameInput.value = lastName;
+    firstNameInput.value = firstName;
+    phoneInput.value = phone;
+    //show modal
+    updateModal.classList.remove("hidden");
+}
+//update-form submission
+updateForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    //get guide id
+    let id = updateForm.getAttribute("data-id");
+    //send AJAX request
+    const formData = new FormData(updateForm);
+    formData.append("id",id);
+    fetch("formHandler/update_guide.php",{method:"POST", body: formData}).then(res=>res.json())
+    .then(data=>{
+        //reset error fields
+        updateLastNameError.innerHTML = "";
+        if(data.lastNameError){
+            updateLastNameError.innerHTML = data.lastNameError;
+        }
+        updateFirstNameError.innerHTML = "";
+        if(data.firstNameError){
+            updateFirstNameError.innerHTML = data.firstNameError;
+        }
+        updatePhoneError.innerHTML = "";
+        if(data.phoneError){
+            updatePhoneError.innerHTML = data.phoneError;
+        }
+        updateIdError.innerHTML = "";
+        if(data.idError){
+            updateIdError.innerHTML = data.idError;
+        }
+        //on success: update list, hide modal
+        if(data.updateSuccess){
+            updateGuidesList();
+            hideModal();
+        }
+    });
+});
+
+
 //DELETE GUIDE_____________________________________________________
 //on delete button confirmation
 confirm.addEventListener('click',()=>{
