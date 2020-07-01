@@ -63,6 +63,84 @@ createForm.addEventListener("submit",(e)=>{
 });
 
 
+//UPDATE EXCURSION___________________________________________________________
+//get DOM elements
+const updateModal = document.getElementById("update-modal");
+const updateForm = document.getElementById("update-form");
+const nameInput = document.getElementById("name-update");
+const updateNameError = document.getElementById("update-nameError");
+const priceInput = document.getElementById("price-update");
+const updatePriceError = document.getElementById("update-priceError");
+const maxHikersInput = document.getElementById("maxHikers-update");
+const updateMaxHikersError = document.getElementById("update-maxHikersError");
+const departureDateInput = document.getElementById("departureDate-update");
+const arrivalDateInput = document.getElementById("arrivalDate-update");
+const updateDateError = document.getElementById("update-dateError");
+const updatePlaceError = document.getElementById("update-placeError");
+const updateGuidesError = document.getElementById("update-guidesError");
+const updateIdError = document.getElementById("update-idError");
+//show update-modal
+function showUpdateModal(id,name,price,maxHikers,departureDate,arrivalDate,departureId,arrivalId){
+    //add id of element to update
+    updateForm.setAttribute("data-id",id);
+    //fill form fields
+    nameInput.value = name;
+    priceInput.value = price;
+    maxHikersInput.value = maxHikers;
+    departureDateInput.value = departureDate;
+    arrivalDateInput.value = arrivalDate;
+    //_________fill select option and guides checkboxes_____________________
+    //show modal
+    updateModal.classList.remove("hidden");
+}
+//update-form submission
+updateForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    //get excursion id
+    let id = updateForm.getAttribute("data-id");
+    //send AJAX request
+    const formData = new FormData(updateForm);
+    formData.append("id",id);
+    fetch("formHandler/update_excursion.php",{method:"POST", body: formData}).then(res=>res.json())
+    .then(data=>{
+        //reset error fields
+        updateNameError.innerHTML = "";
+        if(data.nameError){
+            updateNameError.innerHTML = data.nameError;
+        }
+        updatePriceError.innerHTML = "";
+        if(data.priceError){
+            updatePriceError.innerHTML = data.priceError;
+        }
+        updateMaxHikersError.innerHTML = "";
+        if(data.maxHikersError){
+            updateMaxHikersError.innerHTML = data.maxHikersError;
+        }
+        updateDateError.innerHTML = "";
+        if(data.dateError){
+            updateDateError.innerHTML = data.dateError;
+        }
+        updatePlaceError.innerHTML = "";
+        if(data.placeError){
+            updatePlaceError.innerHTML = data.placeError;
+        }
+        updateGuidesError.innerHTML = "";
+        if(data.guidesError){
+            updateGuidesError.innerHTML = data.guidesError;
+        }
+        updateIdError.innerHTML = "";
+        if(data.idError){
+            updateIdError.innerHTML = data.idError;
+        }
+        //on success: update list, hide modal
+        if(data.updateSuccess){
+            updateExcursionsList();
+            hideModal();
+        }
+    });
+});
+
+
 //DELETE EXCURSION_____________________________________________________
 //on delete button confirmation
 confirm.addEventListener('click',()=>{

@@ -54,7 +54,8 @@ foreach($excursions as $excursion){
             .$excursion['price']
             .$hikers_number
             .$excursion['max_hikers']
-            ."<button onclick='showDeleteModal({$excursion['id']})'>Supprimer</button>
+            ."<button onclick=\"showDeleteModal({$excursion['id']})\">Supprimer</button>
+            <button onclick=\"showUpdateModal( {$excursion['id']} , '{$excursion['name']}' , '{$excursion['price']}' , '{$excursion['max_hikers']}' , '{$excursion['departure_date']}' , '{$excursion['arrival_date']}' , '{$excursion['departure_place_id']}' , '{$excursion['arrival_place_id']}')\">Modifier</button>
         </div>";
 }
 

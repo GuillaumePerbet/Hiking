@@ -122,9 +122,108 @@ include_once("formHandler/dbconnect.php");
                         <div id="guidesError" class="error"></div>
                     </fieldset>
                 </div>
-                
-                <div id="createSuccess" class="success"></div>
+
                 <input class="uk-button-primary" type="submit" value="Créer l'excursion">
+            </form>
+        </div>
+    </div>
+
+    <div id="update-modal" class="hidden modal flex center justify-center">
+        <div class="flex column center">
+            <button onclick="hideModal()">retour</button>
+            <form id="update-form" class="flex column center">
+                <div class="flex wrap evenly start">
+                    <fieldset class="flex column">
+                        <legend>Excursion</legend>
+
+                        <label>Nom de l'excursion</label>
+                        <input id="name-update" type="text" name="name">
+                        <div id="update-nameError" class="error"></div>
+        
+                        <label class="flex between">Prix de l'excursion
+                        <input id="price-update" type="number" name="price">
+                        </label>
+                        <div id="update-priceError" class="error"></div>
+        
+                        <label class="flex between">Nombre de places
+                        <input id="maxHikers-update" type="number" name="max_hikers">
+                        </label>
+                        <div id="update-maxHikersError" class="error"></div>
+                    </fieldset>
+    
+                    <fieldset class="flex column">
+                        <legend>Période</legend>
+    
+                        <label>Date de début</label>
+                        <input id="departureDate-update" type="date" name="departure_date">
+            
+                        <label>Date de fin</label>
+                        <input id="arrivalDate-update" type="date" name="arrival_date">
+
+                        <div id="update-dateError" class="error"></div>
+                    </fieldset>
+    
+                    <fieldset class="flex column">
+                        <legend>Région</legend>
+
+                        <?php
+                        //fetch array of place name and id
+                        $req = $pdo->query("SELECT id,name FROM place");
+                        $places = $req->fetchAll();
+                        $req -> closeCursor();
+                        ?>
+    
+                        <label>Point de départ</label>
+                        <select name="departure_place_id">
+                            <?php
+                            foreach($places as $place){
+                            ?>
+                                <option value="<?=$place['id']?>">
+                                    <?=$place['name']?>
+                                </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+            
+                        <label>Point d'arrivée</label>
+                        <select name="arrival_place_id">
+                            <?php
+                            foreach($places as $place){
+                            ?>
+                                <option value="<?=$place['id']?>">
+                                    <?=$place['name']?>
+                                </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <div id="update-placeError" class="error"></div>
+                    </fieldset>
+    
+                    <fieldset class="flex column">
+                        <legend>Guides</legend>
+    
+                        <?php
+                        //fetch array of guide name and id
+                        $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
+                        $guides = $req->fetchAll();
+                        $req -> closeCursor();
+                        foreach($guides as $guide){
+                        ?>
+                            <label>
+                                <input type='checkbox' name='guide_ids[]' value=' <?=$guide['id']?> '>
+                                <?=$guide['first_name']?> <?=$guide['last_name']?>
+                            </label>
+                        <?php
+                        }
+                        ?>
+                        <div id="update-guidesError" class="error"></div>
+                    </fieldset>
+                </div>
+
+                <input class="uk-button-primary" type="submit" value="Modifier">
+                <div id="update-idError" class="error"></div>
             </form>
         </div>
     </div>
