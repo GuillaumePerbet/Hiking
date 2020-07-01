@@ -1,15 +1,17 @@
-//burger menu
+//BURGER MENU________________________________________
+//get DOM elements
 const menu = document.getElementById("menu");
 const nav = document.querySelector("nav");
+//menu click event
 menu.addEventListener("click", ()=>{
+    //toggle left property of navigation
     let left = window.getComputedStyle(nav).left;
     nav.style.left=(left=="0px")?"-100%":"0px";
 });
 
-//sign out link
+//SIGN OUT____________________________________________
 function disconnect(){
-   fetch("formHandler/logout.php")
-    .then(()=>document.location.href="index.php");
+    document.location.href="logout.php";
 }
 
 //show delete modal
