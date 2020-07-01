@@ -1,8 +1,8 @@
-//UPDATE HIKERS LISTS_____________________________________________________
+//UPDATE HIKERS LIST_____________________________________________________
 //get DOM elements
 const hikersList = document.getElementById("hikers-list");
 const selectHiker = document.getElementById("select-hiker");
-//create function
+//update list function
 function updateHikersList(){
     fetch("formHandler/list_hikers.php").then(res=>res.json()).then(data=>{
         //update table
@@ -20,7 +20,7 @@ updateHikersList();
 const createForm = document.getElementById("create-form");
 const lastNameError = document.getElementById("lastNameError");
 const firstNameError = document.getElementById("firstNameError");
-//form submission
+//create-form submission
 createForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     //send AJAX request
@@ -29,14 +29,14 @@ createForm.addEventListener("submit",(e)=>{
     .then(data=>{
         //reset error fields
         lastNameError.innerHTML = "";
-        firstNameError.innerHTML = "";
         if(data.lastNameError){
             lastNameError.innerHTML = data.lastNameError;
         }
+        firstNameError.innerHTML = "";
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
         }
-        //on success: reset form fields, update hikers lists, hide modal
+        //on success: reset form, update list, hide modal
         if(data.createSuccess){
             createForm.reset();
             updateHikersList();
@@ -56,7 +56,7 @@ confirm.addEventListener('click',()=>{
     formData.append("id",id);
     fetch("formHandler/delete_hiker.php",{method: "POST", body: formData})
     .then(()=>{
-        //on success: update hikers list, hide modal
+        //on success: update list, hide modal
         updateHikersList();
         hideModal();
     });
