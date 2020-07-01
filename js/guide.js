@@ -13,7 +13,7 @@ updateGuidesList();
 confirm.addEventListener('click',()=>{
     let id = confirm.getAttribute("data-id");
     deleteGuide(id);
-    modal.classList.add('hidden');
+    hideModal();
 });
 
 //delete guide function
@@ -39,7 +39,6 @@ createForm.addEventListener("submit",(e)=>{
         lastNameError.innerHTML = "";
         firstNameError.innerHTML = "";
         phoneError.innerHTML = "";
-        createSuccess.innerHTML = "";
         //print errors
         if(data.lastNameError){
             lastNameError.innerHTML = data.lastNameError;
@@ -50,11 +49,11 @@ createForm.addEventListener("submit",(e)=>{
         if(data.phoneError){
             phoneError.innerHTML = data.phoneError;
         }
-        //on success: print message, reset form fields, update guides list
+        //on success, reset form fields, update list, hide modal
         if(data.createSuccess){
             createForm.reset();
-            createSuccess.innerHTML = data.createSuccess;
             updateGuidesList();
+            hideModal();
         }
     });
 });

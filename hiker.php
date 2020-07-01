@@ -35,21 +35,7 @@ if(!isset($_SESSION["user"])){
                     </table>
                 </section>
 
-                <section>
-                    <form id="create-form" class="flex column">
-                        <label>Nom</label>
-                        <input type="text" name="last_name">
-                        <div id="lastNameError" class="error"></div>
-    
-                        <label>Prénom</label>
-                        <input type="text" name="first_name">
-                        <div id="firstNameError" class="error"></div>
-                        
-                        <div id="createSuccess" class="success"></div>
-                        <input class="uk-button-primary" type="submit" value="Nouveau Membre">
-                    </form>
-                </section>
-    
+                <button onclick="showCreateModal()">Ajouter un membre</button>
     
                 <section>
                     <form id="registration-form" class="flex column">
@@ -85,12 +71,30 @@ if(!isset($_SESSION["user"])){
         </section>
     </main>
 
-    <div id="modal" class="flex center justify-center hidden">
+    <div id="create-modal" class="hidden modal flex center justify-center">
+        <div class="flex column center">
+            <button onclick="hideModal()">retour</button>
+            <form id="create-form" class="flex column">
+                <label>Nom</label>
+                <input type="text" name="last_name">
+                <div id="lastNameError" class="error"></div>
+
+                <label>Prénom</label>
+                <input type="text" name="first_name">
+                <div id="firstNameError" class="error"></div>
+                
+                <div id="createSuccess" class="success"></div>
+                <input class="uk-button-primary" type="submit" value="Nouveau Membre">
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
             <p>Etes vous sûr de vouloir supprimer ce membre?</p>
             <div>
                 <button id="confirm">oui</button>
-                <button id="decline" onclick="decline()">non</button>
+                <button id="decline" onclick="hideModal()">non</button>
             </div>
         </div>
     </div>

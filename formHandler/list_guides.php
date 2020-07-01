@@ -32,7 +32,7 @@ foreach($guides as $guide){
             <td>{$guide['last_name']} {$guide['first_name']}</td>
             <td>{$guide['phone']}</td>
             <td>$excursionList</td>
-            <td><button onclick='showModal({$guide['id']})'>Supprimer</button></td>
+            <td><button onclick='showDeleteModal({$guide['id']})'>Supprimer</button></td>
         </tr>";
 }
 

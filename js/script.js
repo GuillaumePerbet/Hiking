@@ -12,15 +12,25 @@ function disconnect(){
     .then(()=>document.location.href="index.php");
 }
 
-//modal
-const modal = document.getElementById("modal");
+//show delete modal
+const deleteModal = document.getElementById("delete-modal");
 const confirm = document.getElementById("confirm");
-//show modal and add item id to confirm button attribute
-function showModal(id){
-    modal.classList.remove("hidden");
+function showDeleteModal(id){
+    deleteModal.classList.remove("hidden");
+    //add id of element to delete
     confirm.setAttribute("data-id",id);
 }
-//decline delete button: hide modal
-function decline(){
-    modal.classList.add('hidden');
+
+//show create modal
+const createModal = document.getElementById("create-modal");
+function showCreateModal(){
+    createModal.classList.remove("hidden");
+}
+
+//hide all modals
+const modals = document.getElementsByClassName("modal");
+function hideModal(){
+    for(let modal of modals){
+        modal.classList.add("hidden");
+    }
 }

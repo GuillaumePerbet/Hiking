@@ -15,7 +15,7 @@ updateHikersList();
 confirm.addEventListener('click',()=>{
     let id = confirm.getAttribute("data-id");
     deleteHiker(id);
-    modal.classList.add('hidden');
+    hideModal();
 });
 
 //delete hiker function
@@ -39,7 +39,6 @@ createForm.addEventListener("submit",(e)=>{
         //reset error fields
         lastNameError.innerHTML = "";
         firstNameError.innerHTML = "";
-        createSuccess.innerHTML = "";
         //print errors
         if(data.lastNameError){
             lastNameError.innerHTML = data.lastNameError;
@@ -47,11 +46,11 @@ createForm.addEventListener("submit",(e)=>{
         if(data.firstNameError){
             firstNameError.innerHTML = data.firstNameError;
         }
-        //on success: print message, reset form fields, update list
+        //on success, reset form fields, update list, hide modal
         if(data.createSuccess){
             createForm.reset();
-            createSuccess.innerHTML = data.createSuccess;
             updateHikersList();
+            hideModal();
         }
     });
 });

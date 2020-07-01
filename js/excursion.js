@@ -13,7 +13,7 @@ updateExcursionsList();
 confirm.addEventListener('click',()=>{
     let id = confirm.getAttribute("data-id");
     deleteExcursion(id);
-    modal.classList.add('hidden');
+    hideModal();
 });
 
 //delete excursion function
@@ -33,7 +33,7 @@ const placeError = document.getElementById("placeError");
 const guidesError = document.getElementById("guidesError");
 const createSuccess = document.getElementById("createSuccess");
 
-//create_hiker form handler
+//create excursion form handler
 createForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     const formData = new FormData(createForm);
@@ -45,7 +45,6 @@ createForm.addEventListener("submit",(e)=>{
         dateError.innerHTML = "";
         placeError.innerHTML = "";
         guidesError.innerHTML = "";
-        createSuccess.innerHTML = "";
         //print errors
         if(data.nameError){
             nameError.innerHTML = data.nameError;
@@ -65,10 +64,11 @@ createForm.addEventListener("submit",(e)=>{
         if(data.guidesError){
             guidesError.innerHTML = data.guidesError;
         }
-        //print success and reset form fields
+        //on success, reset form fields, update list, hide modal
         if(data.createSuccess){
             createForm.reset();
-            createSuccess.innerHTML = data.createSuccess;
+            updateExcursionsList();
+            hideModal();
         }
     });
 });
