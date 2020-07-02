@@ -289,19 +289,13 @@ main > section table th {
   padding: 1rem 0;
 }
 main > section table th:first-of-type {
-  padding-left: 3.5rem;
-}
-main > section table th:last-of-type {
-  padding-right: 3.5rem;
+  padding-left: 5rem;
 }
 main > section table tr {
   border: 1px solid white;
 }
 main > section table tr td:first-of-type {
-  padding-left: 3.5rem;
-}
-main > section table tr td:last-of-type {
-  padding-right: 3.5rem;
+  padding-left: 5rem;
 }
 main > section table tr td ul {
   margin: 1.5rem 0;

@@ -10,7 +10,7 @@ if(!isset($_SESSION["user"])){
     <?php include_once("template/head.html"); ?>
     <title>Guides</title>
 </head>
-<body class="flex column">
+<body>
 
     <?php include_once("template/header.php");?>
 
@@ -18,14 +18,13 @@ if(!isset($_SESSION["user"])){
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <div class="flex column">
                 <table>
                     <thead>
                         <tr>
-                            <th scope="col">Nom du guide</th>
+                            <th scope="col">Editer</th>
+                            <th scope="col">Guide</th>
                             <th scope="col">Téléphone</th>
                             <th scope="col">Excursions</th>
-                            <th scope="col">Editer</th>
                         </tr>
                     </thead>
 
@@ -35,7 +34,6 @@ if(!isset($_SESSION["user"])){
                 </table>
 
                 <button onclick="showCreateModal()">Ajouter un guide</button>
-            </div>
         </section>
     </main>
 
