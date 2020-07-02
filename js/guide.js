@@ -60,13 +60,13 @@ const updatePhoneError = document.getElementById("update-phoneError");
 const updateIdError = document.getElementById("update-idError");
 const updateModal = document.getElementById("update-modal");
 //show update-modal
-function showUpdateModal(id,lastName,firstName,phone){
+function showUpdateModal(guide){
     //add id of element to update
-    updateForm.setAttribute("data-id",id);
+    updateForm.setAttribute("data-id",guide.id);
     //fill form fields
-    lastNameInput.value = lastName;
-    firstNameInput.value = firstName;
-    phoneInput.value = phone;
+    lastNameInput.value = guide.last_name;
+    firstNameInput.value = guide.first_name;
+    phoneInput.value = guide.phone;
     //show modal
     updateModal.classList.remove("hidden");
 }

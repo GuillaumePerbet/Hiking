@@ -33,8 +33,8 @@ foreach($guides as $guide){
             <td>{$guide['phone']}</td>
             <td>$excursionList</td>
             <td>
-                <button onclick=\"showDeleteModal({$guide['id']})\">Supprimer</button>
-                <button onclick=\"showUpdateModal({$guide['id']},'{$guide['last_name']}','{$guide['first_name']}','{$guide['phone']}')\">Modifier</button>
+                <button onclick='showDeleteModal({$guide['id']})'>Supprimer</button>
+                <button onclick='showUpdateModal(".json_encode($guide).")'>Modifier</button>
             </td>
         </tr>";
 }

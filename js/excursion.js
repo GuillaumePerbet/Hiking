@@ -80,16 +80,34 @@ const updatePlaceError = document.getElementById("update-placeError");
 const updateGuidesError = document.getElementById("update-guidesError");
 const updateIdError = document.getElementById("update-idError");
 //show update-modal
-function showUpdateModal(id,name,price,maxHikers,departureDate,arrivalDate,departureId,arrivalId){
+function showUpdateModal(excursion){
     //add id of element to update
-    updateForm.setAttribute("data-id",id);
+    updateForm.setAttribute("data-id",excursion.id);
     //fill form fields
-    nameInput.value = name;
-    priceInput.value = price;
-    maxHikersInput.value = maxHikers;
-    departureDateInput.value = departureDate;
-    arrivalDateInput.value = arrivalDate;
-    //_________fill select option and guides checkboxes_____________________
+    nameInput.value = excursion.name;
+    priceInput.value = excursion.price;
+    maxHikersInput.value = excursion.max_hikers;
+    departureDateInput.value = excursion.departure_date;
+    arrivalDateInput.value = excursion.arrival_date;
+    //choose selected places
+    let departureOptions = document.querySelectorAll("#departurePlace-update>option");
+    for (let departureOption of departureOptions){
+        if(departureOption.value == excursion.departure_place_id){
+            departureOption.setAttribute("selected","selected");
+        }else{
+            departureOption.removeAttribute("selected");
+        }
+    }
+    let arrivalOptions = document.querySelectorAll("#arrivalPlace-update>option");
+    for (let arrivalOption of arrivalOptions){
+        if(arrivalOption.value == excursion.arrival_place_id){
+            arrivalOption.setAttribute("selected","selected");
+        }else{
+            arrivalOption.removeAttribute("selected");
+        }
+    }
+    //choose checked guides
+    console.log(excursion.guides);
     //show modal
     updateModal.classList.remove("hidden");
 }

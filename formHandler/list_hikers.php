@@ -34,8 +34,8 @@ foreach($hikers as $hiker){
             <td>{$hiker['last_name']} {$hiker['first_name']}</td>
             <td>$excursionList</td>
             <td>
-                <button onclick=\"showDeleteModal({$hiker['id']})\">Supprimer</button>
-                <button onclick=\"showUpdateModal({$hiker['id']}, '{$hiker['last_name']}','{$hiker['first_name']}')\">Modifier</button>
+                <button onclick='showDeleteModal({$hiker['id']})'>Supprimer</button>
+                <button onclick='showUpdateModal(".json_encode($hiker).")'>Modifier</button>
             </td>
         </tr>";
 

@@ -11,7 +11,7 @@ $response["list"] = "";
 foreach($excursions as $excursion){
     //get excursion guides
     $req = $pdo->prepare(
-        "SELECT g.first_name, g.last_name
+        "SELECT g.first_name, g.last_name, g.id
         FROM excursion AS e
         INNER JOIN accompany AS a ON a.excursion_id=e.id
         INNER JOIN guide AS g ON g.id=a.guide_id
@@ -20,9 +20,11 @@ foreach($excursions as $excursion){
     $req->execute([$excursion["id"]]);
     $guides = $req->fetchAll();
     $req -> closeCursor();
-    $guidesList=[];
+    $guideNames=[];
+    $excursion["guides"]=[];
     foreach($guides as $guide){
-        array_push($guidesList,$guide["first_name"]." ".$guide["last_name"]);
+        array_push($guideNames,$guide["first_name"]." ".$guide["last_name"]);
+        array_push($excursion["guides"],$guide["id"]);
     }
 
     //get places name
@@ -50,12 +52,12 @@ foreach($excursions as $excursion){
             .$arrival_place
             .$excursion['departure_date']
             .$excursion['arrival_date']
-            .$guidesList[0]
+            .$guideNames[0]
             .$excursion['price']
             .$hikers_number
             .$excursion['max_hikers']
-            ."<button onclick=\"showDeleteModal({$excursion['id']})\">Supprimer</button>
-            <button onclick=\"showUpdateModal( {$excursion['id']} , '{$excursion['name']}' , '{$excursion['price']}' , '{$excursion['max_hikers']}' , '{$excursion['departure_date']}' , '{$excursion['arrival_date']}' , '{$excursion['departure_place_id']}' , '{$excursion['arrival_place_id']}')\">Modifier</button>
+            ."<button onclick='showDeleteModal({$excursion['id']})'>Supprimer</button>
+            <button onclick='showUpdateModal(".json_encode($excursion).")'>Modifier</button>
         </div>";
 }
 

@@ -56,12 +56,12 @@ const updateFirstNameError = document.getElementById("update-firstNameError");
 const updateIdError = document.getElementById("update-idError");
 const updateModal = document.getElementById("update-modal");
 //show update-modal
-function showUpdateModal(id,lastName,firstName){
+function showUpdateModal(hiker){
     //add id of element to update
-    updateForm.setAttribute("data-id",id);
+    updateForm.setAttribute("data-id",hiker.id);
     //fill form fields
-    lastNameInput.value = lastName;
-    firstNameInput.value = firstName;
+    lastNameInput.value = hiker.last_name;
+    firstNameInput.value = hiker.first_name;
     //show modal
     updateModal.classList.remove("hidden");
 }
