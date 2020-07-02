@@ -13,7 +13,7 @@ $response["select"] = "";
 foreach($hikers as $hiker){
     //get excursions registrations for this hiker
     $req = $pdo->prepare(
-        "SELECT e.name
+        "SELECT e.name,e.id
         FROM registration as r
         INNER JOIN excursion as e ON r.excursion_id=e.id
         WHERE r.hiker_id=?"
@@ -22,11 +22,18 @@ foreach($hikers as $hiker){
     $excursions = $req->fetchAll();
     $req -> closeCursor();
     //create html list of excursions
-    $excursionList = "<ul>";
+    $excursionList =
+        "<ul>";
     foreach($excursions as $excursion){
-        $excursionList.="<li>{$excursion['name']}</li>";
+        $excursionList.=
+            "<li>
+                {$excursion['name']}
+                <button onclick='unregister({$hiker['id']},{$excursion['id']})'>Désinscrire</button>
+            </li>";
     }
-    $excursionList .= "</ul>";
+    $excursionList .=
+            "<button onclick='showRegistrationModal({$hiker['id']})'>Inscrire</button>
+        </ul>";
 
     //create html table row
     $response["list"].=
@@ -40,7 +47,7 @@ foreach($hikers as $hiker){
         </tr>";
 
     //create select option
-    $response["select"].="<option value=' {$hiker['id']} '> {$hiker['last_name']} {$hiker['first_name']} </option>";
+    $response["select"].="<option value='{$hiker['id']}'> {$hiker['last_name']} {$hiker['first_name']} </option>";
 }
 
 echo json_encode($response);

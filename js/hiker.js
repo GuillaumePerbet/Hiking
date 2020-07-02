@@ -116,8 +116,23 @@ confirm.addEventListener('click',()=>{
 
 
 //HIKER REGISTRATION TO EXCURSION______________________________________
-//ge DOM elements
+//get DOM elements
+const registrationModal = document.getElementById("registration-modal");
 const registrationForm = document.getElementById("registration-form");
+const hikerOptions = selectHiker.getElementsByTagName("option");
+//show registration-modal
+function showRegistrationModal(id){
+    //choose selected hiker
+    for (let hikerOption of hikerOptions){
+        if(hikerOption.value == id){
+            hikerOption.setAttribute("selected","selected");
+        }else{
+            hikerOption.removeAttribute("selected");
+        }
+    }
+    //show modal
+    registrationModal.classList.remove("hidden");
+}
 //form submission
 registrationForm.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -141,3 +156,14 @@ registrationForm.addEventListener("submit",(e)=>{
         }
     });
 });
+
+//HIKER UNREGISTRATION_______________________________________
+function unregister(hikerId,excursionId){
+    const formData = new FormData();
+    formData.append("hiker_id",hikerId);
+    formData.append("excursion_id",excursionId);
+    fetch("formHandler/unregistration.php",{method:"POST", body:formData}).then(()=>{
+        updateHikersList();
+        hideModal();
+    });
+}

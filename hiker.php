@@ -37,35 +37,6 @@ if(!isset($_SESSION["user"])){
 
                 <button onclick="showCreateModal()">Ajouter un membre</button>
     
-                <section>
-                    <form id="registration-form" class="flex column">
-                        <label>Membre</label>
-                        <select id="select-hiker" name="hiker_id"></select>
-                        <div id="hikerError" class="error"></div>
-    
-        
-                        <label>Excursion</label>
-                        <select name="excursion_id">
-                            <?php
-                            //fetch array of excursion name and id
-                            include_once("formHandler/dbconnect.php");
-                            $req = $pdo->query("SELECT id,name FROM excursion");
-                            $excursions = $req->fetchAll();
-                            $req -> closeCursor();
-                            foreach($excursions as $excursion){
-                            ?>
-                                <option value="<?=$excursion['id']?>">
-                                    <?= $excursion['name']?>
-                                </option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                        <div id="excursionError" class="error"></div>
-
-                        <input class="uk-button-primary" type="submit" value="Inscription">
-                    </form>
-                </section>
             </div>
         </section>
     </main>
@@ -112,6 +83,38 @@ if(!isset($_SESSION["user"])){
                 <button id="confirm">oui</button>
                 <button id="decline" onclick="hideModal()">non</button>
             </div>
+        </div>
+    </div>
+
+    <div id="registration-modal" class="hidden modal flex center justify-center">
+        <div class="flex column center">
+            <button onclick="hideModal()">retour</button>
+            <form id="registration-form" class="flex column">
+                <label>Membre</label>
+                <select id="select-hiker" name="hiker_id"></select>
+                <div id="hikerError" class="error"></div>
+                
+                <label>Excursion</label>
+                <select name="excursion_id">
+                    <?php
+                    //fetch array of excursion name and id
+                    include_once("formHandler/dbconnect.php");
+                    $req = $pdo->query("SELECT id,name FROM excursion");
+                    $excursions = $req->fetchAll();
+                    $req -> closeCursor();
+                    foreach($excursions as $excursion){
+                    ?>
+                        <option value="<?=$excursion['id']?>">
+                            <?= $excursion['name']?>
+                        </option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <div id="excursionError" class="error"></div>
+
+                <input class="uk-button-primary" type="submit" value="Inscription">
+            </form>
         </div>
     </div>
 
