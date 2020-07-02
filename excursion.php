@@ -123,7 +123,7 @@ include_once("formHandler/dbconnect.php");
                     </fieldset>
                 </div>
 
-                <input class="uk-button-primary" type="submit" value="Créer l'excursion">
+                <input type="submit" value="Créer l'excursion">
             </form>
         </div>
     </div>
@@ -222,7 +222,7 @@ include_once("formHandler/dbconnect.php");
                     </fieldset>
                 </div>
 
-                <input class="uk-button-primary" type="submit" value="Modifier">
+                <input type="submit" value="Modifier">
                 <div id="update-idError" class="error"></div>
             </form>
         </div>
@@ -240,7 +240,5 @@ include_once("formHandler/dbconnect.php");
 
     <script src="js/script.js"></script>
     <script src="js/excursion.js"></script>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>

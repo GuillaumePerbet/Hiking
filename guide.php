@@ -55,7 +55,7 @@ if(!isset($_SESSION["user"])){
                 <input type="tel" name="phone">
                 <div id="phoneError" class="error"></div>
 
-                <input class="uk-button-primary" type="submit" value="Nouveau Guide">
+                <input type="submit" value="Nouveau Guide">
             </form>
         </div>
     </div>
@@ -76,7 +76,7 @@ if(!isset($_SESSION["user"])){
                 <input id="phone-update" type="tel" name="phone">
                 <div id="update-phoneError" class="error"></div>
 
-                <input class="uk-button-primary" type="submit" value="Modifier">
+                <input type="submit" value="Modifier">
                 <div id="update-idError" class="error"></div>
             </form>
         </div>
@@ -94,7 +94,5 @@ if(!isset($_SESSION["user"])){
 
     <script src="js/script.js"></script>
     <script src="js/guide.js"></script>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>

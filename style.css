@@ -225,9 +225,6 @@ nav ul li a:hover {
   color: #59F5BC;
   text-decoration: none;
 }
-nav ul li a .uk-icon {
-  margin: 0 1rem 0 2rem;
-}
 
 main > section {
   background-color: #EFF1F2;
@@ -316,9 +313,6 @@ main > section > div {
   }
   main nav ul li a {
     padding: 1rem;
-  }
-  main nav ul li .uk-icon {
-    display: none;
   }
   main section {
     position: initial;

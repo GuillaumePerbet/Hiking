@@ -31,7 +31,5 @@ if(isset($_SESSION["user"])){
     </main>
 
     <script src="js/index.js"></script>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
 </body>
 </html>
