@@ -5,11 +5,13 @@
         </div>
 
         <p id="user-name"><?=$_SESSION["user"]?></p>
+
+        <a onclick="disconnect()"><svg fill="#ffeace" width="51.6" height="51.6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="sign-out"><polygon points="13.1 13.4 12.5 12.8 15.28 10 8 10 8 9 15.28 9 12.5 6.2 13.1 5.62 17 9.5"></polygon><polygon points="13 2 3 2 3 17 13 17 13 16 4 16 4 3 13 3"></polygon></svg>Déconnexion</a>
     </div>
 
     <div id="menu">
         <svg width="51.2" height="51.2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="menu"><rect x="2" y="4" width="16" height="1"></rect><rect x="2" y="9" width="16" height="1"></rect><rect x="2" y="14" width="16" height="1"></rect></svg>
     </div>
 
-    <h1><span>Natural</span> Coach</h1>
+    <h1>HIKING</h1>
 </header>

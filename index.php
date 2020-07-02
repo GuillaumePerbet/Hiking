@@ -13,7 +13,7 @@ if(isset($_SESSION["user"])){
 <body id="login" class="flex column">
     
     <header>
-        <h1><span>Natural</span> Coach</h1>
+        <h1>HIKING</h1>
     </header>
 
     <main class="center">

@@ -32,7 +32,7 @@ foreach($hikers as $hiker){
             </li>";
     }
     $excursionList .=
-            "<button class='add' onclick='showRegistrationModal({$hiker['id']})'>Ajouter</button>
+            "<button class='add' onclick='showRegistrationModal({$hiker['id']})'>Inscrire</button>
         </ul>";
 
     //create html table row
