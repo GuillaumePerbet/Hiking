@@ -53,16 +53,13 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Sergoe-UI", sans-serif;
   font-size: 1.25rem;
   color: #122025;
   min-height: 100vh;
   margin: 0;
-}
-
-main {
-  display: flex;
-  flex: 1;
 }
 
 p {
@@ -80,6 +77,44 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+}
+
+.medium-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+}
+
+.trash {
+  background-image: url("media/trash.png");
+}
+
+.edit {
+  margin-left: 0.5rem;
+  background-image: url("media/edit.png");
+}
+
+.remove {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
+  background-image: url("media/remove.png");
+}
+
+.add {
+  color: #4cda43;
+}
+.add::before {
+  content: url("media/add.png");
+  margin-right: 0.4rem;
 }
 
 .modal {
@@ -226,7 +261,14 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
+main {
+  display: flex;
+  flex: 1;
+}
 main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #EFF1F2;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -235,9 +277,42 @@ main > section {
   top: -4rem;
   margin-right: 1rem;
   margin-bottom: -4rem;
+  padding-top: 5rem;
 }
-main > section > div {
-  margin-top: 5rem;
+main > section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main > section table th {
+  color: #9296AD;
+  text-align: left;
+  padding: 1rem 0;
+}
+main > section table th:first-of-type {
+  padding-left: 3.5rem;
+}
+main > section table th:last-of-type {
+  padding-right: 3.5rem;
+}
+main > section table tr {
+  border: 1px solid white;
+}
+main > section table tr td:first-of-type {
+  padding-left: 3.5rem;
+}
+main > section table tr td:last-of-type {
+  padding-right: 3.5rem;
+}
+main > section table tr td ul {
+  margin: 1.5rem 0;
+}
+main > section table tr td ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+main > section table tr td .trash {
+  margin: 1.5rem 0;
 }
 
 #login {

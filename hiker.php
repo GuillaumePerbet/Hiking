@@ -10,7 +10,7 @@ if(!isset($_SESSION["user"])){
     <?php include_once("template/head.html"); ?>
     <title>Randonneurs</title>
 </head>
-<body class="flex column">
+<body>
 
     <?php include_once("template/header.php");?>
 
@@ -18,26 +18,21 @@ if(!isset($_SESSION["user"])){
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <div class="flex column">
-                <section>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">Nom du membre</th>
-                                <th scope="col">Excursions</th>
-                                <th scope="col">Editer</th>
-                            </tr>
-                        </thead>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Editer</th>
+                        <th scope="col">Membre</th>
+                        <th scope="col">Excursions</th>
+                    </tr>
+                </thead>
 
-                        <tbody id="hikers-list">
+                <tbody id="hikers-list">
 
-                        </tbody>
-                    </table>
-                </section>
+                </tbody>
+            </table>
 
-                <button onclick="showCreateModal()">Ajouter un membre</button>
-    
-            </div>
+            <button onclick="showCreateModal()">Ajouter un membre</button>
         </section>
     </main>
 

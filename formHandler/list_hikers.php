@@ -27,23 +27,23 @@ foreach($hikers as $hiker){
     foreach($excursions as $excursion){
         $excursionList.=
             "<li>
+                <button class='remove' onclick='unregister({$hiker['id']},{$excursion['id']})'></button>
                 {$excursion['name']}
-                <button onclick='unregister({$hiker['id']},{$excursion['id']})'>Désinscrire</button>
             </li>";
     }
     $excursionList .=
-            "<button onclick='showRegistrationModal({$hiker['id']})'>Inscrire</button>
+            "<button class='add' onclick='showRegistrationModal({$hiker['id']})'>Ajouter</button>
         </ul>";
 
     //create html table row
     $response["list"].=
         "<tr>
+            <td>
+                <button class='medium-btn trash' onclick='showDeleteModal({$hiker['id']})'></button>
+                <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($hiker).")'></button>
+            </td>
             <td>{$hiker['last_name']} {$hiker['first_name']}</td>
             <td>$excursionList</td>
-            <td>
-                <button onclick='showDeleteModal({$hiker['id']})'>Supprimer</button>
-                <button onclick='showUpdateModal(".json_encode($hiker).")'>Modifier</button>
-            </td>
         </tr>";
 
     //create select option

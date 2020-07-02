@@ -58,16 +58,13 @@
 
 // GENERAL TAGS
 body{
+    display: flex;
+    flex-direction: column;
     font-family: 'Sergoe-UI', sans-serif;
     font-size: 1.25rem;
     color: #122025;
     min-height: 100vh;
     margin: 0;
-}
-
-main{
-    display: flex;
-    flex: 1;
 }
 
 p{
@@ -85,6 +82,45 @@ ul{
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+//buttons
+button{
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+}
+
+.medium-btn{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+}
+
+.trash{
+    background-image: url("media/trash.png");
+}
+
+.edit{
+    margin-left: 0.5rem;
+    background-image: url("media/edit.png");
+}
+
+.remove{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.4rem;
+    background-image: url("media/remove.png");
+}
+
+.add{
+    color: #4cda43;
+    &::before{
+        content: url("media/add.png");
+        margin-right: 0.4rem;
+    }
 }
 
 //MODAL
@@ -259,21 +295,76 @@ nav{
 }
 
 
-//MAIN SECTION
-main>section{
-    background-color: #EFF1F2;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+//MAIN
+main{
+    display: flex;
     flex: 1;
-    position: relative;
-    top: -4rem;
-    margin-right: 1rem;
-    margin-bottom: -4rem;
 
-    >div{
-        margin-top: 5rem;
+    >section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #EFF1F2;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        flex: 1;
+        position: relative;
+        top: -4rem;
+        margin-right: 1rem;
+        margin-bottom: -4rem;
+        padding-top: 5rem;
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            
+            th{
+                color: #9296AD;
+                text-align: left;
+                padding: 1rem 0;
+
+                &:first-of-type{
+                    padding-left: 3.5rem;
+                }
+
+                &:last-of-type{
+                    padding-right: 3.5rem;
+                }
+            }
+
+            tr{
+                border: 1px solid white;
+
+                td{
+
+                    &:first-of-type{
+                        padding-left: 3.5rem;
+                    }
+
+                    &:last-of-type{
+                        padding-right: 3.5rem;
+                    }
+
+                    ul{
+                        margin: 1.5rem 0;
+
+                        li{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 0.75rem;
+                        }
+                    }
+
+                    .trash{
+                        margin: 1.5rem 0;
+                    }
+                }
+            }
+        }
     }
 }
+
+    
 
 //LOGIN
 #login{
