@@ -76,7 +76,10 @@ const updateMaxHikersError = document.getElementById("update-maxHikersError");
 const departureDateInput = document.getElementById("departureDate-update");
 const arrivalDateInput = document.getElementById("arrivalDate-update");
 const updateDateError = document.getElementById("update-dateError");
+const departureOptions = document.querySelectorAll("#departurePlace-update>option");
+const arrivalOptions = document.querySelectorAll("#arrivalPlace-update>option");
 const updatePlaceError = document.getElementById("update-placeError");
+const guideCheckboxes = document.querySelectorAll("#guides-update input[type=checkbox]");
 const updateGuidesError = document.getElementById("update-guidesError");
 const updateIdError = document.getElementById("update-idError");
 //show update-modal
@@ -90,7 +93,6 @@ function showUpdateModal(excursion){
     departureDateInput.value = excursion.departure_date;
     arrivalDateInput.value = excursion.arrival_date;
     //choose selected places
-    let departureOptions = document.querySelectorAll("#departurePlace-update>option");
     for (let departureOption of departureOptions){
         if(departureOption.value == excursion.departure_place_id){
             departureOption.setAttribute("selected","selected");
@@ -98,7 +100,6 @@ function showUpdateModal(excursion){
             departureOption.removeAttribute("selected");
         }
     }
-    let arrivalOptions = document.querySelectorAll("#arrivalPlace-update>option");
     for (let arrivalOption of arrivalOptions){
         if(arrivalOption.value == excursion.arrival_place_id){
             arrivalOption.setAttribute("selected","selected");
@@ -107,7 +108,13 @@ function showUpdateModal(excursion){
         }
     }
     //choose checked guides
-    console.log(excursion.guides);
+    for (let guideCheckbox of guideCheckboxes){
+        if (excursion.guides.includes(guideCheckbox.value)){
+            guideCheckbox.setAttribute("checked","checked");
+        }else{
+            guideCheckbox.removeAttribute("checked");
+        }
+    }
     //show modal
     updateModal.classList.remove("hidden");
 }

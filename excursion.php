@@ -113,7 +113,7 @@ include_once("formHandler/dbconnect.php");
                         foreach($guides as $guide){
                         ?>
                             <label>
-                                <input type='checkbox' name='guide_ids[]' value=' <?=$guide['id']?> '>
+                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
                                 <?=$guide['first_name']?> <?=$guide['last_name']?>
                             </label>
                         <?php
@@ -174,7 +174,7 @@ include_once("formHandler/dbconnect.php");
                         ?>
     
                         <label>Point de départ</label>
-                        <select name="departure_place_id">
+                        <select id="departurePlace-update" name="departure_place_id">
                             <?php
                             foreach($places as $place){
                             ?>
@@ -187,7 +187,7 @@ include_once("formHandler/dbconnect.php");
                         </select>
             
                         <label>Point d'arrivée</label>
-                        <select name="arrival_place_id">
+                        <select id="arrivalPlace-update" name="arrival_place_id">
                             <?php
                             foreach($places as $place){
                             ?>
@@ -201,7 +201,7 @@ include_once("formHandler/dbconnect.php");
                         <div id="update-placeError" class="error"></div>
                     </fieldset>
     
-                    <fieldset class="flex column">
+                    <fieldset id="guides-update" class="flex column">
                         <legend>Guides</legend>
     
                         <?php
@@ -212,7 +212,7 @@ include_once("formHandler/dbconnect.php");
                         foreach($guides as $guide){
                         ?>
                             <label>
-                                <input type='checkbox' name='guide_ids[]' value=' <?=$guide['id']?> '>
+                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
                                 <?=$guide['first_name']?> <?=$guide['last_name']?>
                             </label>
                         <?php
