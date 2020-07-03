@@ -39,7 +39,7 @@ if (isset($_POST["phone"])){
     if ($phone !== false){
         $params[":phone"] = $phone;
     }else{
-        $response["phoneError"] = "Veuillez entrer un numéro de téléphone valide";
+        $response["phoneError"] = "Téléphone non valide";
     }
 }else{
     $response["phoneError"] = "Aucun numéro de téléphone n'a été soumis";

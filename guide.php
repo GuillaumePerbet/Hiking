@@ -22,7 +22,7 @@ if(!isset($_SESSION["user"])){
                     <thead>
                         <tr>
                             <th scope="col">Editer</th>
-                            <th scope="col">Guide</th>
+                            <th scope="col"><button class="add" onclick="showCreateModal()"></button> Guide</th>
                             <th scope="col">Téléphone</th>
                             <th scope="col">Excursions</th>
                         </tr>
@@ -32,8 +32,6 @@ if(!isset($_SESSION["user"])){
 
                     </tbody>
                 </table>
-
-                <button onclick="showCreateModal()">Ajouter un guide</button>
         </section>
     </main>
 
@@ -73,9 +71,9 @@ if(!isset($_SESSION["user"])){
                 <label>Téléphone</label>
                 <input id="phone-update" type="tel" name="phone">
                 <div id="update-phoneError" class="error"></div>
-
-                <input type="submit" value="Modifier">
+                
                 <div id="update-idError" class="error"></div>
+                <input type="submit" value="Modifier">
             </form>
         </div>
     </div>

@@ -86,6 +86,10 @@ ul {
   list-style: none;
 }
 
+.padding0 {
+  padding: 0;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -133,7 +137,6 @@ button {
 .modal > div {
   background-color: #EFF1F2;
   border-radius: 1rem;
-  padding: 2rem;
 }
 
 .hidden {
@@ -141,7 +144,7 @@ button {
 }
 
 form {
-  margin: 2rem;
+  margin: 3rem;
   max-width: 72rem;
   min-width: 18rem;
 }
@@ -152,7 +155,7 @@ form fieldset {
 form legend {
   font-family: "Segoe-UI-Bold", sans-serif;
 }
-form input, form select {
+form select {
   color: #585B6E;
   font-size: 1.25rem;
   border: 1px solid #D7DAE2;
@@ -161,46 +164,49 @@ form input, form select {
   margin-bottom: 1rem;
   margin-left: 1rem;
 }
-form input[type=number], form select[type=number] {
+form input {
+  color: #585B6E;
+  font-size: 1.25rem;
+  border: 1px solid #D7DAE2;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+form input[type=number] {
   width: 5rem;
   -moz-appearance: textfield;
 }
-form input[type=number]::-webkit-outer-spin-button, form input[type=number]::-webkit-inner-spin-button, form select[type=number]::-webkit-outer-spin-button, form select[type=number]::-webkit-inner-spin-button {
+form input[type=number]::-webkit-outer-spin-button, form input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-form input[type=date], form select[type=date] {
+form input[type=date] {
   width: 9.5rem;
 }
-form input[type=submit], form select[type=submit] {
+form input[type=submit] {
   font-family: "Segoe-UI-Bold", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  color: #585B6E;
+  letter-spacing: 0.2rem;
   border-radius: 2rem;
-  background-color: #59F5BC;
+  color: #122025;
+  background-color: #f69333;
   border: none;
   padding: 0.75rem 1.75rem;
-  margin-left: 0;
+  margin: 0;
   align-self: center;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
 }
-form input[type=submit]:hover, form select[type=submit]:hover {
-  background-color: #3eb388;
-  color: #EFF1F2;
+form input[type=submit]:hover {
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
 form .error {
   margin-left: 1rem;
   height: 1.25rem;
   color: #E43137;
   font-size: 0.85rem;
-  transform: translateY(-1rem);
-}
-form .success {
-  text-align: center;
-  color: #44bb8f;
-  height: 1.25rem;
   transform: translateY(-1rem);
 }
 
@@ -221,26 +227,24 @@ header #user div {
 }
 header #user #user-name {
   font-size: 1.25rem;
-  margin: 0;
 }
 header #user a {
   text-transform: uppercase;
   font-family: "Segoe-UI-Bold", sans-serif;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   transition: 0.1s ease-in-out;
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 1rem 0 1rem 2rem;
+  margin: 1rem 0 2rem 2.1rem;
   align-self: flex-start;
 }
 header #user a svg {
   transition: 0.1s ease-in-out;
-  margin-right: 1rem;
+  margin-right: 0.7rem;
 }
 header #user a:hover {
   color: #f69333;
-  text-decoration: none;
 }
 header #user a:hover svg {
   fill: #f69333;
@@ -255,9 +259,8 @@ header h1 {
   letter-spacing: 0.75rem;
   flex: 1 0;
   text-align: center;
-  margin-top: 0.8rem;
-  margin-right: 1rem;
   color: #f69333;
+  margin-top: 2rem;
 }
 
 nav {
@@ -266,7 +269,7 @@ nav {
   border-top: 1px solid #707070;
   text-transform: uppercase;
   font-family: "Segoe-UI-Bold", sans-serif;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
 }
 nav ul li {
   width: 18rem;
@@ -284,7 +287,6 @@ nav ul li a svg {
 }
 nav ul li a:hover {
   color: #f69333;
-  text-decoration: none;
 }
 nav ul li a:hover svg {
   fill: #f69333;
@@ -341,15 +343,10 @@ main > section table tr td .trash {
 #login {
   background-color: #122025;
 }
-#login h1 {
-  margin: 0;
-  padding-top: 2rem;
-}
 #login section {
-  position: initial;
   border-radius: 1rem;
-  flex: 0;
-  margin: auto;
+  top: -2rem;
+  margin: 0;
 }
 
 @media only screen and (max-width: 1172px) {
@@ -386,9 +383,6 @@ main > section table tr td .trash {
   header #user {
     display: none;
   }
-  header h1 {
-    margin-bottom: 0;
-  }
   header #menu {
     display: block;
     align-self: flex-end;
@@ -419,10 +413,6 @@ main > section table tr td .trash {
   }
 }
 @media only screen and (max-width: 368px) {
-  h1 span {
-    margin-left: -3rem;
-  }
-
   form {
     margin-right: 1rem;
     margin-left: 1rem;

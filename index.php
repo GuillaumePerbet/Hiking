@@ -8,16 +8,16 @@ if(isset($_SESSION["user"])){
 <html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
-    <title>Identification</title>
+    <title>Authentification</title>
 </head>
-<body id="login" class="flex column">
+<body id="login" class="flex column center">
     
     <header>
         <h1>HIKING</h1>
     </header>
 
     <main class="center">
-        <section>
+        <section class="padding0">
                 <form id="login-form" class="flex column justify-center" action="">
                     <label for="user">Utilisateur</label>
                     <input type="text" name="user">

@@ -22,7 +22,7 @@ if(!isset($_SESSION["user"])){
                 <thead>
                     <tr>
                         <th scope="col">Editer</th>
-                        <th scope="col">Membre</th>
+                        <th scope="col"> <button class="add" onclick="showCreateModal()"></button> Membre</th>
                         <th scope="col">Excursions</th>
                     </tr>
                 </thead>
@@ -31,8 +31,6 @@ if(!isset($_SESSION["user"])){
 
                 </tbody>
             </table>
-
-            <button onclick="showCreateModal()">Ajouter un membre</button>
         </section>
     </main>
 
@@ -65,8 +63,8 @@ if(!isset($_SESSION["user"])){
                 <input id="first-name-update" type="text" name="first_name">
                 <div id="update-firstNameError" class="error"></div>
 
-                <input type="submit" value="Modifier">
                 <div id="update-idError" class="error"></div>
+                <input type="submit" value="Modifier">
             </form>
         </div>
     </div>
