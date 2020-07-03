@@ -70,9 +70,7 @@ body {
 }
 
 p {
-  margin: 0 2rem;
-  font-size: 2rem;
-  text-align: center;
+  margin: 0;
 }
 
 a {
@@ -135,8 +133,31 @@ button {
   position: fixed;
 }
 .modal > div {
+  position: relative;
   background-color: #EFF1F2;
   border-radius: 1rem;
+}
+.modal > div > .remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1rem;
+}
+
+#delete-modal > div {
+  padding: 3rem;
+}
+#delete-modal > div p {
+  margin-bottom: 1rem;
+}
+#delete-modal > div #confirm {
+  margin-right: 1rem;
+}
+#delete-modal > div #confirm::before {
+  content: url("media/confirm.png");
+}
+#delete-modal > div #decline::before {
+  content: url("media/decline.png");
 }
 
 .hidden {
@@ -208,6 +229,9 @@ form .error {
   color: #E43137;
   font-size: 0.85rem;
   transform: translateY(-1rem);
+}
+form .btn-error {
+  transform: none;
 }
 
 header {
@@ -308,7 +332,7 @@ main > section {
   top: -4rem;
   margin-right: 1rem;
   margin-bottom: -4rem;
-  padding-top: 5rem;
+  padding-top: 4rem;
 }
 main > section table {
   width: 100%;

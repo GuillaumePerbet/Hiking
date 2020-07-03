@@ -142,10 +142,10 @@ registrationForm.addEventListener("submit",(e)=>{
     .then(data=>{
         //reset error fields
         hikerError.innerHTML = "";
-        excursionError.innerHTML = "";
         if(data.hikerError){
             hikerError.innerHTML = data.hikerError;
         }
+        excursionError.innerHTML = "";
         if(data.excursionError){
             excursionError.innerHTML = data.excursionError;
         }

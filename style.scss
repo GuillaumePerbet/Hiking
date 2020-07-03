@@ -76,9 +76,7 @@ body{
 }
 
 p{
-    margin: 0 2rem;
-    font-size: 2rem;
-    text-align: center;
+    margin: 0;
 }
 
 a{
@@ -143,8 +141,39 @@ button{
     position: fixed;
 
     >div{
+        position: relative;
         background-color: #EFF1F2;
         border-radius: 1rem;
+
+        >.remove{
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 1rem;
+        }
+    }
+}
+
+#delete-modal{
+    >div{
+        padding: 3rem;
+
+        p{
+            margin-bottom: 1rem;
+        }
+
+        #confirm{
+            margin-right: 1rem;
+            &::before{
+                content: url("media/confirm.png");
+            }
+        }
+
+        #decline{
+            &::before{
+                content: url("media/decline.png");
+            }
+        }
     }
 }
 
@@ -227,6 +256,10 @@ form{
         color: #E43137;
         font-size: 0.85rem;
         transform: translateY(-1rem);
+    }
+
+    .btn-error{
+        transform: none;
     }
 }
 
@@ -350,7 +383,7 @@ main{
         top: -4rem;
         margin-right: 1rem;
         margin-bottom: -4rem;
-        padding-top: 5rem;
+        padding-top: 4rem;
 
         table{
             width: 100%;

@@ -36,7 +36,7 @@ if(!isset($_SESSION["user"])){
 
     <div id="create-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <button onclick="hideModal()">retour</button>
+            <button class="remove" onclick="hideModal()"></button>
             <form id="create-form" class="flex column">
                 <label>Nom</label>
                 <input type="text" name="last_name">
@@ -53,7 +53,7 @@ if(!isset($_SESSION["user"])){
 
     <div id="update-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <button onclick="hideModal()">retour</button>
+            <button class="remove" onclick="hideModal()"></button>
             <form id="update-form" class="flex column">
                 <label>Nom</label>
                 <input id="last-name-update" type="text" name="last_name">
@@ -63,25 +63,25 @@ if(!isset($_SESSION["user"])){
                 <input id="first-name-update" type="text" name="first_name">
                 <div id="update-firstNameError" class="error"></div>
 
-                <div id="update-idError" class="error"></div>
                 <input type="submit" value="Modifier">
+                <div id="update-idError" class="error btn-error"></div>
             </form>
         </div>
     </div>
 
     <div id="delete-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <p>Etes vous sûr de vouloir supprimer ce membre?</p>
+            <p>Êtes vous sûr de vouloir supprimer ce membre?</p>
             <div>
-                <button id="confirm">oui</button>
-                <button id="decline" onclick="hideModal()">non</button>
+                <button id="confirm"></button>
+                <button id="decline" onclick="hideModal()"></button>
             </div>
         </div>
     </div>
 
     <div id="registration-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <button onclick="hideModal()">retour</button>
+            <button class="remove" onclick="hideModal()"></button>
             <form id="registration-form" class="flex column">
                 <label>Membre</label>
                 <select id="select-hiker" name="hiker_id"></select>

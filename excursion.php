@@ -31,7 +31,7 @@ include_once("formHandler/dbconnect.php");
 
     <div id="create-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <button onclick="hideModal()">retour</button>
+            <button class="remove" onclick="hideModal()"></button>
             <form id="create-form" class="flex column center">
                 <div class="flex wrap evenly start">
                     <fieldset class="flex column">
@@ -130,7 +130,7 @@ include_once("formHandler/dbconnect.php");
 
     <div id="update-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <button onclick="hideModal()">retour</button>
+            <button class="remove" onclick="hideModal()"></button>
             <form id="update-form" class="flex column center">
                 <div class="flex wrap evenly start">
                     <fieldset class="flex column">
@@ -223,17 +223,17 @@ include_once("formHandler/dbconnect.php");
                 </div>
 
                 <input type="submit" value="Modifier">
-                <div id="update-idError" class="error"></div>
+                <div id="update-idError" class="error btn-error"></div>
             </form>
         </div>
     </div>
 
     <div id="delete-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
-            <p>Etes vous sûr de vouloir supprimer cette excursion?</p>
+            <p>Êtes vous sûr de vouloir supprimer cette excursion?</p>
             <div>
-                <button id="confirm">oui</button>
-                <button id="decline" onclick="hideModal()">non</button>
+                <button id="confirm"></button>
+                <button id="decline" onclick="hideModal()"></button>
             </div>
         </div>
     </div>
