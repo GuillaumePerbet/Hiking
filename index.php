@@ -16,7 +16,7 @@ if(isset($_SESSION["user"])){
         <h1>HIKING</h1>
     </header>
 
-    <main class="center">
+    <main>
         <section class="padding0">
                 <form id="login-form" class="flex column justify-center" action="">
                     <label for="user">Utilisateur</label>
