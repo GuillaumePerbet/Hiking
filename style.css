@@ -460,10 +460,22 @@ main > section table tr td .trash {
 #login {
   background-color: #122025;
 }
-#login section {
+#login main {
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+#login main section {
   border-radius: 1rem;
   top: -2rem;
   margin: 0;
+}
+@media only screen and (max-width: 394px) {
+  #login h1 {
+    font-size: 4rem;
+  }
+  #login form {
+    padding: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

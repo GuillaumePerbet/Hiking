@@ -544,10 +544,25 @@ main{
 #login{
     background-color: #122025;
 
-    section{
-        border-radius: 1rem;
-        top: -2rem;
-        margin: 0;
+    main{
+        align-items: flex-start;
+        margin-top: 2rem;
+        
+        section{
+            border-radius: 1rem;
+            top: -2rem;
+            margin: 0;
+        }
+    }
+
+    @media only screen and (max-width:394px){
+        h1{
+            font-size: 4rem;
+        }
+
+        form{
+            padding: 2rem;
+        }
     }
 }
 
