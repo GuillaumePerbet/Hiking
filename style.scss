@@ -205,18 +205,7 @@ button{
 
 //FORMS
 form{
-    margin: 3rem;
-    max-width: 72rem;
-    min-width: 18rem;
-
-    fieldset{
-        margin: 0 2rem 1rem;
-        width: 18rem;
-    }
-
-    legend{
-        font-family: 'Segoe-UI-Bold', sans-serif;
-    }
+    padding: 3rem;
 
     select{
         color: #585B6E;
@@ -226,6 +215,43 @@ form{
         box-shadow: 0 2px 30px rgba(0,0,0,0.15);
         margin-bottom: 1rem;
         margin-left: 1rem;
+        min-width: 14rem;
+    }
+
+    .custom-checkbox{
+        display: block;
+        position: relative;
+        padding-left: 1.75rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ span{
+                background-color: #585B6E;
+            }
+        }
+
+        span{
+            position: absolute;
+            top: 0.2rem;
+            left: 0;
+            height: 1rem;
+            width: 1rem;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+            transition: 0.5s;
+        }
     }
     
     input{
@@ -247,7 +273,7 @@ form{
         }
     
         &[type="date"]{
-            width: 9.5rem;
+            width: 14rem;
         }
     
         &[type="submit"]{
@@ -281,6 +307,24 @@ form{
 
     .btn-error{
         transform: none;
+    }
+}
+
+.excursion-form{
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 0;
+
+    >div{
+
+        >div{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        >div:last-of-type{
+            align-self: flex-end;
+        }
     }
 }
 

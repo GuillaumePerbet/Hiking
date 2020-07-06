@@ -186,16 +186,7 @@ button {
 }
 
 form {
-  margin: 3rem;
-  max-width: 72rem;
-  min-width: 18rem;
-}
-form fieldset {
-  margin: 0 2rem 1rem;
-  width: 18rem;
-}
-form legend {
-  font-family: "Segoe-UI-Bold", sans-serif;
+  padding: 3rem;
 }
 form select {
   color: #585B6E;
@@ -205,6 +196,39 @@ form select {
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
   margin-left: 1rem;
+  min-width: 14rem;
+}
+form .custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+form .custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+form .custom-checkbox input:checked ~ span {
+  background-color: #585B6E;
+}
+form .custom-checkbox span {
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
 }
 form input {
   color: #585B6E;
@@ -223,7 +247,7 @@ form input[type=number]::-webkit-outer-spin-button, form input[type=number]::-we
   -webkit-appearance: none;
 }
 form input[type=date] {
-  width: 9.5rem;
+  width: 14rem;
 }
 form input[type=submit] {
   font-family: "Segoe-UI-Bold", sans-serif;
@@ -252,6 +276,19 @@ form .error {
 }
 form .btn-error {
   transform: none;
+}
+
+.excursion-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 0;
+}
+.excursion-form > div > div {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.excursion-form > div > div:last-of-type {
+  align-self: flex-end;
 }
 
 header {

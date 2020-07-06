@@ -19,22 +19,9 @@ include_once("formHandler/dbconnect.php");
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <button class="large-btn" onclick="showCreateModal()">Créer une excursion</button>
-
-            <div id="excursions" class="flex wrap evenly">
-
-            </div>
-        </section>
-    </main>
-
-    <div id="create-modal" class="hidden modal flex center justify-center">
-        <div class="flex column center">
-            <button class="remove" onclick="hideModal()"></button>
-            <form id="create-form" class="flex column center">
-                <div class="flex wrap evenly start">
-                    <fieldset class="flex column">
-                        <legend>Excursion</legend>
-
+            <form id="create-form" class=" excursion-form flex column">
+                <div class=" flex wrap between">
+                    <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input type="text" name="name">
                         <div id="nameError" class="error"></div>
@@ -48,30 +35,24 @@ include_once("formHandler/dbconnect.php");
                         <input type="number" name="max_hikers">
                         </label>
                         <div id="maxHikersError" class="error"></div>
-                    </fieldset>
+                    </div>
     
-                    <fieldset class="flex column">
-                        <legend>Période</legend>
-    
+                    <div class="flex column">
                         <label>Date de début</label>
                         <input type="date" name="departure_date">
             
                         <label>Date de fin</label>
                         <input type="date" name="arrival_date">
-
+        
                         <div id="dateError" class="error"></div>
-                    </fieldset>
-    
-                    <fieldset class="flex column">
-                        <legend>Région</legend>
-
+        
                         <?php
                         //fetch array of place name and id
                         $req = $pdo->query("SELECT id,name FROM place");
                         $places = $req->fetchAll();
                         $req -> closeCursor();
                         ?>
-    
+        
                         <label>Point de départ</label>
                         <select name="departure_place_id">
                             <?php
@@ -98,11 +79,10 @@ include_once("formHandler/dbconnect.php");
                             ?>
                         </select>
                         <div id="placeError" class="error"></div>
-                    </fieldset>
-    
-                    <fieldset class="flex column">
-                        <legend>Guides</legend>
-    
+                    </div>
+
+                    <div class="flex column">
+                        <div id="guidesError" class="error"></div>
                         <?php
                         //fetch array of guide name and id
                         $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
@@ -110,21 +90,24 @@ include_once("formHandler/dbconnect.php");
                         $req -> closeCursor();
                         foreach($guides as $guide){
                         ?>
-                            <label>
-                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
+                            <label class="custom-checkbox">
                                 <?=$guide['first_name']?> <?=$guide['last_name']?>
+                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
+                                <span></span>
                             </label>
                         <?php
                         }
                         ?>
-                        <div id="guidesError" class="error"></div>
-                    </fieldset>
+                    </div>
                 </div>
-
                 <input type="submit" value="Créer l'excursion">
             </form>
-        </div>
-    </div>
+
+            <div id="excursions" class="flex wrap evenly">
+
+            </div>
+        </section>
+    </main>
 
     <div id="update-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
@@ -209,9 +192,10 @@ include_once("formHandler/dbconnect.php");
                         $req -> closeCursor();
                         foreach($guides as $guide){
                         ?>
-                            <label>
-                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
+                            <label class="custom-checkbox">
                                 <?=$guide['first_name']?> <?=$guide['last_name']?>
+                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
+                                <span></span>
                             </label>
                         <?php
                         }
