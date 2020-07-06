@@ -21,7 +21,7 @@ include_once("formHandler/dbconnect.php");
         <section>
             <button class="large-btn" onclick="showCreateModal()">Créer une excursion</button>
 
-            <div id="excursions">
+            <div id="excursions" class="flex wrap evenly">
 
             </div>
         </section>

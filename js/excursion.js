@@ -110,9 +110,9 @@ function showUpdateModal(excursion){
     //choose checked guides
     for (let guideCheckbox of guideCheckboxes){
         if (excursion.guides.includes(guideCheckbox.value)){
-            guideCheckbox.setAttribute("checked","checked");
+            guideCheckbox.checked = true;
         }else{
-            guideCheckbox.removeAttribute("checked");
+            guideCheckbox.checked = false;
         }
     }
     //show modal

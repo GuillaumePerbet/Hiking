@@ -20,11 +20,11 @@ foreach($excursions as $excursion){
     $req->execute([$excursion["id"]]);
     $guides = $req->fetchAll();
     $req -> closeCursor();
-    $guideNames = $guides[0]["first_name"]." ".$guides[0]["last_name"];
+    $guideNames = $guides[0]["last_name"];
     $excursion["guides"] = [$guides[0]["id"]];
     foreach($guides as $i=>$guide){
         if ($i!=0){
-            $guideNames .= " , ".$guide["first_name"];
+            $guideNames .= ", ".$guide["last_name"];
             array_push($excursion["guides"],$guide["id"]);
         }
     }
@@ -52,17 +52,21 @@ foreach($excursions as $excursion){
             <header>
                 <h2>".$excursion['name']."</h2>
                 <div>
-                    <p>".$excursion['price']."€</p>
-                    <p>".$hikers_number."/".$excursion['max_hikers']."</p>
+                    <p class='price'>".$excursion['price']."€</p>
+                    <p>Inscriptions : ".$hikers_number."/".$excursion['max_hikers']."</p>
                 </div>
             </header>
-            <p>Départ le ".$excursion['departure_date'].", de la région ".$departure_place."</p>
-            <p>Arrivée le ".$excursion['arrival_date'].", de la région ".$arrival_place."</p>
             <div>
-                <p>Guides : ".$guideNames."</p>
+                <p>Départ le ".$excursion['departure_date']." de la région ".$departure_place."</p>
+                <p>Arrivée le ".$excursion['arrival_date']." à la région ".$arrival_place."</p>
+                <div class='flex between'>
+                    <p>Guides : ".$guideNames."</p>
+                    <div>
+                        <button class='medium-btn trash' onclick='showDeleteModal({$excursion['id']})'></button>
+                        <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($excursion).")'></button>
+                    </div>
+                </div>
             </div>
-            <button class='medium-btn trash' onclick='showDeleteModal({$excursion['id']})'></button>
-            <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($excursion).")'></button>
         </section>";
 }
 

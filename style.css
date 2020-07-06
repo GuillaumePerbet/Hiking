@@ -47,6 +47,10 @@
   align-items: flex-start;
 }
 
+.end {
+  align-items: flex-end;
+}
+
 .evenly {
   justify-content: space-evenly;
 }
@@ -380,11 +384,41 @@ main > section table tr td .trash {
   margin: 1.5rem 0;
 }
 
-#excursions section {
+#excursions > section {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
+  margin: 1rem;
+  width: 28rem;
 }
-#excursions section h2 {
-  color: red;
+#excursions > section header {
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+#excursions > section header h2 {
+  margin: 0;
+}
+#excursions > section header div {
+  min-width: 11rem;
+  text-align: right;
+}
+#excursions > section header .price {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+#excursions > section > div {
+  padding: 1rem;
+}
+#excursions > section > div > p {
+  margin-bottom: 1rem;
+}
+#excursions > section > div > div > p {
+  max-width: 20rem;
+}
+#excursions > section > div > div > div {
+  align-self: flex-end;
 }
 
 #login {

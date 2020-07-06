@@ -52,6 +52,10 @@
     align-items: flex-start;
 }
 
+.end{
+    align-items: flex-end;
+}
+
 .evenly{
     justify-content: space-evenly;
 }
@@ -445,12 +449,50 @@ main{
 }
 
 //EXCURSION SECTION
-#excursions{
-    section{
-        border-radius: 1rem;
+#excursions>section{
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+    border-radius: 1rem;
+    margin: 1rem;
+    width: 28rem;
+
+    header{
+        padding: 1rem;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
 
         h2{
-            color: red;
+            margin: 0;
+        }
+
+        div{
+            min-width: 11rem;
+            text-align: right;
+        }
+
+        .price{
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    >div{
+        padding: 1rem;
+
+        >p{
+            margin-bottom: 1rem;
+        }
+
+        >div{
+
+            >p{
+                max-width: 20rem;
+            }
+            
+            >div{
+                align-self: flex-end;
+            }
         }
     }
 }    
