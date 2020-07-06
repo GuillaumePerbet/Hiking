@@ -78,7 +78,7 @@ const updateDateError = document.getElementById("update-dateError");
 const departureOptions = document.querySelectorAll("#departurePlace-update>option");
 const arrivalOptions = document.querySelectorAll("#arrivalPlace-update>option");
 const updatePlaceError = document.getElementById("update-placeError");
-const guideCheckboxes = document.querySelectorAll("#guides-update input[type=checkbox]");
+const guideCheckboxes = document.querySelectorAll("#update-form input[type='checkbox']");
 const updateGuidesError = document.getElementById("update-guidesError");
 const updateIdError = document.getElementById("update-idError");
 //show update-modal

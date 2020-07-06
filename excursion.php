@@ -19,7 +19,7 @@ include_once("formHandler/dbconnect.php");
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <form id="create-form" class=" excursion-form flex column">
+            <form id="create-form" class="excursion-form flex column">
                 <div class=" flex wrap between">
                     <div class="flex column">
                         <label>Nom de l'excursion</label>
@@ -112,11 +112,9 @@ include_once("formHandler/dbconnect.php");
     <div id="update-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
             <button class="remove" onclick="hideModal()"></button>
-            <form id="update-form" class="flex column center">
-                <div class="flex wrap evenly start">
-                    <fieldset class="flex column">
-                        <legend>Excursion</legend>
-
+            <form id="update-form" class="excursion-form flex column center">
+                <div class="flex wrap between start">
+                    <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input id="name-update" type="text" name="name">
                         <div id="update-nameError" class="error"></div>
@@ -130,11 +128,9 @@ include_once("formHandler/dbconnect.php");
                         <input id="maxHikers-update" type="number" name="max_hikers">
                         </label>
                         <div id="update-maxHikersError" class="error"></div>
-                    </fieldset>
+                    </div>
     
-                    <fieldset class="flex column">
-                        <legend>Période</legend>
-    
+                    <div class="flex column">
                         <label>Date de début</label>
                         <input id="departureDate-update" type="date" name="departure_date">
             
@@ -142,11 +138,7 @@ include_once("formHandler/dbconnect.php");
                         <input id="arrivalDate-update" type="date" name="arrival_date">
 
                         <div id="update-dateError" class="error"></div>
-                    </fieldset>
-    
-                    <fieldset class="flex column">
-                        <legend>Région</legend>
-
+                    
                         <?php
                         //fetch array of place name and id
                         $req = $pdo->query("SELECT id,name FROM place");
@@ -180,11 +172,10 @@ include_once("formHandler/dbconnect.php");
                             ?>
                         </select>
                         <div id="update-placeError" class="error"></div>
-                    </fieldset>
-    
-                    <fieldset id="guides-update" class="flex column">
-                        <legend>Guides</legend>
-    
+                    </div>
+
+                    <div class="flex column">
+                        <div id="update-guidesError" class="error"></div>
                         <?php
                         //fetch array of guide name and id
                         $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
@@ -200,8 +191,7 @@ include_once("formHandler/dbconnect.php");
                         <?php
                         }
                         ?>
-                        <div id="update-guidesError" class="error"></div>
-                    </fieldset>
+                    </div>
                 </div>
 
                 <input type="submit" value="Modifier">

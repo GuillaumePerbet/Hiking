@@ -281,7 +281,6 @@ form .btn-error {
 .excursion-form {
   box-sizing: border-box;
   width: 100%;
-  padding-top: 0;
 }
 .excursion-form > div > div {
   margin-left: 1rem;
