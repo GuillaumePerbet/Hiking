@@ -57,7 +57,6 @@ createForm.addEventListener("submit",(e)=>{
         if(data.createSuccess){
             createForm.reset();
             updateExcursionsList();
-            hideModal();
         }
     });
 });
@@ -84,6 +83,14 @@ const updateGuidesError = document.getElementById("update-guidesError");
 const updateIdError = document.getElementById("update-idError");
 //show update-modal
 function showUpdateModal(excursion){
+    //reset error fields
+    updateNameError.innerHTML = "";
+    updatePriceError.innerHTML = "";
+    updateMaxHikersError.innerHTML = "";
+    updateDateError.innerHTML = "";
+    updatePlaceError.innerHTML = "";
+    updateGuidesError.innerHTML = "";
+    updateIdError.innerHTML = "";
     //add id of element to update
     updateForm.setAttribute("data-id",excursion.id);
     //fill form fields

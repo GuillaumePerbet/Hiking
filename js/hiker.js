@@ -57,6 +57,10 @@ const updateIdError = document.getElementById("update-idError");
 const updateModal = document.getElementById("update-modal");
 //show update-modal
 function showUpdateModal(hiker){
+    //reset error fields
+    updateLastNameError.innerHTML = "";
+    updateFirstNameError.innerHTML = "";
+    updateIdError.innerHTML = "";
     //add id of element to update
     updateForm.setAttribute("data-id",hiker.id);
     //fill form fields

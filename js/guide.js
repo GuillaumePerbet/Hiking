@@ -61,6 +61,10 @@ const updateIdError = document.getElementById("update-idError");
 const updateModal = document.getElementById("update-modal");
 //show update-modal
 function showUpdateModal(guide){
+    //reset error fields
+    lastNameError.innerHTML = "";
+    firstNameError.innerHTML = "";
+    phoneError.innerHTML = "";
     //add id of element to update
     updateForm.setAttribute("data-id",guide.id);
     //fill form fields
