@@ -1,6 +1,6 @@
 //UPDATE EXCURSION LIST_____________________________________________________
 //get DOM elements
-const excursionsList = document.getElementById("excursions-list");
+const excursionsList = document.getElementById("excursions");
 //update list function
 function updateExcursionsList(){
     fetch("formHandler/list_excursions.php").then(res=>res.json()).then(data=>{

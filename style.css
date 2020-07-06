@@ -96,6 +96,23 @@ button {
   padding: 0;
 }
 
+.large-btn {
+  font-family: "Segoe-UI-Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-radius: 2rem;
+  color: #122025;
+  background-color: #f69333;
+  padding: 0.75rem 1.75rem;
+  margin: 0;
+  align-self: center;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.large-btn:hover {
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
 .medium-btn {
   width: 2rem;
   height: 2rem;
@@ -216,7 +233,6 @@ form input[type=submit] {
   margin: 0;
   align-self: center;
   cursor: pointer;
-  position: relative;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -364,6 +380,13 @@ main > section table tr td .trash {
   margin: 1.5rem 0;
 }
 
+#excursions section {
+  border-radius: 1rem;
+}
+#excursions section h2 {
+  color: red;
+}
+
 #login {
   background-color: #122025;
 }
@@ -371,81 +394,6 @@ main > section table tr td .trash {
   border-radius: 1rem;
   top: -2rem;
   margin: 0;
-}
-
-@media only screen and (max-width: 1172px) {
-  #excursion form {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  #excursion form fieldset {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    box-sizing: border-box;
-  }
-  #excursion form input[type=number] {
-    margin-left: 0;
-  }
-}
-@media only screen and (max-width: 1040px) {
-  section > div form {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-  section > div form:not(:first-of-type)::before {
-    content: "";
-    height: 1px;
-    width: 100%;
-    background-color: #585B6E;
-    margin-bottom: 1rem;
-  }
-  section > div form input[type=submit] {
-    margin-top: 1rem;
-  }
-}
-@media only screen and (max-width: 688px) {
-  header #user {
-    display: none;
-  }
-  header #menu {
-    display: block;
-    align-self: flex-end;
-    margin: 0 1rem;
-    flex-shrink: 0;
-  }
-
-  main {
-    position: relative;
-  }
-  main nav {
-    position: absolute;
-    border-bottom-right-radius: 1rem;
-    left: -100%;
-    transition: 0.8s;
-  }
-  main nav ul li {
-    width: auto;
-    margin: 1.5rem 0;
-  }
-  main nav ul li a {
-    padding: 1rem;
-  }
-  main section {
-    position: initial;
-    border-radius: 0;
-    margin: 0;
-  }
-}
-@media only screen and (max-width: 368px) {
-  form {
-    margin-right: 1rem;
-    margin-left: 1rem;
-  }
-
-  #excursion form {
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

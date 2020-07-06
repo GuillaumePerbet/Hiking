@@ -11,20 +11,18 @@ include_once("formHandler/dbconnect.php");
     <?php include_once("template/head.html"); ?>
     <title>Créer une excursion</title>
 </head>
-<body class="flex column">
+<body>
 
     <?php include_once("template/header.php");?>
 
     <main>
         <?php include_once("template/navbar.html");?>
 
-        <section id="excursion">
-            <div class="flex column">
-                <section id="excursions-list">
+        <section>
+            <button class="large-btn" onclick="showCreateModal()">Créer une excursion</button>
 
-                </section>
+            <div id="excursions">
 
-                <button onclick="showCreateModal()">Ajouter une excursion</button>
             </div>
         </section>
     </main>

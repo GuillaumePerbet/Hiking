@@ -18,20 +18,20 @@ if(!isset($_SESSION["user"])){
         <?php include_once("template/navbar.html");?>
 
         <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Editer</th>
-                            <th scope="col"><button class="add" onclick="showCreateModal()"></button> Guide</th>
-                            <th scope="col">Téléphone</th>
-                            <th scope="col">Excursions</th>
-                        </tr>
-                    </thead>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Editer</th>
+                        <th scope="col"><button class="add" onclick="showCreateModal()"></button> Guide</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Excursions</th>
+                    </tr>
+                </thead>
 
-                    <tbody id="guides-list">
+                <tbody id="guides-list">
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </section>
     </main>
 

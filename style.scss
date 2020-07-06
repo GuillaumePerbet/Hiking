@@ -94,13 +94,31 @@ ul{
     padding: 0;
 }
 
-//buttons
+//BUTTON
 button{
     cursor: pointer;
     border: none;
     font-size: inherit;
     font-family: inherit;
     padding: 0;
+}
+
+.large-btn{
+    font-family: 'Segoe-UI-Bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border-radius: 2rem;
+    color: #122025;
+    background-color: #f69333;
+    padding: 0.75rem 1.75rem;
+    margin: 0;
+    align-self: center;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .medium-btn{
@@ -240,7 +258,6 @@ form{
             margin: 0;
             align-self: center;
             cursor: pointer;
-            position: relative;
             box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
             transition: box-shadow 0.3s ease-in-out;
 
@@ -366,7 +383,7 @@ nav{
 }
 
 
-//MAIN
+//MAIN SECTION AND TABLE
 main{
     display: flex;
     flex: 1;
@@ -427,7 +444,16 @@ main{
     }
 }
 
-    
+//EXCURSION SECTION
+#excursions{
+    section{
+        border-radius: 1rem;
+
+        h2{
+            color: red;
+        }
+    }
+}    
 
 //LOGIN
 #login{
@@ -440,103 +466,103 @@ main{
     }
 }
 
-//RESPONSIVE
-@media only screen  and (max-width:1172px){
-    //RESIZE EXCURSION FORM TO KEEP 2 COLUMN VIEW
-    #excursion{
-        form{
-            margin-left: 1rem;
-            margin-right: 1rem;
+// //RESPONSIVE
+// @media only screen  and (max-width:1172px){
+//     //RESIZE EXCURSION FORM TO KEEP 2 COLUMN VIEW
+//     #excursion{
+//         form{
+//             margin-left: 1rem;
+//             margin-right: 1rem;
     
-            fieldset{
-                margin-left: 1rem;
-                margin-right: 1rem;
-                box-sizing: border-box;
-            }
+//             fieldset{
+//                 margin-left: 1rem;
+//                 margin-right: 1rem;
+//                 box-sizing: border-box;
+//             }
     
-            input[type="number"]{
-                margin-left: 0;
-            }
-        }
-    }
-}
+//             input[type="number"]{
+//                 margin-left: 0;
+//             }
+//         }
+//     }
+// }
 
-@media only screen and (max-width:1040px){
-    //PREVENT MULTI-COLUMN IN SECTION
-    section>div{
+// @media only screen and (max-width:1040px){
+//     //PREVENT MULTI-COLUMN IN SECTION
+//     section>div{
 
-        form{
-            margin-top: 0;
-            margin-bottom: 1rem;
+//         form{
+//             margin-top: 0;
+//             margin-bottom: 1rem;
 
-            &:not(:first-of-type)::before{
-                content: '';
-                height: 1px;
-                width: 100%;
-                background-color: #585B6E;
-                margin-bottom: 1rem;
-            }
+//             &:not(:first-of-type)::before{
+//                 content: '';
+//                 height: 1px;
+//                 width: 100%;
+//                 background-color: #585B6E;
+//                 margin-bottom: 1rem;
+//             }
     
-            input[type="submit"]{
-                margin-top: 1rem;
-            }
-        }
-    }
-}
+//             input[type="submit"]{
+//                 margin-top: 1rem;
+//             }
+//         }
+//     }
+// }
 
-@media only screen and (max-width:688px){
-    header{
-        #user{
-            display: none;
-        }
+// @media only screen and (max-width:688px){
+//     header{
+//         #user{
+//             display: none;
+//         }
 
-        #menu{
-            display: block;
-            align-self: flex-end;
-            margin: 0 1rem;
-            flex-shrink: 0;
-        }
-    }
+//         #menu{
+//             display: block;
+//             align-self: flex-end;
+//             margin: 0 1rem;
+//             flex-shrink: 0;
+//         }
+//     }
 
-    main{
-        position: relative;
+//     main{
+//         position: relative;
 
-        nav{
-            position: absolute;
-            border-bottom-right-radius: 1rem;
-            left: -100%;
-            transition: 0.8s;
+//         nav{
+//             position: absolute;
+//             border-bottom-right-radius: 1rem;
+//             left: -100%;
+//             transition: 0.8s;
 
-            ul {
+//             ul {
 
-                li{
-                    width: auto;
-                    margin: 1.5rem 0;
+//                 li{
+//                     width: auto;
+//                     margin: 1.5rem 0;
 
-                    a{
-                        padding: 1rem;
-                    }
-                }
-            }
-        }
+//                     a{
+//                         padding: 1rem;
+//                     }
+//                 }
+//             }
+//         }
         
-        section{
-            position: initial;
-            border-radius: 0;
-            margin: 0;
-        }
-    }
-}
+//         section{
+//             position: initial;
+//             border-radius: 0;
+//             margin: 0;
+//         }
+//     }
+// }
 
 
-@media only screen and (max-width:368px){
-    form{
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
+// @media only screen and (max-width:368px){
+//     form{
+//         margin-right: 1rem;
+//         margin-left: 1rem;
+//     }
 
-    #excursion form{
-        margin-right: 0;
-        margin-left: 0;
-    }
-}
+//     #excursion form{
+//         margin-right: 0;
+//         margin-left: 0;
+//     }
+// }

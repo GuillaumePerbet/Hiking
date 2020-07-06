@@ -20,11 +20,13 @@ foreach($excursions as $excursion){
     $req->execute([$excursion["id"]]);
     $guides = $req->fetchAll();
     $req -> closeCursor();
-    $guideNames=[];
-    $excursion["guides"]=[];
-    foreach($guides as $guide){
-        array_push($guideNames,$guide["first_name"]." ".$guide["last_name"]);
-        array_push($excursion["guides"],$guide["id"]);
+    $guideNames = $guides[0]["first_name"]." ".$guides[0]["last_name"];
+    $excursion["guides"] = [$guides[0]["id"]];
+    foreach($guides as $i=>$guide){
+        if ($i!=0){
+            $guideNames .= " , ".$guide["first_name"];
+            array_push($excursion["guides"],$guide["id"]);
+        }
     }
 
     //get places name
@@ -46,19 +48,22 @@ foreach($excursions as $excursion){
 
     //add html item
     $response["list"].=
-        "<div>"
-            .$excursion['name']
-            .$departure_place
-            .$arrival_place
-            .$excursion['departure_date']
-            .$excursion['arrival_date']
-            .$guideNames[0]
-            .$excursion['price']
-            .$hikers_number
-            .$excursion['max_hikers']
-            ."<button onclick='showDeleteModal({$excursion['id']})'>Supprimer</button>
-            <button onclick='showUpdateModal(".json_encode($excursion).")'>Modifier</button>
-        </div>";
+        "<section>
+            <header>
+                <h2>".$excursion['name']."</h2>
+                <div>
+                    <p>".$excursion['price']."€</p>
+                    <p>".$hikers_number."/".$excursion['max_hikers']."</p>
+                </div>
+            </header>
+            <p>Départ le ".$excursion['departure_date'].", de la région ".$departure_place."</p>
+            <p>Arrivée le ".$excursion['arrival_date'].", de la région ".$arrival_place."</p>
+            <div>
+                <p>Guides : ".$guideNames."</p>
+            </div>
+            <button class='medium-btn trash' onclick='showDeleteModal({$excursion['id']})'></button>
+            <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($excursion).")'></button>
+        </section>";
 }
 
 echo json_encode($response);
