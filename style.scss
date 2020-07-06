@@ -207,6 +207,10 @@ button{
 form{
     padding: 3rem;
 
+    label{
+        margin-bottom: 0.5rem;
+    }
+
     select{
         color: #585B6E;
         font-size: 1.25rem;
@@ -311,22 +315,30 @@ form{
 }
 
 .excursion-form{
-    box-sizing: border-box;
-    width: 100%;
 
     >div{
 
         >div{
-            margin-left: 1rem;
-            margin-right: 1rem;
+            margin: 0 1.5rem;
+
+            @media only screen and (min-width:1035px) and (max-width:1342px){
+                &:last-of-type>div{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                    label{
+                        flex: 0 0 25%;
+                        margin-right: 1rem;
+                    }
+                }
+            }
         }
 
-        >div:last-of-type{
-            align-self: flex-end;
+        @media only screen and (max-width:1034px){  
+            flex-direction: column;
         }
     }
 }
-
 
 // TOP BAR
 header{
@@ -428,7 +440,6 @@ nav{
         }
     }
 }
-
 
 //MAIN SECTION AND TABLE
 main{

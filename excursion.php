@@ -20,7 +20,7 @@ include_once("formHandler/dbconnect.php");
 
         <section>
             <form id="create-form" class="excursion-form flex column">
-                <div class=" flex wrap between">
+                <div class=" flex wrap justify-center start">
                     <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input type="text" name="name">
@@ -82,22 +82,25 @@ include_once("formHandler/dbconnect.php");
                     </div>
 
                     <div class="flex column">
-                        <div id="guidesError" class="error"></div>
-                        <?php
-                        //fetch array of guide name and id
-                        $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
-                        $guides = $req->fetchAll();
-                        $req -> closeCursor();
-                        foreach($guides as $guide){
-                        ?>
-                            <label class="custom-checkbox">
-                                <?=$guide['first_name']?> <?=$guide['last_name']?>
-                                <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
-                                <span></span>
-                            </label>
-                        <?php
-                        }
-                        ?>
+                        <label>Guides :</label>
+                        <div class="flex column">
+                            <?php
+                            //fetch array of guide name and id
+                            $req = $pdo->query("SELECT id,last_name,first_name FROM guide");
+                            $guides = $req->fetchAll();
+                            $req -> closeCursor();
+                            foreach($guides as $guide){
+                            ?>
+                                <label class="custom-checkbox">
+                                    <?=$guide['first_name']?> <?=$guide['last_name']?>
+                                    <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
+                                    <span></span>
+                                </label>
+                            <?php
+                            }
+                            ?>
+                            <div id="guidesError" class="error"></div>
+                        </div>
                     </div>
                 </div>
                 <input type="submit" value="Créer l'excursion">
