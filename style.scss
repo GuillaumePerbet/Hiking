@@ -1,4 +1,4 @@
-// FONTS
+// FONTS_______________________________________________________________
 @font-face {
 	font-family: 'Segoe-UI-Bold';
 	src: url('fonts/Segoe-UI-Bold.eot');
@@ -31,7 +31,7 @@
 	font-style: normal;
 }
 
-// FLEX
+// FLEX___________________________________________________________
 .flex{
     display: flex;
 }
@@ -68,7 +68,7 @@
     justify-content: center;
 }
 
-// GENERAL TAGS
+// GENERAL TAGS____________________________________________________
 body{
     display: flex;
     flex-direction: column;
@@ -98,7 +98,11 @@ ul{
     padding: 0;
 }
 
-//BUTTON
+.hidden{
+    display: none;
+}
+
+//BUTTON______________________________________________________
 button{
     cursor: pointer;
     border: none;
@@ -136,7 +140,6 @@ button{
 }
 
 .edit{
-    margin-left: 0.5rem;
     background-image: url("media/edit.png");
 }
 
@@ -155,55 +158,382 @@ button{
     }
 }
 
-//MODAL
-.modal{
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(0,0,0,0.2);
-    position: fixed;
+// TOP BAR_____________________________________________________________
+header{
+    background-color: #122025;
+    color: #ffeace;
 
-    >div{
-        position: relative;
-        background-color: #EFF1F2;
-        border-radius: 1rem;
+    #user{
+        width: 20rem;
 
-        >.remove{
-            position: absolute;
-            right: 0;
-            top: 0;
-            margin: 1rem;
+        div{
+            background-color: #7db3c7;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        #user-name{
+            font-size: 1.25rem;
+        }
+
+        a{
+            text-transform: uppercase;
+            font-family: 'Segoe-UI-Bold', sans-serif;
+            letter-spacing: 0.2rem;
+            transition: .1s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: 1rem 0 2rem 2.1rem;
+            align-self: flex-start;
+
+            svg{
+                transition: .1s ease-in-out;
+                margin-right: 0.7rem;
+            }
+            
+            &:hover{
+                color: #f69333;
+
+                svg{
+                    fill: #f69333;
+                }
+            }
+        }
+    }
+
+    #menu{
+        display: none;
+        margin-left: 2rem;
+
+        >svg{
+            transition: .1s ease-in-out;
+            fill: #EFF1F2;
+            cursor: pointer;
+
+            &:hover{
+                fill: #f69333;
+            }
+        }
+    }
+
+    h1{
+        font-family: 'Cacha', serif;
+        font-size: 5rem;
+        letter-spacing: 0.75rem;
+        flex: 1 0;
+        text-align: center;
+        color: #f69333;
+        margin-top: 2rem;
+    }
+
+    #responsive-deco{
+        display: none;
+        margin-right: 2rem;
+        
+        svg{
+            transition: 0.1s ease-in-out;
+            cursor: pointer;
+
+            &:hover{
+                fill: #f69333;
+            }
+        }
+    }
+
+    //RESPONSIVE HEADER
+    @media only screen and (max-width:1034px){
+        align-items: flex-end;
+        padding-bottom: 1rem;
+
+        #user{
+            display: none;
+        }
+
+        #menu{
+            display: flex;
+        }
+
+        h1{
+            margin: 1rem 0;
+        }
+
+        #responsive-deco{
+            display: block;
         }
     }
 }
 
-#delete-modal{
-    >div{
-        padding: 3rem;
+// NAV__________________________________________________________
+nav{
+    color: #ffeace;
+    background-color: #122025;
+    border-top: 1px solid #707070;
+    text-transform: uppercase;
+    font-family: 'Segoe-UI-Bold', sans-serif;
+    letter-spacing: 0.2rem;
 
-        p{
+    ul{
+
+        li{
+            width: 18rem;
+            margin: 2rem 0 2rem 2rem;
+    
+            a{
+                transition: .1s ease-in-out;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                svg{
+                    transition: .1s ease-in-out;
+                    margin-right: 1rem;
+                }
+                
+                &:hover{
+                    color: #f69333;
+
+                    svg{
+                        fill: #f69333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//LOGIN________________________________________________________
+#login{
+    background-color: #122025;
+
+    main{
+        align-items: flex-start;
+        margin-top: 2rem;
+        
+        section{
+            border-radius: 1rem;
+            top: -2rem;
+            margin: 0;
+        }
+    }
+
+    @media only screen and (max-width:394px){
+        h1{
+            font-size: 4rem;
+        }
+
+        form{
+            padding: 2rem;
+        }
+    }
+}
+
+//MAIN SECTION AND TABLE______________________________________________
+main{
+    display: flex;
+    flex: 1;
+
+    >section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #EFF1F2;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        flex: 1;
+        position: relative;
+        top: -4rem;
+        margin-right: 1rem;
+        margin-bottom: -4rem;
+        padding-top: 4rem;
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+
+            //RESPONSIVE HIDE PHONE COLUMN
+            @media only screen and (max-width:1034px){
+                .phone{
+                    display: none;
+                }
+            }
+            
+            th{
+                color: #9296AD;
+                text-align: left;
+                padding: 1rem 0;
+
+                &:first-of-type{
+                    padding-left: 5rem;
+                    @media only screen and (max-width:664px){
+                        padding-left: 2rem;
+                    }
+
+                }
+            }
+
+            tr{
+                border: 1px solid white;
+
+                td{
+
+                    &:first-of-type{
+                        padding-left: 5rem;
+                        @media only screen and (max-width:664px){
+                            padding-left: 2rem;
+                        }
+                    }
+
+                    ul{
+                        margin: 1.5rem 0;
+
+                        li{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 0.75rem;
+                        }
+                    }
+
+                    .trash{
+                        margin: 1.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    //RESPONSIVE SECTION
+    @media only screen and (max-width:1034px){
+        position: relative;
+
+        nav{
+            position: absolute;
+            border-bottom-right-radius: 1rem;
+            left: -100%;
+            transition: 0.5s;
+        }
+        
+        section{
+            position: initial;
+            border-radius: 0;
+            margin: 0;
+        }
+    }
+}
+
+//EXCURSION PAGE_______________________________________________
+#create-form{
+    width: 90%;
+    
+    #excursion-fields{
+        
+        >div{
+            margin: 0 1.5rem;
+    
+            #guidesError{
+                margin-top: 0.5rem;
+            }
+        }
+    
+        @media only screen and (max-width:1342px){
+            #guides-list{
+                >label{
+                    text-align: center;
+                }
+    
+                >div{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+    
+                    label{
+                        box-sizing: border-box;
+                        width: 40%;
+                        margin-left: 3rem;
+                    }
+                }
+    
+                #guidesError{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+#excursions>section{
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+    border-radius: 1rem;
+    margin: 1rem;
+    width: 28rem;
+
+    header{
+        padding: 1rem;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        h2{
+            margin: 0;
+        }
+
+        div{
+            min-width: 11rem;
+            text-align: right;
+        }
+
+        .price{
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    >div{
+        padding: 1rem;
+
+        >p{
             margin-bottom: 1rem;
         }
 
-        #confirm{
-            margin-right: 1rem;
-            &::before{
-                content: url("media/confirm.png");
-            }
-        }
+        >div{
 
-        #decline{
-            &::before{
-                content: url("media/decline.png");
+            >p{
+                max-width: 20rem;
+            }
+            
+            >div{
+                align-self: flex-end;
             }
         }
     }
 }
 
-.hidden{
-    display: none;
+#update-form{
+    >div{
+
+        @media only screen and (min-width:699px) and (max-width:1012px){
+            >div:last-of-type>div{
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                label{
+                    flex: 0 0 25%;
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        >div{
+            margin: 0 1.5rem;
+        }
+    }
 }
 
-//FORMS
+//FORMS__________________________________________________
 form{
     padding: 3rem;
 
@@ -314,388 +644,46 @@ form{
     }
 }
 
-.excursion-form{
+//MODAL_____________________________________________________
+.modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0,0,0,0.2);
+    position: fixed;
 
     >div{
-
-        >div{
-            margin: 0 1.5rem;
-
-            @media only screen and (min-width:1035px) and (max-width:1342px){
-                &:last-of-type>div{
-                    flex-direction: row;
-                    flex-wrap: wrap;
-
-                    label{
-                        flex: 0 0 25%;
-                        margin-right: 1rem;
-                    }
-                }
-            }
-        }
-
-        @media only screen and (max-width:1034px){  
-            flex-direction: column;
-        }
-    }
-}
-
-#update-form{
-    >div{
-
-        @media only screen and (min-width:699px) and (max-width:1012px){
-            >div:last-of-type>div{
-                flex-direction: row;
-                flex-wrap: wrap;
-
-                label{
-                    flex: 0 0 25%;
-                    margin-right: 1rem;
-                }
-            }
-        }
-
-
-        >div{
-            margin: 0 1.5rem;
-        }
-    }
-}
-
-// TOP BAR
-header{
-    background-color: #122025;
-    color: #ffeace;
-
-    #user{
-        width: 20rem;
-
-        div{
-            background-color: #7db3c7;
-            border-radius: 100%;
-            width: 60px;
-            height: 60px;
-            margin-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        #user-name{
-            font-size: 1.25rem;
-        }
-
-        a{
-            text-transform: uppercase;
-            font-family: 'Segoe-UI-Bold', sans-serif;
-            letter-spacing: 0.2rem;
-            transition: .1s ease-in-out;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            margin: 1rem 0 2rem 2.1rem;
-            align-self: flex-start;
-
-            svg{
-                transition: .1s ease-in-out;
-                margin-right: 0.7rem;
-            }
-            
-            &:hover{
-                color: #f69333;
-
-                svg{
-                    fill: #f69333;
-                }
-            }
-        }
-    }
-
-    #menu{
-        display: none;
-        color: #EFF1F2;
-    }
-
-    h1{
-        font-family: 'Cacha', serif;
-        font-size: 5rem;
-        letter-spacing: 0.75rem;
-        flex: 1 0;
-        text-align: center;
-        color: #f69333;
-        margin-top: 2rem;
-    }
-}
-
-// NAV
-nav{
-    color: #ffeace;
-    background-color: #122025;
-    border-top: 1px solid #707070;
-    text-transform: uppercase;
-    font-family: 'Segoe-UI-Bold', sans-serif;
-    letter-spacing: 0.2rem;
-
-    ul{
-
-        li{
-            width: 18rem;
-            margin: 2rem 0 2rem 2rem;
-    
-            a{
-                transition: .1s ease-in-out;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-
-                svg{
-                    transition: .1s ease-in-out;
-                    margin-right: 1rem;
-                }
-                
-                &:hover{
-                    color: #f69333;
-
-                    svg{
-                        fill: #f69333;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//MAIN SECTION AND TABLE
-main{
-    display: flex;
-    flex: 1;
-
-    >section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #EFF1F2;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-        flex: 1;
         position: relative;
-        top: -4rem;
-        margin-right: 1rem;
-        margin-bottom: -4rem;
-        padding-top: 4rem;
+        background-color: #EFF1F2;
+        border-radius: 1rem;
 
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            
-            th{
-                color: #9296AD;
-                text-align: left;
-                padding: 1rem 0;
-
-                &:first-of-type{
-                    padding-left: 5rem;
-                }
-            }
-
-            tr{
-                border: 1px solid white;
-
-                td{
-
-                    &:first-of-type{
-                        padding-left: 5rem;
-                    }
-
-                    ul{
-                        margin: 1.5rem 0;
-
-                        li{
-                            display: flex;
-                            align-items: center;
-                            margin-bottom: 0.75rem;
-                        }
-                    }
-
-                    .trash{
-                        margin: 1.5rem 0;
-                    }
-                }
-            }
+        >.remove{
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 1rem;
         }
     }
 }
 
-//EXCURSION SECTION
-#excursions>section{
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
-    border-radius: 1rem;
-    margin: 1rem;
-    width: 28rem;
-
-    header{
-        padding: 1rem;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
-        display: flex;
-        justify-content: space-between;
-
-        h2{
-            margin: 0;
-        }
-
-        div{
-            min-width: 11rem;
-            text-align: right;
-        }
-
-        .price{
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-    }
-
+#delete-modal{
     >div{
-        padding: 1rem;
+        padding: 3rem;
 
-        >p{
+        p{
             margin-bottom: 1rem;
         }
 
-        >div{
-
-            >p{
-                max-width: 20rem;
-            }
-            
-            >div{
-                align-self: flex-end;
+        #confirm{
+            margin-right: 1rem;
+            &::before{
+                content: url("media/confirm.png");
             }
         }
-    }
-}    
 
-//LOGIN
-#login{
-    background-color: #122025;
-
-    main{
-        align-items: flex-start;
-        margin-top: 2rem;
-        
-        section{
-            border-radius: 1rem;
-            top: -2rem;
-            margin: 0;
-        }
-    }
-
-    @media only screen and (max-width:394px){
-        h1{
-            font-size: 4rem;
-        }
-
-        form{
-            padding: 2rem;
+        #decline{
+            &::before{
+                content: url("media/decline.png");
+            }
         }
     }
 }
-
-// //RESPONSIVE
-// @media only screen  and (max-width:1172px){
-//     //RESIZE EXCURSION FORM TO KEEP 2 COLUMN VIEW
-//     #excursion{
-//         form{
-//             margin-left: 1rem;
-//             margin-right: 1rem;
-    
-//             fieldset{
-//                 margin-left: 1rem;
-//                 margin-right: 1rem;
-//                 box-sizing: border-box;
-//             }
-    
-//             input[type="number"]{
-//                 margin-left: 0;
-//             }
-//         }
-//     }
-// }
-
-// @media only screen and (max-width:1040px){
-//     //PREVENT MULTI-COLUMN IN SECTION
-//     section>div{
-
-//         form{
-//             margin-top: 0;
-//             margin-bottom: 1rem;
-
-//             &:not(:first-of-type)::before{
-//                 content: '';
-//                 height: 1px;
-//                 width: 100%;
-//                 background-color: #585B6E;
-//                 margin-bottom: 1rem;
-//             }
-    
-//             input[type="submit"]{
-//                 margin-top: 1rem;
-//             }
-//         }
-//     }
-// }
-
-// @media only screen and (max-width:688px){
-//     header{
-//         #user{
-//             display: none;
-//         }
-
-//         #menu{
-//             display: block;
-//             align-self: flex-end;
-//             margin: 0 1rem;
-//             flex-shrink: 0;
-//         }
-//     }
-
-//     main{
-//         position: relative;
-
-//         nav{
-//             position: absolute;
-//             border-bottom-right-radius: 1rem;
-//             left: -100%;
-//             transition: 0.8s;
-
-//             ul {
-
-//                 li{
-//                     width: auto;
-//                     margin: 1.5rem 0;
-
-//                     a{
-//                         padding: 1rem;
-//                     }
-//                 }
-//             }
-//         }
-        
-//         section{
-//             position: initial;
-//             border-radius: 0;
-//             margin: 0;
-//         }
-//     }
-// }
-
-
-// @media only screen and (max-width:368px){
-//     form{
-//         margin-right: 1rem;
-//         margin-left: 1rem;
-//     }
-
-//     #excursion form{
-//         margin-right: 0;
-//         margin-left: 0;
-//     }
-// }

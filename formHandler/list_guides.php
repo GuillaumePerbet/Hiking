@@ -34,7 +34,7 @@ foreach($guides as $guide){
                 <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($guide).")'></button>
             </td>
             <td>{$guide['last_name']} {$guide['first_name']}</td>
-            <td>{$guide['phone']}</td>
+            <td class='phone'>{$guide['phone']}</td>
             <td>$excursionList</td>
             
         </tr>";

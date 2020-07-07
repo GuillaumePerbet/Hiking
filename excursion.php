@@ -19,8 +19,8 @@ include_once("formHandler/dbconnect.php");
         <?php include_once("template/navbar.html");?>
 
         <section>
-            <form id="create-form" class="excursion-form flex column">
-                <div class="flex wrap justify-center start">
+            <form id="create-form" class="flex column">
+                <div id="excursion-fields" class="flex wrap evenly start">
                     <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input type="text" name="name">
@@ -81,8 +81,8 @@ include_once("formHandler/dbconnect.php");
                         <div id="placeError" class="error"></div>
                     </div>
 
-                    <div class="flex column">
-                        <label>Guides :</label>
+                    <div id="guides-list" class="flex column">
+                        <label>Guides</label>
                         <div class="flex column">
                             <?php
                             //fetch array of guide name and id
@@ -99,8 +99,8 @@ include_once("formHandler/dbconnect.php");
                             <?php
                             }
                             ?>
-                            <div id="guidesError" class="error"></div>
                         </div>
+                        <div id="guidesError" class="error"></div>
                     </div>
                 </div>
                 <input type="submit" value="Créer l'excursion">

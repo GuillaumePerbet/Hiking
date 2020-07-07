@@ -23,7 +23,7 @@ if(!isset($_SESSION["user"])){
                     <tr>
                         <th scope="col">Editer</th>
                         <th scope="col"><button class="add" onclick="showCreateModal()"></button> Guide</th>
-                        <th scope="col">Téléphone</th>
+                        <th class="phone" scope="col">Téléphone</th>
                         <th scope="col">Excursions</th>
                     </tr>
                 </thead>

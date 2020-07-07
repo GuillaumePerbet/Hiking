@@ -6,7 +6,8 @@ const nav = document.querySelector("nav");
 menu.addEventListener("click", ()=>{
     //toggle left property of navigation
     let left = window.getComputedStyle(nav).left;
-    nav.style.left=(left=="0px")?"-100%":"0px";
+    let width = window.getComputedStyle(nav).width;
+    nav.style.left=(left=="0px")?"-"+width:"0px";
 });
 
 

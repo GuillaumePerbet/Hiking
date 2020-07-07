@@ -27,7 +27,7 @@ if (isset($_POST["price"])){
     if ($price !== false){
         $params[":price"] = $price;
     }else{
-        $response["priceError"] = "Veuillez entrer un prix valide";
+        $response["priceError"] = "Veuillez entrer un prix";
     }
 }else{
     $response["priceError"] = "Aucun prix n'a été soumis";
@@ -39,7 +39,7 @@ if (isset($_POST["max_hikers"])){
     if ($max_hikers !== false){
         $params[":max_hikers"] = $max_hikers;
     }else{
-        $response["maxHikersError"] = "Veuillez entrer un nombre de places valide";
+        $response["maxHikersError"] = "Veuillez entrer un nombre de places";
     }
 }else{
     $response["maxHikersError"] = "Aucun nombre de places n'a été soumis";
