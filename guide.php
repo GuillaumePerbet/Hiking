@@ -24,7 +24,7 @@ if(!isset($_SESSION["user"])){
                         <th scope="col">Editer</th>
                         <th scope="col"><button class="add" onclick="showCreateModal()"></button> Guide</th>
                         <th class="phone" scope="col">Téléphone</th>
-                        <th scope="col">Excursions</th>
+                        <th class="excursion" scope="col">Excursions</th>
                     </tr>
                 </thead>
 

@@ -35,7 +35,7 @@ foreach($guides as $guide){
             </td>
             <td>{$guide['last_name']} {$guide['first_name']}</td>
             <td class='phone'>{$guide['phone']}</td>
-            <td>$excursionList</td>
+            <td class='excursion'>$excursionList</td>
             
         </tr>";
 }

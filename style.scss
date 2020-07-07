@@ -143,6 +143,14 @@ button{
     background-image: url("media/edit.png");
 }
 
+@media only screen and (max-width:602px){
+    #excursions{
+        .edit{
+            display: none;
+        }
+    }
+}
+
 .remove{
     width: 1rem;
     height: 1rem;
@@ -163,6 +171,11 @@ button{
     body>header{
         align-items: flex-end;
         padding-bottom: 1rem;
+
+        @media only screen and (max-width:482px){
+            justify-content: space-between;
+            padding: 2rem;
+        }
     }
 }
 
@@ -235,6 +248,9 @@ header{
         text-align: center;
         color: #f69333;
         margin-top: 2rem;
+        @media only screen and (max-width:482px){
+            display: none;
+        }
     }
 
     #responsive-deco{
@@ -362,6 +378,13 @@ main{
             //RESPONSIVE HIDE PHONE COLUMN
             @media only screen and (max-width:1034px){
                 .phone{
+                    display: none;
+                }
+            }
+
+            //RESPONSIVE HIDE EXCURSION COLUMN
+            @media only screen and (max-width:504px){
+                .excursion{
                     display: none;
                 }
             }

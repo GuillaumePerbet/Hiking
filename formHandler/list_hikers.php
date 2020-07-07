@@ -43,7 +43,7 @@ foreach($hikers as $hiker){
                 <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($hiker).")'></button>
             </td>
             <td>{$hiker['last_name']} {$hiker['first_name']}</td>
-            <td>$excursionList</td>
+            <td class='excursion'>$excursionList</td>
         </tr>";
 
     //create select option

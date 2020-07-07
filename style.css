@@ -135,6 +135,11 @@ button {
   background-image: url("media/edit.png");
 }
 
+@media only screen and (max-width: 602px) {
+  #excursions .edit {
+    display: none;
+  }
+}
 .remove {
   width: 1rem;
   height: 1rem;
@@ -154,6 +159,12 @@ button {
   body > header {
     align-items: flex-end;
     padding-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 1034px) and (max-width: 482px) {
+  body > header {
+    justify-content: space-between;
+    padding: 2rem;
   }
 }
 header {
@@ -215,6 +226,11 @@ header h1 {
   text-align: center;
   color: #f69333;
   margin-top: 2rem;
+}
+@media only screen and (max-width: 482px) {
+  header h1 {
+    display: none;
+  }
 }
 header #responsive-deco {
   display: none;
@@ -316,6 +332,11 @@ main > section table {
 }
 @media only screen and (max-width: 1034px) {
   main > section table .phone {
+    display: none;
+  }
+}
+@media only screen and (max-width: 504px) {
+  main > section table .excursion {
     display: none;
   }
 }
