@@ -8,7 +8,7 @@ if(isset($_SESSION["user"])){
 <html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
-    <title>Authentification</title>
+    <title>Hiking - Authentification</title>
 </head>
 <body id="login" class="flex column center">
     

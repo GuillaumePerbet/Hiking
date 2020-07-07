@@ -8,7 +8,7 @@ if(!isset($_SESSION["user"])){
 <html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
-    <title>Randonneurs</title>
+    <title>Hiking - Randonneurs</title>
 </head>
 <body>
 

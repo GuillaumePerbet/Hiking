@@ -9,7 +9,7 @@ include_once("formHandler/dbconnect.php");
 <html lang="fr">
 <head>
     <?php include_once("template/head.html"); ?>
-    <title>Créer une excursion</title>
+    <title>Hiking - Excursions</title>
 </head>
 <body>
 
