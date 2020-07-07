@@ -57,6 +57,6 @@ $req = $pdo ->prepare($sql);
 $req -> execute($params);
 $req -> closeCursor();
 
-$response["createSuccess"] = "Nouveau guide : $first_name $last_name";
+$response["createSuccess"] = "Nouveau guide : ".htmlentities($first_name)." ".htmlentities($last_name);
 
 echo json_encode($response);

@@ -45,6 +45,6 @@ $req = $pdo ->prepare($sql);
 $req -> execute($params);
 $req -> closeCursor();
 
-$response["createSuccess"] = "$first_name $last_name est désormais membre";
+$response["createSuccess"] = "Nouveau membre : ".htmlentities($first_name)." ".htmlentities($last_name);
 
 echo json_encode($response);
