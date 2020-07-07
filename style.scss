@@ -159,6 +159,13 @@ button{
 }
 
 // TOP BAR_____________________________________________________________
+@media only screen and (max-width:1034px){
+    body>header{
+        align-items: flex-end;
+        padding-bottom: 1rem;
+    }
+}
+
 header{
     background-color: #122025;
     color: #ffeace;
@@ -246,8 +253,6 @@ header{
 
     //RESPONSIVE HEADER
     @media only screen and (max-width:1034px){
-        align-items: flex-end;
-        padding-bottom: 1rem;
 
         #user{
             display: none;
