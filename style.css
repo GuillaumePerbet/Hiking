@@ -369,30 +369,65 @@ main > section table tr td .trash {
   }
 }
 
+#guidesError, #update-guidesError {
+  margin-top: 0.5rem;
+}
+
 #create-form {
   width: 90%;
 }
-#create-form #excursion-fields > div {
+#create-form .excursion-form > div {
   margin: 0 1.5rem;
 }
-#create-form #excursion-fields > div #guidesError {
-  margin-top: 0.5rem;
-}
 @media only screen and (max-width: 1342px) {
-  #create-form #excursion-fields #guides-list > label {
+  #create-form .excursion-form .guides-list > label {
     text-align: center;
   }
-  #create-form #excursion-fields #guides-list > div {
+  #create-form .excursion-form .guides-list > div {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  #create-form #excursion-fields #guides-list > div label {
+  #create-form .excursion-form .guides-list > div label {
     box-sizing: border-box;
     width: 40%;
     margin-left: 3rem;
   }
-  #create-form #excursion-fields #guides-list #guidesError {
+  #create-form .excursion-form .guides-list #guidesError {
+    text-align: center;
+  }
+}
+
+#update-form .excursion-form > div {
+  margin: 0 1.5rem;
+}
+@media only screen and (max-width: 740px) {
+  #update-form .excursion-form > div {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 984px) {
+  #update-form .excursion-form .guides-list > label {
+    text-align: center;
+  }
+  #update-form .excursion-form .guides-list > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #update-form .excursion-form .guides-list > div label {
+    box-sizing: border-box;
+    width: 40%;
+    margin-left: 3rem;
+  }
+}
+@media only screen and (max-width: 984px) and (max-width: 740px) {
+  #update-form .excursion-form .guides-list > div label {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 984px) {
+  #update-form .excursion-form .guides-list #update-guidesError {
     text-align: center;
   }
 }
@@ -432,20 +467,6 @@ main > section table tr td .trash {
 }
 #excursions > section > div > div > div {
   align-self: flex-end;
-}
-
-@media only screen and (min-width: 699px) and (max-width: 1012px) {
-  #update-form > div > div:last-of-type > div {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  #update-form > div > div:last-of-type > div label {
-    flex: 0 0 25%;
-    margin-right: 1rem;
-  }
-}
-#update-form > div > div {
-  margin: 0 1.5rem;
 }
 
 form {

@@ -20,7 +20,7 @@ include_once("formHandler/dbconnect.php");
 
         <section>
             <form id="create-form" class="flex column">
-                <div id="excursion-fields" class="flex wrap evenly start">
+                <div class="excursion-form flex wrap evenly start">
                     <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input type="text" name="name">
@@ -81,7 +81,7 @@ include_once("formHandler/dbconnect.php");
                         <div id="placeError" class="error"></div>
                     </div>
 
-                    <div id="guides-list" class="flex column">
+                    <div class="guides-list flex column">
                         <label>Guides</label>
                         <div class="flex column">
                             <?php
@@ -103,6 +103,7 @@ include_once("formHandler/dbconnect.php");
                         <div id="guidesError" class="error"></div>
                     </div>
                 </div>
+                
                 <input type="submit" value="Créer l'excursion">
             </form>
 
@@ -115,8 +116,8 @@ include_once("formHandler/dbconnect.php");
     <div id="update-modal" class="hidden modal flex center justify-center">
         <div class="flex column center">
             <button class="remove" onclick="hideModal()"></button>
-            <form id="update-form" class="flex column center">
-                <div class="flex wrap justify-center start">
+            <form id="update-form" class="flex column">
+                <div class=" excursion-form flex wrap evenly start">
                     <div class="flex column">
                         <label>Nom de l'excursion</label>
                         <input id="name-update" type="text" name="name">
@@ -177,8 +178,8 @@ include_once("formHandler/dbconnect.php");
                         <div id="update-placeError" class="error"></div>
                     </div>
 
-                    <div class="flex column">
-                        <label>Guides :</label>
+                    <div class="guides-list flex column">
+                        <label>Guides</label>
                         <div class="flex column">
                             <?php
                             //fetch array of guide name and id
@@ -195,8 +196,8 @@ include_once("formHandler/dbconnect.php");
                             <?php
                             }
                             ?>
-                            <div id="update-guidesError" class="error"></div>
                         </div>
+                        <div id="update-guidesError" class="error"></div>
                     </div>
                 </div>
 
