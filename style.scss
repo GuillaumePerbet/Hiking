@@ -323,6 +323,10 @@ nav{
 #login{
     background-color: #122025;
 
+    h1{
+        display: block;
+    }
+
     main{
         align-items: flex-start;
         margin-top: 2rem;
@@ -334,13 +338,13 @@ nav{
         }
     }
 
-    @media only screen and (max-width:394px){
+    @media only screen and (max-width:362px){
         h1{
             font-size: 4rem;
         }
 
         form{
-            padding: 2rem;
+            padding: 1.5rem;
         }
     }
 }

@@ -12,7 +12,7 @@ if(isset($_SESSION["user"])){
 </head>
 <body id="login" class="flex column center">
     
-    <header>
+    <header class="padding0">
         <h1>HIKING</h1>
     </header>
 

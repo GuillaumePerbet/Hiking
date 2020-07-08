@@ -284,6 +284,9 @@ nav ul li a:hover svg {
 #login {
   background-color: #122025;
 }
+#login h1 {
+  display: block;
+}
 #login main {
   align-items: flex-start;
   margin-top: 2rem;
@@ -293,12 +296,12 @@ nav ul li a:hover svg {
   top: -2rem;
   margin: 0;
 }
-@media only screen and (max-width: 394px) {
+@media only screen and (max-width: 362px) {
   #login h1 {
     font-size: 4rem;
   }
   #login form {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 }
 
