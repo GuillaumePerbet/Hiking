@@ -14,13 +14,6 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "back-to-nature";
-  src: url("fonts/back-to-nature.eot");
-  src: local("☺"), url("fonts/back-to-nature.woff") format("woff"), url("fonts/back-to-nature.ttf") format("truetype"), url("fonts/back-to-nature.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "Cacha";
   src: url("fonts/Cacha.eot");
   src: local("☺"), url("fonts/Cacha.woff") format("woff"), url("fonts/Cacha.ttf") format("truetype"), url("fonts/Cacha.svg") format("svg");
