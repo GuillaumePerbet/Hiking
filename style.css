@@ -148,27 +148,6 @@ button {
   margin-right: 0.4rem;
 }
 
-@media only screen and (max-width: 1034px) {
-  body > header {
-    align-items: flex-end;
-    padding-bottom: 1rem;
-  }
-}
-@media only screen and (max-width: 1034px) and (max-width: 534px) {
-  body > header {
-    justify-content: space-between;
-    padding: 2rem;
-  }
-  body > header h1 {
-    display: none;
-  }
-  body > header #menu {
-    margin: 0;
-  }
-  body > header #responsive-deco {
-    margin: 0;
-  }
-}
 header {
   background-color: #122025;
   color: #ffeace;
@@ -210,7 +189,12 @@ header #user a:hover svg {
 }
 header #menu {
   display: none;
-  margin-left: 2rem;
+  margin-left: 5rem;
+}
+@media only screen and (max-width: 718px) {
+  header #menu {
+    margin-left: 2rem;
+  }
 }
 header #menu > svg {
   transition: 0.1s ease-in-out;
@@ -232,7 +216,12 @@ header h1 {
 }
 header #responsive-deco {
   display: none;
-  margin-right: 2rem;
+  margin-right: 5rem;
+}
+@media only screen and (max-width: 718px) {
+  header #responsive-deco {
+    margin-right: 2rem;
+  }
 }
 header #responsive-deco svg {
   transition: 0.1s ease-in-out;
@@ -242,21 +231,40 @@ header #responsive-deco svg {
 header #responsive-deco svg:hover {
   fill: #f69333;
 }
-@media only screen and (max-width: 1034px) {
-  header #user {
+
+@media only screen and (max-width: 1200px) {
+  body > header {
+    align-items: flex-end;
+    padding-bottom: 1rem;
+  }
+  body > header #user {
     display: none;
   }
-  header #menu {
+  body > header #menu {
     display: flex;
   }
-  header h1 {
+  body > header h1 {
     margin: 1rem 0;
   }
-  header #responsive-deco {
+  body > header #responsive-deco {
     display: block;
   }
 }
-
+@media only screen and (max-width: 1200px) and (max-width: 564px) {
+  body > header {
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  body > header h1 {
+    display: none;
+  }
+  body > header #menu {
+    margin: 0;
+  }
+  body > header #responsive-deco {
+    margin: 0;
+  }
+}
 nav {
   color: #ffeace;
   background-color: #122025;
@@ -332,12 +340,12 @@ main > section table {
   width: 100%;
   border-collapse: collapse;
 }
-@media only screen and (max-width: 1034px) {
+@media only screen and (max-width: 1200px) {
   main > section table .phone {
     display: none;
   }
 }
-@media only screen and (max-width: 534px) {
+@media only screen and (max-width: 564px) {
   main > section table .excursion {
     display: none;
   }
@@ -350,7 +358,7 @@ main > section table th {
 main > section table th:first-of-type {
   padding-left: 5rem;
 }
-@media only screen and (max-width: 664px) {
+@media only screen and (max-width: 718px) {
   main > section table th:first-of-type {
     padding-left: 2rem;
   }
@@ -361,7 +369,7 @@ main > section table tr {
 main > section table tr td:first-of-type {
   padding-left: 5rem;
 }
-@media only screen and (max-width: 664px) {
+@media only screen and (max-width: 718px) {
   main > section table tr td:first-of-type {
     padding-left: 2rem;
   }
@@ -377,7 +385,7 @@ main > section table tr td ul li {
 main > section table tr td .trash {
   margin: 1.5rem 0;
 }
-@media only screen and (max-width: 1034px) {
+@media only screen and (max-width: 1200px) {
   main {
     position: relative;
   }

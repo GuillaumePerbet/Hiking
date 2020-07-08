@@ -159,30 +159,6 @@ button{
 }
 
 // TOP BAR_____________________________________________________________
-@media only screen and (max-width:1034px){
-    body>header{
-        align-items: flex-end;
-        padding-bottom: 1rem;
-
-        @media only screen and (max-width:534px){
-            justify-content: space-between;
-            padding: 2rem;
-
-            h1{
-                display: none;
-            }
-
-            #menu{
-                margin: 0;
-            }
-
-            #responsive-deco{
-                margin: 0;
-            }
-        }
-    }
-}
-
 header{
     background-color: #122025;
     color: #ffeace;
@@ -231,7 +207,11 @@ header{
 
     #menu{
         display: none;
-        margin-left: 2rem;
+        margin-left: 5rem;
+
+        @media only screen and (max-width:718px){
+            margin-left: 2rem;
+        }
 
         >svg{
             transition: .1s ease-in-out;
@@ -257,7 +237,11 @@ header{
 
     #responsive-deco{
         display: none;
-        margin-right: 2rem;
+        margin-right: 5rem;
+
+        @media only screen and (max-width:718px){
+            margin-right: 2rem;
+        }
         
         svg{
             transition: 0.1s ease-in-out;
@@ -269,9 +253,13 @@ header{
             }
         }
     }
+}
 
-    //RESPONSIVE HEADER
-    @media only screen and (max-width:1034px){
+//RESPONSIVE HEADER TABLETTE
+@media only screen and (max-width:1200px){
+    body>header{
+        align-items: flex-end;
+        padding-bottom: 1rem;
 
         #user{
             display: none;
@@ -287,6 +275,24 @@ header{
 
         #responsive-deco{
             display: block;
+        }
+
+        //RESPONSIVE HEADER MOBILE
+        @media only screen and (max-width:564px){
+            justify-content: space-between;
+            padding: 2rem;
+
+            h1{
+                display: none;
+            }
+
+            #menu{
+                margin: 0;
+            }
+
+            #responsive-deco{
+                margin: 0;
+            }
         }
     }
 }
@@ -383,14 +389,14 @@ main{
             border-collapse: collapse;
 
             //RESPONSIVE HIDE PHONE COLUMN
-            @media only screen and (max-width:1034px){
+            @media only screen and (max-width:1200px){
                 .phone{
                     display: none;
                 }
             }
 
             //RESPONSIVE HIDE EXCURSION COLUMN
-            @media only screen and (max-width:534px){
+            @media only screen and (max-width:564px){
                 .excursion{
                     display: none;
                 }
@@ -403,7 +409,7 @@ main{
 
                 &:first-of-type{
                     padding-left: 5rem;
-                    @media only screen and (max-width:664px){
+                    @media only screen and (max-width:718px){
                         padding-left: 2rem;
                     }
 
@@ -417,7 +423,7 @@ main{
 
                     &:first-of-type{
                         padding-left: 5rem;
-                        @media only screen and (max-width:664px){
+                        @media only screen and (max-width:718px){
                             padding-left: 2rem;
                         }
                     }
@@ -441,7 +447,7 @@ main{
     }
 
     //RESPONSIVE SECTION
-    @media only screen and (max-width:1034px){
+    @media only screen and (max-width:1200px){
         position: relative;
 
         nav{
@@ -473,6 +479,7 @@ main{
             margin: 0 1.5rem;
         }
     
+        //CREATE FORM FROM 1 TO 2 ROWS
         @media only screen and (max-width:1342px){
             .guides-list{
                 >label{
