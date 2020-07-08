@@ -48,6 +48,10 @@
   justify-content: space-evenly;
 }
 
+.around {
+  justify-content: space-around;
+}
+
 .between {
   justify-content: space-between;
 }
@@ -227,7 +231,7 @@ header #responsive-deco svg:hover {
   fill: #f69333;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1054px) {
   body > header {
     align-items: flex-end;
     padding-bottom: 1rem;
@@ -245,7 +249,7 @@ header #responsive-deco svg:hover {
     display: block;
   }
 }
-@media only screen and (max-width: 1200px) and (max-width: 564px) {
+@media only screen and (max-width: 1054px) and (max-width: 564px) {
   body > header {
     justify-content: space-between;
     padding: 2rem;
@@ -335,7 +339,7 @@ main > section table {
   width: 100%;
   border-collapse: collapse;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1054px) {
   main > section table .phone {
     display: none;
   }
@@ -380,7 +384,7 @@ main > section table tr td ul li {
 main > section table tr td .trash {
   margin: 1.5rem 0;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1054px) {
   main {
     position: relative;
   }
@@ -403,22 +407,28 @@ main > section table tr td .trash {
 
 .excursion-form > div {
   margin: 0 1.5rem;
+  flex: 1;
+  max-width: 16.5rem;
 }
-@media only screen and (max-width: 1342px) {
-  .excursion-form .guides-list > label {
-    text-align: center;
+
+#create-form {
+  box-sizing: border-box;
+  width: 100%;
+}
+@media only screen and (max-width: 1360px) {
+  #create-form .guides-list {
+    max-width: 33rem;
+    flex-basis: 100%;
   }
-  .excursion-form .guides-list > div {
+  #create-form .guides-list > div {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
-  .excursion-form .guides-list > div label {
-    box-sizing: border-box;
-    width: 40%;
-    margin-left: 3rem;
+  #create-form .guides-list > div label {
+    flex-basis: 40%;
   }
-  .excursion-form .guides-list #guidesError {
+  #create-form .guides-list #guidesError {
     text-align: center;
   }
 }

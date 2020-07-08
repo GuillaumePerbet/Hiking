@@ -52,6 +52,10 @@
     justify-content: space-evenly;
 }
 
+.around{
+    justify-content: space-around;
+}
+
 .between{
     justify-content: space-between;
 }
@@ -248,7 +252,7 @@ header{
 }
 
 //HEADER RESPONSIVE TABLETTE
-@media only screen and (max-width:1200px){
+@media only screen and (max-width:1054px){
     body>header{
         align-items: flex-end;
         padding-bottom: 1rem;
@@ -381,7 +385,7 @@ main{
             border-collapse: collapse;
 
             //RESPONSIVE HIDE PHONE COLUMN
-            @media only screen and (max-width:1200px){
+            @media only screen and (max-width:1054px){
                 .phone{
                     display: none;
                 }
@@ -439,7 +443,7 @@ main{
     }
 
     //MAIN SECTION RESPONSIVE
-    @media only screen and (max-width:1200px){
+    @media only screen and (max-width:1054px){
         position: relative;
 
         nav{
@@ -463,34 +467,42 @@ main{
 }
 
 .excursion-form{
-        
+
     >div{
         margin: 0 1.5rem;
+        flex: 1;
+        max-width: 16.5rem;
     }
+}
 
-    //CREATE FORM FROM 1 TO 2 ROWS
-    @media only screen and (max-width:1342px){
-        .guides-list{
-            >label{
-                text-align: center;
-            }
+//EXCURSION FORM TWO ROW VIEW
+@mixin two-rows{
+    .guides-list{
+        max-width: 33rem;
+        flex-basis: 100%;
 
-            >div{
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
+        >div{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
-                label{
-                    box-sizing: border-box;
-                    width: 40%;
-                    margin-left: 3rem;
-                }
-            }
-
-            #guidesError{
-                text-align: center;
+            label{
+                flex-basis: 40%;
             }
         }
+
+        #guidesError{
+            text-align: center;
+        }
+    }
+}
+
+#create-form{
+    box-sizing: border-box;
+    width: 100%;
+
+    @media only screen and (max-width:1360px){
+        @include two-rows;
     }
 }
 
