@@ -159,6 +159,15 @@ button {
     justify-content: space-between;
     padding: 2rem;
   }
+  body > header h1 {
+    display: none;
+  }
+  body > header #menu {
+    margin: 0;
+  }
+  body > header #responsive-deco {
+    margin: 0;
+  }
 }
 header {
   background-color: #122025;
@@ -220,11 +229,6 @@ header h1 {
   text-align: center;
   color: #f69333;
   margin-top: 2rem;
-}
-@media only screen and (max-width: 534px) {
-  header h1 {
-    display: none;
-  }
 }
 header #responsive-deco {
   display: none;

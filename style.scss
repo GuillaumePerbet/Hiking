@@ -167,6 +167,18 @@ button{
         @media only screen and (max-width:534px){
             justify-content: space-between;
             padding: 2rem;
+
+            h1{
+                display: none;
+            }
+
+            #menu{
+                margin: 0;
+            }
+
+            #responsive-deco{
+                margin: 0;
+            }
         }
     }
 }
@@ -241,9 +253,6 @@ header{
         text-align: center;
         color: #f69333;
         margin-top: 2rem;
-        @media only screen and (max-width:534px){
-            display: none;
-        }
     }
 
     #responsive-deco{
