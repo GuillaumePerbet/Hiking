@@ -231,7 +231,7 @@ header #responsive-deco svg:hover {
   fill: #f69333;
 }
 
-@media only screen and (max-width: 1054px) {
+@media only screen and (max-width: 1056px) {
   body > header {
     align-items: flex-end;
     padding-bottom: 1rem;
@@ -249,7 +249,7 @@ header #responsive-deco svg:hover {
     display: block;
   }
 }
-@media only screen and (max-width: 1054px) and (max-width: 564px) {
+@media only screen and (max-width: 1056px) and (max-width: 564px) {
   body > header {
     justify-content: space-between;
     padding: 2rem;
@@ -339,7 +339,7 @@ main > section table {
   width: 100%;
   border-collapse: collapse;
 }
-@media only screen and (max-width: 1054px) {
+@media only screen and (max-width: 1056px) {
   main > section table .phone {
     display: none;
   }
@@ -384,7 +384,7 @@ main > section table tr td ul li {
 main > section table tr td .trash {
   margin: 1.5rem 0;
 }
-@media only screen and (max-width: 1054px) {
+@media only screen and (max-width: 1056px) {
   main {
     position: relative;
   }
@@ -401,133 +401,139 @@ main > section table tr td .trash {
   }
 }
 
-#guidesError, #update-guidesError {
-  margin-top: 0.5rem;
-}
-
-.excursion-form > div {
+.excursion-form > div > div {
   margin: 0 1.5rem;
-  flex: 1;
-  max-width: 16.5rem;
+  width: 16.5rem;
 }
 
-#create-form {
+#excursion #create-form {
   box-sizing: border-box;
   width: 100%;
+  padding-top: 0;
 }
-@media only screen and (max-width: 1360px) {
-  #create-form .guides-list {
+@media only screen and (min-width: 717px) and (max-width: 1360px) {
+  #excursion #create-form .guides-list {
     max-width: 33rem;
     flex-basis: 100%;
   }
-  #create-form .guides-list > div {
+  #excursion #create-form .guides-list > div {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  #create-form .guides-list > div label {
+  #excursion #create-form .guides-list > div label {
     flex-basis: 40%;
   }
-  #create-form .guides-list #guidesError {
+  #excursion #create-form .guides-list #guidesError, #excursion #create-form .guides-list #update-guidesError {
     text-align: center;
   }
-}
-
-@media only screen and (max-width: 602px) {
-  #excursions .edit {
-    display: none;
-  }
-}
-@media only screen and (max-width: 420px) {
-  #update-form {
-    padding: 2rem;
-  }
-}
-#update-form .excursion-form > div {
-  margin: 0 1.5rem;
-}
-@media only screen and (max-width: 740px) {
-  #update-form .excursion-form > div {
-    margin: 0;
-  }
-}
-@media only screen and (max-width: 984px) {
-  #update-form .excursion-form .guides-list > label {
-    text-align: center;
-  }
-  #update-form .excursion-form .guides-list > div {
+  #excursion #create-form #date-place-update {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  #update-form .excursion-form .guides-list > div label {
-    box-sizing: border-box;
-    width: 40%;
-    margin-left: 3rem;
+    justify-content: space-around;
+    flex: 1;
   }
 }
-@media only screen and (max-width: 984px) and (max-width: 740px) {
-  #update-form .excursion-form .guides-list > div label {
-    margin-left: 0;
+@media only screen and (max-width: 716px) {
+  #excursion #create-form {
+    padding: 0;
+  }
+  #excursion #create-form > div {
+    flex-direction: column;
+    align-items: center;
   }
 }
-@media only screen and (max-width: 984px) {
-  #update-form .excursion-form .guides-list #update-guidesError {
-    text-align: center;
-  }
+#excursion #guidesError, #excursion #update-guidesError {
+  margin-top: 0.5rem;
 }
-
-#excursions > section {
+#excursion #excursions > section {
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
   margin: 1rem;
   width: 28rem;
 }
-#excursions > section header {
+#excursion #excursions > section header {
   padding: 1rem;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   display: flex;
   justify-content: space-between;
 }
-#excursions > section header h2 {
+#excursion #excursions > section header h2 {
   margin: 0;
 }
-#excursions > section header div {
+#excursion #excursions > section header div {
   min-width: 11rem;
   text-align: right;
 }
-#excursions > section header .price {
+#excursion #excursions > section header .price {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
-#excursions > section > div {
+#excursion #excursions > section > div {
   padding: 1rem;
 }
-#excursions > section > div > p {
+#excursion #excursions > section > div > p {
   margin-bottom: 1rem;
 }
-#excursions > section > div > div > p {
+#excursion #excursions > section > div > div > p {
   max-width: 20rem;
 }
-#excursions > section > div > div > div {
+#excursion #excursions > section > div > div > div {
   align-self: flex-end;
 }
+@media only screen and (max-height: 666px) {
+  #excursion #excursions > section > div > div .edit {
+    display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  #excursion #excursions > section > div > div .edit {
+    display: none;
+  }
+}
 @media only screen and (max-width: 484px) {
-  #excursions > section {
+  #excursion #excursions > section {
     width: 100%;
   }
-  #excursions > section header {
+  #excursion #excursions > section header {
     flex-direction: column;
   }
-  #excursions > section header div {
+  #excursion #excursions > section header div {
     min-width: 0;
   }
-  #excursions > section header div p {
+  #excursion #excursions > section header div p {
     text-align: left;
   }
-  #excursions > section > div > div {
+  #excursion #excursions > section > div > div {
     flex-direction: column;
+  }
+}
+#excursion #update-modal > div {
+  margin: 1rem;
+}
+@media only screen and (max-width: 1056px) {
+  #excursion #update-modal > div #update-form {
+    padding: 2rem;
+  }
+  #excursion #update-modal > div #update-form .guides-list {
+    max-width: 33rem;
+    flex-basis: 100%;
+  }
+  #excursion #update-modal > div #update-form .guides-list > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #excursion #update-modal > div #update-form .guides-list > div label {
+    flex-basis: 40%;
+  }
+  #excursion #update-modal > div #update-form .guides-list #guidesError, #excursion #update-modal > div #update-form .guides-list #update-guidesError {
+    text-align: center;
+  }
+  #excursion #update-modal > div #update-form #date-place-update {
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
   }
 }
 
@@ -646,7 +652,12 @@ form .btn-error {
 }
 @media only screen and (max-width: 420px) {
   .modal #create-form {
-    padding: 2rem 0.75rem;
+    padding: 2rem 1rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .modal #update-form {
+    padding: 2rem;
   }
 }
 

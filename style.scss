@@ -252,7 +252,7 @@ header{
 }
 
 //HEADER RESPONSIVE TABLETTE
-@media only screen and (max-width:1054px){
+@media only screen and (max-width:1056px){
     body>header{
         align-items: flex-end;
         padding-bottom: 1rem;
@@ -385,7 +385,7 @@ main{
             border-collapse: collapse;
 
             //RESPONSIVE HIDE PHONE COLUMN
-            @media only screen and (max-width:1054px){
+            @media only screen and (max-width:1056px){
                 .phone{
                     display: none;
                 }
@@ -443,7 +443,7 @@ main{
     }
 
     //MAIN SECTION RESPONSIVE
-    @media only screen and (max-width:1054px){
+    @media only screen and (max-width:1056px){
         position: relative;
 
         nav{
@@ -462,21 +462,8 @@ main{
 }
 
 //EXCURSION PAGE_______________________________________________
-#guidesError, #update-guidesError{
-    margin-top: 0.5rem;
-}
-
-.excursion-form{
-
-    >div{
-        margin: 0 1.5rem;
-        flex: 1;
-        max-width: 16.5rem;
-    }
-}
-
-//EXCURSION FORM TWO ROW VIEW
-@mixin two-rows{
+@mixin two-columns{
+    //EXCURSION FORM TWO COLUMN VIEW
     .guides-list{
         max-width: 33rem;
         flex-basis: 100%;
@@ -491,139 +478,143 @@ main{
             }
         }
 
-        #guidesError{
+        #guidesError, #update-guidesError{
             text-align: center;
         }
     }
-}
 
-#create-form{
-    box-sizing: border-box;
-    width: 100%;
-
-    @media only screen and (max-width:1360px){
-        @include two-rows;
+    #date-place-update{
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 1;
     }
 }
 
-//DELETE EXCURSION EDIT OPTION ON SMALL SCREEN
-@media only screen and (max-width:602px){
-    #excursions{
-        .edit{
-            display: none;
-        }
-    }
-}
-
-#update-form{
-    //RESPONSIVE GENERAL UPDATE FORM
-    @media only screen and (max-width:420px){
-        padding: 2rem;
-    }
-
-    //RESPONSIVE EXCURSION UPDATE FORM
-    .excursion-form{
-        
-        >div{
-            margin: 0 1.5rem;
-            @media only screen and (max-width:740px){
-                margin: 0;
-            }
-        }
-    
-        @media only screen and (max-width:984px){
-            .guides-list{
-                >label{
-                    text-align: center;
-                }
-    
-                >div{
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
-    
-                    label{
-                        box-sizing: border-box;
-                        width: 40%;
-                        margin-left: 3rem;
-                        @media only screen and (max-width:740px){
-                            margin-left: 0;
-                        }
-                    }
-                }
-    
-                #update-guidesError{
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
-
-#excursions>section{
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
-    border-radius: 1rem;
-    margin: 1rem;
-    width: 28rem;
-
-    header{
-        padding: 1rem;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
-        display: flex;
-        justify-content: space-between;
-
-        h2{
-            margin: 0;
-        }
-
-        div{
-            min-width: 11rem;
-            text-align: right;
-        }
-
-        .price{
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-    }
+@mixin one-column{
+    //EXCURSION FORM ONE COLUMN VIEW
+    padding: 0;
 
     >div{
-        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
-        >p{
-            margin-bottom: 1rem;
+.excursion-form>div>div{
+    margin: 0 1.5rem;
+    width: 16.5rem;
+}
+
+#excursion{
+
+    #create-form{
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 0;
+
+        @media only screen and (min-width:717px) and (max-width:1360px){
+            @include two-columns;
         }
+    
+        @media only screen and (max-width:716px){
+            @include one-column;
+        }
+    }
+    
+    #guidesError, #update-guidesError{
+        margin-top: 0.5rem;
+    }
 
+    #excursions>section{
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+        border-radius: 1rem;
+        margin: 1rem;
+        width: 28rem;
+    
+        header{
+            padding: 1rem;
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+            display: flex;
+            justify-content: space-between;
+    
+            h2{
+                margin: 0;
+            }
+    
+            div{
+                min-width: 11rem;
+                text-align: right;
+            }
+    
+            .price{
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    
         >div{
-
+            padding: 1rem;
+    
             >p{
-                max-width: 20rem;
+                margin-bottom: 1rem;
+            }
+    
+            >div{
+    
+                >p{
+                    max-width: 20rem;
+                }
+                
+                >div{
+                    align-self: flex-end;
+                }
+
+                //DISABLE EXCURSION UPDATE OPTION
+                @media only screen and (max-height:666px){
+                    .edit{
+                        display: none;
+                    }
+                }
+
+                @media only screen and (max-width:540px){
+                    .edit{
+                        display: none;
+                    }
+                }
+            }
+        }
+    
+        @media only screen and (max-width:484px){
+            width: 100%;
+    
+            header{
+                flex-direction: column;
+    
+                div{
+                    min-width: 0;
+    
+                    p{
+                        text-align: left;
+                    }
+                }
             }
             
-            >div{
-                align-self: flex-end;
+            >div>div{
+                flex-direction: column;
             }
         }
     }
 
-    @media only screen and (max-width:484px){
-        width: 100%;
+    #update-modal>div{
+        margin: 1rem;
 
-        header{
-            flex-direction: column;
+        #update-form{
 
-            div{
-                min-width: 0;
-
-                p{
-                    text-align: left;
-                }
+            @media only screen and (max-width:1056px){
+                @include two-columns;
+                padding: 2rem;
             }
-        }
-        
-        >div>div{
-            flex-direction: column;
         }
     }
 }
@@ -762,7 +753,14 @@ form{
     //CREATE MODAL RESPONSIVE
     #create-form{
         @media only screen and (max-width:420px){
-            padding: 2rem 0.75rem;
+            padding: 2rem 1rem;
+        }
+    }
+
+    //UPDATE MODAL RESPONSIVE
+    #update-form{
+        @media only screen and (max-width:420px){
+            padding: 2rem;
         }
     }
 }
