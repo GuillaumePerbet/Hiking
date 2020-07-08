@@ -154,7 +154,7 @@ button {
     padding-bottom: 1rem;
   }
 }
-@media only screen and (max-width: 1034px) and (max-width: 482px) {
+@media only screen and (max-width: 1034px) and (max-width: 534px) {
   body > header {
     justify-content: space-between;
     padding: 2rem;
@@ -221,7 +221,7 @@ header h1 {
   color: #f69333;
   margin-top: 2rem;
 }
-@media only screen and (max-width: 482px) {
+@media only screen and (max-width: 534px) {
   header h1 {
     display: none;
   }
@@ -233,6 +233,7 @@ header #responsive-deco {
 header #responsive-deco svg {
   transition: 0.1s ease-in-out;
   cursor: pointer;
+  transform: translateY(0.25rem);
 }
 header #responsive-deco svg:hover {
   fill: #f69333;
@@ -332,7 +333,7 @@ main > section table {
     display: none;
   }
 }
-@media only screen and (max-width: 504px) {
+@media only screen and (max-width: 534px) {
   main > section table .excursion {
     display: none;
   }

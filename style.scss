@@ -164,7 +164,7 @@ button{
         align-items: flex-end;
         padding-bottom: 1rem;
 
-        @media only screen and (max-width:482px){
+        @media only screen and (max-width:534px){
             justify-content: space-between;
             padding: 2rem;
         }
@@ -241,7 +241,7 @@ header{
         text-align: center;
         color: #f69333;
         margin-top: 2rem;
-        @media only screen and (max-width:482px){
+        @media only screen and (max-width:534px){
             display: none;
         }
     }
@@ -253,6 +253,7 @@ header{
         svg{
             transition: 0.1s ease-in-out;
             cursor: pointer;
+            transform: translateY(0.25rem);
 
             &:hover{
                 fill: #f69333;
@@ -380,7 +381,7 @@ main{
             }
 
             //RESPONSIVE HIDE EXCURSION COLUMN
-            @media only screen and (max-width:504px){
+            @media only screen and (max-width:534px){
                 .excursion{
                     display: none;
                 }
