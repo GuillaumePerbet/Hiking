@@ -482,7 +482,7 @@ main > section table tr td .trash {
 #excursion #excursions > section > div > div > div {
   align-self: flex-end;
 }
-@media only screen and (max-height: 666px) {
+@media only screen and (max-height: 650px) {
   #excursion #excursions > section > div > div .edit {
     display: none;
   }
