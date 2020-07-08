@@ -393,6 +393,7 @@ main > section table tr td .trash {
     border-bottom-right-radius: 1rem;
     left: -100%;
     transition: 0.5s;
+    z-index: 1;
   }
   main section {
     position: initial;
