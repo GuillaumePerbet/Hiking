@@ -128,11 +128,6 @@ button {
   background-image: url("media/edit.png");
 }
 
-@media only screen and (max-width: 602px) {
-  #excursions .edit {
-    display: none;
-  }
-}
 .remove {
   width: 1rem;
   height: 1rem;
@@ -406,31 +401,38 @@ main > section table tr td .trash {
   margin-top: 0.5rem;
 }
 
-#create-form {
-  width: 90%;
-}
-#create-form .excursion-form > div {
+.excursion-form > div {
   margin: 0 1.5rem;
 }
 @media only screen and (max-width: 1342px) {
-  #create-form .excursion-form .guides-list > label {
+  .excursion-form .guides-list > label {
     text-align: center;
   }
-  #create-form .excursion-form .guides-list > div {
+  .excursion-form .guides-list > div {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  #create-form .excursion-form .guides-list > div label {
+  .excursion-form .guides-list > div label {
     box-sizing: border-box;
     width: 40%;
     margin-left: 3rem;
   }
-  #create-form .excursion-form .guides-list #guidesError {
+  .excursion-form .guides-list #guidesError {
     text-align: center;
   }
 }
 
+@media only screen and (max-width: 602px) {
+  #excursions .edit {
+    display: none;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #update-form {
+    padding: 2rem;
+  }
+}
 #update-form .excursion-form > div {
   margin: 0 1.5rem;
 }
@@ -615,11 +617,18 @@ form .btn-error {
   top: 0;
   margin: 1rem;
 }
+@media only screen and (max-width: 420px) {
+  .modal #create-form {
+    padding: 2rem 0.75rem;
+  }
+}
 
 #delete-modal > div {
+  margin: 2rem;
   padding: 3rem;
 }
 #delete-modal > div p {
+  text-align: center;
   margin-bottom: 1rem;
 }
 #delete-modal > div #confirm {

@@ -135,14 +135,6 @@ button{
     background-image: url("media/edit.png");
 }
 
-@media only screen and (max-width:602px){
-    #excursions{
-        .edit{
-            display: none;
-        }
-    }
-}
-
 .remove{
     width: 1rem;
     height: 1rem;
@@ -255,7 +247,7 @@ header{
     }
 }
 
-//RESPONSIVE HEADER TABLETTE
+//HEADER RESPONSIVE TABLETTE
 @media only screen and (max-width:1200px){
     body>header{
         align-items: flex-end;
@@ -335,7 +327,7 @@ nav{
     }
 }
 
-//LOGIN________________________________________________________
+//LOGIN PAGE________________________________________________________
 #login{
     background-color: #122025;
 
@@ -446,7 +438,7 @@ main{
         }
     }
 
-    //RESPONSIVE SECTION
+    //MAIN SECTION RESPONSIVE
     @media only screen and (max-width:1200px){
         position: relative;
 
@@ -470,44 +462,54 @@ main{
     margin-top: 0.5rem;
 }
 
-#create-form{
-    width: 90%;
-    
-    .excursion-form{
+.excursion-form{
         
-        >div{
-            margin: 0 1.5rem;
-        }
-    
-        //CREATE FORM FROM 1 TO 2 ROWS
-        @media only screen and (max-width:1342px){
-            .guides-list{
-                >label{
-                    text-align: center;
+    >div{
+        margin: 0 1.5rem;
+    }
+
+    //CREATE FORM FROM 1 TO 2 ROWS
+    @media only screen and (max-width:1342px){
+        .guides-list{
+            >label{
+                text-align: center;
+            }
+
+            >div{
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+                label{
+                    box-sizing: border-box;
+                    width: 40%;
+                    margin-left: 3rem;
                 }
-    
-                >div{
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
-    
-                    label{
-                        box-sizing: border-box;
-                        width: 40%;
-                        margin-left: 3rem;
-                    }
-                }
-    
-                #guidesError{
-                    text-align: center;
-                }
+            }
+
+            #guidesError{
+                text-align: center;
             }
         }
     }
 }
 
-#update-form{
+//DELETE EXCURSION EDIT OPTION ON SMALL SCREEN
+@media only screen and (max-width:602px){
+    #excursions{
+        .edit{
+            display: none;
+        }
+    }
+}
 
+#update-form{
+    //RESPONSIVE GENERAL UPDATE FORM
+    @media only screen and (max-width:420px){
+        padding: 2rem;
+    }
+
+    //RESPONSIVE EXCURSION UPDATE FORM
     .excursion-form{
         
         >div{
@@ -724,13 +726,22 @@ form{
             margin: 1rem;
         }
     }
+
+    //CREATE MODAL RESPONSIVE
+    #create-form{
+        @media only screen and (max-width:420px){
+            padding: 2rem 0.75rem;
+        }
+    }
 }
 
 #delete-modal{
     >div{
+        margin: 2rem;
         padding: 3rem;
 
         p{
+            text-align: center;
             margin-bottom: 1rem;
         }
 
