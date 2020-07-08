@@ -594,6 +594,26 @@ main{
             }
         }
     }
+
+    @media only screen and (max-width:484px){
+        width: 100%;
+
+        header{
+            flex-direction: column;
+
+            div{
+                min-width: 0;
+
+                p{
+                    text-align: left;
+                }
+            }
+        }
+        
+        >div>div{
+            flex-direction: column;
+        }
+    }
 }
 
 //FORMS__________________________________________________

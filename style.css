@@ -503,6 +503,23 @@ main > section table tr td .trash {
 #excursions > section > div > div > div {
   align-self: flex-end;
 }
+@media only screen and (max-width: 484px) {
+  #excursions > section {
+    width: 100%;
+  }
+  #excursions > section header {
+    flex-direction: column;
+  }
+  #excursions > section header div {
+    min-width: 0;
+  }
+  #excursions > section header div p {
+    text-align: left;
+  }
+  #excursions > section > div > div {
+    flex-direction: column;
+  }
+}
 
 form {
   padding: 3rem;
