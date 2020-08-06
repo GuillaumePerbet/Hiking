@@ -681,13 +681,16 @@ form .btn-error {
 }
 #delete-modal > div p {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 #delete-modal > div #confirm {
   margin-right: 1rem;
 }
 #delete-modal > div #confirm::before {
   content: url("media/confirm.png");
+}
+#delete-modal > div #decline {
+  margin-left: 1rem;
 }
 #delete-modal > div #decline::before {
   content: url("media/decline.png");
