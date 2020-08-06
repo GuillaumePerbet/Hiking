@@ -269,10 +269,10 @@ nav ul li a svg {
   transition: 0.1s ease-in-out;
   margin-right: 1rem;
 }
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
   color: #f69333;
 }
-nav ul li a:hover svg {
+nav ul li a:hover svg, nav ul li a.active svg {
   fill: #f69333;
 }
 
