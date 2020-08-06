@@ -121,14 +121,12 @@ include_once("formHandler/dbconnect.php");
                         <input id="name-update" type="text" name="name">
                         <div id="update-nameError" class="error"></div>
         
-                        <label class="flex between">Prix de l'excursion
+                        <label>Prix de l'excursion</label>
                         <input id="price-update" type="number" name="price">
-                        </label>
                         <div id="update-priceError" class="error"></div>
         
-                        <label class="flex between">Nombre de places
+                        <label>Nombre de places</label>
                         <input id="maxHikers-update" type="number" name="max_hikers">
-                        </label>
                         <div id="update-maxHikersError" class="error"></div>
                     </div>
     

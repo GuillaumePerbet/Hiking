@@ -347,6 +347,10 @@ nav{
             border-radius: 1rem;
             top: -2rem;
             margin: 0;
+
+            #login-form{
+                min-width: 50vw;
+            }
         }
     }
 
@@ -466,7 +470,6 @@ main{
 @mixin two-columns{
     //EXCURSION FORM TWO COLUMN VIEW
     .guides-list{
-        max-width: 33rem;
         flex-basis: 100%;
 
         >div{
@@ -503,7 +506,6 @@ main{
 
 .excursion-form>div>div{
     margin: 0 1.5rem;
-    width: 16.5rem;
 }
 
 #excursion{
@@ -512,6 +514,10 @@ main{
         box-sizing: border-box;
         width: 100%;
         padding-top: 0;
+
+        >div>div{
+            flex-basis: 30%;
+        }
 
         @media only screen and (min-width:717px) and (max-width:1360px){
             @include two-columns;
@@ -611,6 +617,11 @@ main{
         margin: 1rem;
 
         #update-form{
+            min-width: 80vw;
+
+            >div>div{
+                flex-basis: 30%;
+            }
 
             @media only screen and (max-width:1056px){
                 @include two-columns;
@@ -746,6 +757,8 @@ form{
 
     //CREATE MODAL RESPONSIVE
     #create-form{
+        min-width: 50vw;
+
         @media only screen and (max-width:420px){
             padding: 2rem 1rem;
         }
@@ -753,9 +766,16 @@ form{
 
     //UPDATE MODAL RESPONSIVE
     #update-form{
+        min-width: 50vw;
+
         @media only screen and (max-width:420px){
             padding: 2rem;
         }
+    }
+
+    //REGISTRATION FORM
+    #registration-form{
+        min-width: 50vw;
     }
 }
 
@@ -763,6 +783,7 @@ form{
     >div{
         margin: 2rem;
         padding: 3rem;
+        min-width: 50vw;
 
         p{
             text-align: center;

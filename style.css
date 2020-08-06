@@ -308,6 +308,9 @@ nav ul li a:hover svg {
   top: -2rem;
   margin: 0;
 }
+#login main section #login-form {
+  min-width: 50vw;
+}
 @media only screen and (max-width: 362px) {
   #login h1 {
     font-size: 4rem;
@@ -404,7 +407,6 @@ main > section table tr td .trash {
 
 .excursion-form > div > div {
   margin: 0 1.5rem;
-  width: 16.5rem;
 }
 
 #excursion #create-form {
@@ -412,9 +414,11 @@ main > section table tr td .trash {
   width: 100%;
   padding-top: 0;
 }
+#excursion #create-form > div > div {
+  flex-basis: 30%;
+}
 @media only screen and (min-width: 717px) and (max-width: 1360px) {
   #excursion #create-form .guides-list {
-    max-width: 33rem;
     flex-basis: 100%;
   }
   #excursion #create-form .guides-list > div {
@@ -512,12 +516,17 @@ main > section table tr td .trash {
 #excursion #update-modal > div {
   margin: 1rem;
 }
+#excursion #update-modal > div #update-form {
+  min-width: 80vw;
+}
+#excursion #update-modal > div #update-form > div > div {
+  flex-basis: 30%;
+}
 @media only screen and (max-width: 1056px) {
   #excursion #update-modal > div #update-form {
     padding: 2rem;
   }
   #excursion #update-modal > div #update-form .guides-list {
-    max-width: 33rem;
     flex-basis: 100%;
   }
   #excursion #update-modal > div #update-form .guides-list > div {
@@ -645,20 +654,30 @@ form .btn-error {
   top: 0;
   margin: 1rem;
 }
+.modal #create-form {
+  min-width: 50vw;
+}
 @media only screen and (max-width: 420px) {
   .modal #create-form {
     padding: 2rem 1rem;
   }
+}
+.modal #update-form {
+  min-width: 50vw;
 }
 @media only screen and (max-width: 420px) {
   .modal #update-form {
     padding: 2rem;
   }
 }
+.modal #registration-form {
+  min-width: 50vw;
+}
 
 #delete-modal > div {
   margin: 2rem;
   padding: 3rem;
+  min-width: 50vw;
 }
 #delete-modal > div p {
   text-align: center;
