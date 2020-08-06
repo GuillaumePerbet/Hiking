@@ -632,11 +632,10 @@ form{
         color: #585B6E;
         font-size: 1.25rem;
         border: 1px solid #D7DAE2;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         box-shadow: 0 2px 30px rgba(0,0,0,0.15);
         margin-bottom: 1rem;
-        margin-left: 1rem;
-        min-width: 14rem;
+        padding: 1rem;
     }
 
     .custom-checkbox{
@@ -679,22 +678,17 @@ form{
         color: #585B6E;
         font-size: 1.25rem;
         border: 1px solid #D7DAE2;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         box-shadow: 0 2px 30px rgba(0,0,0,0.15);
         margin-bottom: 1rem;
-        margin-left: 1rem;
+        padding: 1rem;
     
         &[type="number"]{
-            width: 5rem;
             -moz-appearance: textfield;
     
             &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
                 -webkit-appearance: none;
             }
-        }
-    
-        &[type="date"]{
-            width: 14rem;
         }
     
         &[type="submit"]{
@@ -705,7 +699,7 @@ form{
             color: #122025;
             background-color: #f69333;
             border: none;
-            padding: 0.75rem 1.75rem;
+            padding: 1rem 1.75rem;
             margin: 0;
             align-self: center;
             cursor: pointer;
@@ -719,7 +713,6 @@ form{
     }
 
     .error{
-        margin-left: 1rem;
         height: 1.25rem;
         color: #E43137;
         font-size: 0.85rem;

@@ -482,7 +482,7 @@ main > section table tr td .trash {
 #excursion #excursions > section > div > div > div {
   align-self: flex-end;
 }
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 680px) {
   #excursion #excursions > section > div > div .edit {
     display: none;
   }
@@ -548,11 +548,10 @@ form select {
   color: #585B6E;
   font-size: 1.25rem;
   border: 1px solid #D7DAE2;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
-  margin-left: 1rem;
-  min-width: 14rem;
+  padding: 1rem;
 }
 form .custom-checkbox {
   display: block;
@@ -590,20 +589,16 @@ form input {
   color: #585B6E;
   font-size: 1.25rem;
   border: 1px solid #D7DAE2;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
-  margin-left: 1rem;
+  padding: 1rem;
 }
 form input[type=number] {
-  width: 5rem;
   -moz-appearance: textfield;
 }
 form input[type=number]::-webkit-outer-spin-button, form input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-}
-form input[type=date] {
-  width: 14rem;
 }
 form input[type=submit] {
   font-family: "Segoe-UI-Bold", sans-serif;
@@ -613,7 +608,7 @@ form input[type=submit] {
   color: #122025;
   background-color: #f69333;
   border: none;
-  padding: 0.75rem 1.75rem;
+  padding: 1rem 1.75rem;
   margin: 0;
   align-self: center;
   cursor: pointer;
@@ -624,7 +619,6 @@ form input[type=submit]:hover {
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
 form .error {
-  margin-left: 1rem;
   height: 1.25rem;
   color: #E43137;
   font-size: 0.85rem;

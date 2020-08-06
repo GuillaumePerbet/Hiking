@@ -26,14 +26,12 @@ include_once("formHandler/dbconnect.php");
                         <input type="text" name="name">
                         <div id="nameError" class="error"></div>
         
-                        <label class="flex between">Prix de l'excursion
+                        <label>Prix de l'excursion</label>
                         <input type="number" name="price">
-                        </label>
                         <div id="priceError" class="error"></div>
         
-                        <label class="flex between">Nombre de places
+                        <label>Nombre de places</label>
                         <input type="number" name="max_hikers">
-                        </label>
                         <div id="maxHikersError" class="error"></div>
                     </div>
     
