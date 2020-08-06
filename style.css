@@ -676,7 +676,7 @@ form .btn-error {
 
 #delete-modal > div {
   margin: 2rem;
-  padding: 3rem;
+  padding: 5rem 3rem;
   min-width: 50vw;
 }
 #delete-modal > div p {
