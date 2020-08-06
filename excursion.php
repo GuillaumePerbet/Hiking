@@ -27,7 +27,7 @@ include_once("formHandler/dbconnect.php");
         <section>
             <form id="create-form" class="excursion-form flex column">
                 <div class="flex wrap evenly start">
-                    <div class="flex column">
+                    <div class="flex column excursion-description">
                         <label>Nom de l'excursion</label>
                         <input type="text" name="name">
                         <div id="nameError" class="error"></div>
@@ -41,7 +41,7 @@ include_once("formHandler/dbconnect.php");
                         <div id="maxHikersError" class="error"></div>
                     </div>
     
-                    <div class="flex column">
+                    <div class="flex column excursion-description">
                         <label>Date de début</label>
                         <input type="date" name="departure_date">
             
@@ -122,7 +122,7 @@ include_once("formHandler/dbconnect.php");
             <button class="remove" onclick="hideModal()"></button>
             <form id="update-form" class="excursion-form flex column">
                 <div class="flex wrap evenly start">
-                    <div class="flex column">
+                    <div class="flex column excursion-description">
                         <label>Nom de l'excursion</label>
                         <input id="name-update" type="text" name="name">
                         <div id="update-nameError" class="error"></div>
@@ -136,17 +136,15 @@ include_once("formHandler/dbconnect.php");
                         <div id="update-maxHikersError" class="error"></div>
                     </div>
     
-                    <div id="date-place-update" class="flex column">
-                        <div class="flex column">
-                            <label>Date de début</label>
-                            <input id="departureDate-update" type="date" name="departure_date">
-                
-                            <label>Date de fin</label>
-                            <input id="arrivalDate-update" type="date" name="arrival_date">
-    
-                            <div id="update-dateError" class="error"></div>
-                        </div>
-                    
+                    <div class="flex column excursion-description">
+                        <label>Date de début</label>
+                        <input id="departureDate-update" type="date" name="departure_date">
+            
+                        <label>Date de fin</label>
+                        <input id="arrivalDate-update" type="date" name="arrival_date">
+
+                        <div id="update-dateError" class="error"></div>
+                       
                         <?php
                         //fetch array of place name and id
                         $req = $pdo->query("SELECT id,name FROM place");
@@ -154,34 +152,32 @@ include_once("formHandler/dbconnect.php");
                         $req -> closeCursor();
                         ?>
     
-                        <div class="flex column">
-                            <label>Point de départ</label>
-                            <select id="departurePlace-update" name="departure_place_id">
-                                <?php
-                                foreach($places as $place){
-                                ?>
-                                    <option value="<?=$place['id']?>">
-                                        <?=htmlentities($place['name'])?>
-                                    </option>
-                                <?php
-                                }
-                                ?>
-                            </select>
-                
-                            <label>Point d'arrivée</label>
-                            <select id="arrivalPlace-update" name="arrival_place_id">
-                                <?php
-                                foreach($places as $place){
-                                ?>
-                                    <option value="<?=$place['id']?>">
-                                        <?=htmlentities($place['name'])?>
-                                    </option>
-                                <?php
-                                }
-                                ?>
-                            </select>
-                            <div id="update-placeError" class="error"></div>
-                        </div>
+                        <label>Point de départ</label>
+                        <select id="departurePlace-update" name="departure_place_id">
+                            <?php
+                            foreach($places as $place){
+                            ?>
+                                <option value="<?=$place['id']?>">
+                                    <?=htmlentities($place['name'])?>
+                                </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+            
+                        <label>Point d'arrivée</label>
+                        <select id="arrivalPlace-update" name="arrival_place_id">
+                            <?php
+                            foreach($places as $place){
+                            ?>
+                                <option value="<?=$place['id']?>">
+                                    <?=htmlentities($place['name'])?>
+                                </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <div id="update-placeError" class="error"></div>
                     </div>
 
                     <div class="guides-list flex column">
