@@ -41,3 +41,10 @@ function hideModal(){
         modal.classList.add("hidden");
     }
 }
+
+//HODE ON CLIK AROUND
+for(let modal of modals){
+    modal.addEventListener('click',()=>hideModal());
+    const content = modal.getElementsByTagName('div')[0];
+    content.addEventListener('click', (e)=>e.stopPropagation());
+}
