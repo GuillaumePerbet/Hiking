@@ -315,8 +315,8 @@ nav ul li a:hover svg {
   #login h1 {
     font-size: 4rem;
   }
-  #login form {
-    padding: 1.5rem;
+  #login #login-form {
+    padding: 5rem 1.25rem;
   }
 }
 
