@@ -101,23 +101,6 @@ button {
   padding: 0;
 }
 
-.large-btn {
-  font-family: "Segoe-UI-Bold", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  border-radius: 2rem;
-  color: #122025;
-  background-color: #f69333;
-  padding: 0.75rem 1.75rem;
-  margin: 0;
-  align-self: center;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease-in-out;
-}
-.large-btn:hover {
-  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
-}
-
 .medium-btn {
   width: 2rem;
   height: 2rem;
@@ -316,7 +299,7 @@ nav ul li a:hover svg {
     font-size: 4rem;
   }
   #login #login-form {
-    padding: 5rem 1.25rem;
+    padding: 5rem 1.5rem;
   }
 }
 
@@ -548,7 +531,7 @@ main > section table tr td .trash {
 }
 
 form {
-  padding: 5rem 3rem;
+  padding: 5rem;
 }
 form label {
   margin-bottom: 0.5rem;
@@ -627,6 +610,12 @@ form input[type=submit] {
 form input[type=submit]:hover {
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 370px) {
+  form input[type=submit] {
+    letter-spacing: 0.1rem;
+    padding: 1rem 1.25rem;
+  }
+}
 form .error {
   height: 1.25rem;
   color: #E43137;
@@ -654,24 +643,16 @@ form .btn-error {
   top: 0;
   margin: 1rem;
 }
-.modal #create-form {
-  min-width: 50vw;
+.modal #create-form, .modal #update-form {
+  min-width: 60vw;
 }
-@media only screen and (max-width: 420px) {
-  .modal #create-form {
-    padding: 2rem 1rem;
-  }
-}
-.modal #update-form {
-  min-width: 50vw;
-}
-@media only screen and (max-width: 420px) {
-  .modal #update-form {
-    padding: 2rem;
+@media only screen and (max-width: 490px) {
+  .modal #create-form, .modal #update-form {
+    padding: 5rem 1.75rem;
   }
 }
 .modal #registration-form {
-  min-width: 50vw;
+  min-width: 60vw;
 }
 
 #delete-modal > div {
