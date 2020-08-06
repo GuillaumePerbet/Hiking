@@ -292,14 +292,16 @@ nav ul li a:hover svg, nav ul li a.active svg {
   margin: 0;
 }
 #login main section #login-form {
-  min-width: 50vw;
+  min-width: 60vw;
+}
+@media only screen and (max-width: 490px) {
+  #login main section #login-form {
+    padding: 5rem 1.75rem;
+  }
 }
 @media only screen and (max-width: 362px) {
   #login h1 {
     font-size: 4rem;
-  }
-  #login #login-form {
-    padding: 5rem 1.5rem;
   }
 }
 
