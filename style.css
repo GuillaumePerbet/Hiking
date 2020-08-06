@@ -641,18 +641,15 @@ form .btn-error {
   position: absolute;
   right: 0;
   top: 0;
-  margin: 1rem;
+  margin: 2rem;
 }
-.modal #create-form, .modal #update-form {
+.modal #create-form, .modal #update-form, .modal #registration-form {
   min-width: 60vw;
 }
 @media only screen and (max-width: 490px) {
-  .modal #create-form, .modal #update-form {
+  .modal #create-form, .modal #update-form, .modal #registration-form {
     padding: 5rem 1.75rem;
   }
-}
-.modal #registration-form {
-  min-width: 60vw;
 }
 
 #delete-modal > div {

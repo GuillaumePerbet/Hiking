@@ -738,22 +738,17 @@ form{
             position: absolute;
             right: 0;
             top: 0;
-            margin: 1rem;
+            margin: 2rem;
         }
     }
 
     //CREATE AND UPDATE MODAL RESPONSIVE
-    #create-form, #update-form{
+    #create-form, #update-form, #registration-form{
         min-width: 60vw;
 
         @media only screen and (max-width:490px){
             padding: 5rem 1.75rem;
         }
-    }
-
-    //REGISTRATION FORM
-    #registration-form{
-        min-width: 60vw;
     }
 }
 
