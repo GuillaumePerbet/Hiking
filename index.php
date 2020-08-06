@@ -20,10 +20,10 @@ if(isset($_SESSION["user"])){
         <section class="padding0">
                 <form id="login-form" class="flex column justify-center" action="">
                     <label for="user">Utilisateur</label>
-                    <input type="text" name="user">
+                    <input type="text" name="user" placeholder="administrateur">
                     <div id="userError" class="error"></div>
                     <label for="password">Mot de passe</label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="root">
                     <div id="passwordError" class="error"></div>
                     <input type="submit" value="Connexion">
                 </form>
