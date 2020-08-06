@@ -434,6 +434,12 @@ main > section table tr td .trash {
     text-align: left;
   }
 }
+@media only screen and (max-width: 562px) {
+  #excursion #create-form {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 #excursion #guidesError, #excursion #update-guidesError {
   margin-top: 0.5rem;
 }

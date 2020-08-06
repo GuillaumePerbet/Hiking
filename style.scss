@@ -515,6 +515,11 @@ main{
         @media only screen and (max-width:718px){
             @include one-column;
         }
+
+        @media only screen and (max-width:562px){
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
     
     #guidesError, #update-guidesError{
