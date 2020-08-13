@@ -28,7 +28,7 @@ foreach($hikers as $hiker){
         $excursionList.=
             "<li>
                 <button class='remove' onclick='unregister({$hiker['id']},{$excursion['id']})'></button>"
-                .htmlentities($excursion['name']).
+                .htmlspecialchars($excursion['name']).
             "</li>";
     }
     $excursionList .=
@@ -42,12 +42,12 @@ foreach($hikers as $hiker){
                 <button class='medium-btn trash' onclick='showDeleteModal({$hiker['id']})'></button>
                 <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($hiker).")'></button>
             </td>
-            <td>".htmlentities($hiker['last_name'])." ".htmlentities($hiker['first_name'])."</td>
+            <td>".htmlspecialchars($hiker['last_name'])." ".htmlspecialchars($hiker['first_name'])."</td>
             <td class='excursion'>$excursionList</td>
         </tr>";
 
     //create select option
-    $response["select"].="<option value='{$hiker['id']}'>".htmlentities($hiker['last_name'])." ".htmlentities($hiker['first_name'])."</option>";
+    $response["select"].="<option value='{$hiker['id']}'>".htmlspecialchars($hiker['last_name'])." ".htmlspecialchars($hiker['first_name'])."</option>";
 }
 
 echo json_encode($response);

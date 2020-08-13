@@ -50,17 +50,17 @@ foreach($excursions as $excursion){
     $response["list"].=
         "<section>
             <header>
-                <h2>".htmlentities($excursion['name'])."</h2>
+                <h2>".htmlspecialchars($excursion['name'])."</h2>
                 <div>
                     <p class='price'>".$excursion['price']."€</p>
                     <p>Inscriptions : ".$hikers_number."/".$excursion['max_hikers']."</p>
                 </div>
             </header>
             <div>
-                <p>Départ le ".$excursion['departure_date']." de la région ".htmlentities($departure_place)."</p>
-                <p>Arrivée le ".$excursion['arrival_date']." à la région ".htmlentities($arrival_place)."</p>
+                <p>Départ le ".$excursion['departure_date']." de la région ".htmlspecialchars($departure_place)."</p>
+                <p>Arrivée le ".$excursion['arrival_date']." à la région ".htmlspecialchars($arrival_place)."</p>
                 <div class='flex between'>
-                    <p>Guides : ".htmlentities($guideNames)."</p>
+                    <p>Guides : ".htmlspecialchars($guideNames)."</p>
                     <div>
                         <button class='medium-btn trash' onclick='showDeleteModal({$excursion['id']})'></button>
                         <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($excursion).")'></button>

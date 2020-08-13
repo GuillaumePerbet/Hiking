@@ -116,6 +116,6 @@ foreach ($guide_ids as $guide_id){
     $req -> closeCursor();
 }
 
-$response["createSuccess"] = "Nouvelle excursion : ".htmlentities($name);
+$response["createSuccess"] = "Nouvelle excursion : ".htmlspecialchars($name);
 
 echo json_encode($response);

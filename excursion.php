@@ -63,7 +63,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($places as $place){
                             ?>
                                 <option value="<?=$place['id']?>">
-                                    <?=htmlentities($place['name'])?>
+                                    <?=htmlspecialchars($place['name'])?>
                                 </option>
                             <?php
                             }
@@ -76,7 +76,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($places as $place){
                             ?>
                                 <option value="<?=$place['id']?>">
-                                    <?=htmlentities($place['name'])?>
+                                    <?=htmlspecialchars($place['name'])?>
                                 </option>
                             <?php
                             }
@@ -96,7 +96,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($guides as $guide){
                             ?>
                                 <label class="custom-checkbox">
-                                    <?=htmlentities($guide['first_name'])?> <?=htmlentities($guide['last_name'])?>
+                                    <?=htmlspecialchars($guide['first_name'])?> <?=htmlspecialchars($guide['last_name'])?>
                                     <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
                                     <span></span>
                                 </label>
@@ -158,7 +158,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($places as $place){
                             ?>
                                 <option value="<?=$place['id']?>">
-                                    <?=htmlentities($place['name'])?>
+                                    <?=htmlspecialchars($place['name'])?>
                                 </option>
                             <?php
                             }
@@ -171,7 +171,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($places as $place){
                             ?>
                                 <option value="<?=$place['id']?>">
-                                    <?=htmlentities($place['name'])?>
+                                    <?=htmlspecialchars($place['name'])?>
                                 </option>
                             <?php
                             }
@@ -191,7 +191,7 @@ include_once("formHandler/dbconnect.php");
                             foreach($guides as $guide){
                             ?>
                                 <label class="custom-checkbox">
-                                    <?=htmlentities($guide['first_name'])?> <?=htmlentities($guide['last_name'])?>
+                                    <?=htmlspecialchars($guide['first_name'])?> <?=htmlspecialchars($guide['last_name'])?>
                                     <input type='checkbox' name='guide_ids[]' value='<?=$guide['id']?>'>
                                     <span></span>
                                 </label>

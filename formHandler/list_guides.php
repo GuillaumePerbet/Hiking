@@ -22,7 +22,7 @@ foreach($guides as $guide){
     //create html list of excursions
     $excursionList = "<ul>";
     foreach($excursions as $excursion){
-        $excursionList.="<li>".htmlentities($excursion['name'])."</li>";
+        $excursionList.="<li>".htmlspecialchars($excursion['name'])."</li>";
     }
     $excursionList .= "</ul>";
 
@@ -33,7 +33,7 @@ foreach($guides as $guide){
                 <button class='medium-btn trash' onclick='showDeleteModal({$guide['id']})'></button>
                 <button class='medium-btn edit' onclick='showUpdateModal(".json_encode($guide).")'></button>
             </td>
-            <td>".htmlentities($guide['last_name'])." ".htmlentities($guide['first_name'])."</td>
+            <td>".htmlspecialchars($guide['last_name'])." ".htmlspecialchars($guide['first_name'])."</td>
             <td class='phone'>{$guide['phone']}</td>
             <td class='excursion'>$excursionList</td>
             

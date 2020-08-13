@@ -104,7 +104,7 @@ if(!isset($_SESSION["user"])){
                     foreach($excursions as $excursion){
                     ?>
                         <option value="<?=$excursion['id']?>">
-                            <?=htmlentities($excursion['name'])?>
+                            <?=htmlspecialchars($excursion['name'])?>
                         </option>
                     <?php
                     }

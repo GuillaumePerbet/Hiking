@@ -127,6 +127,6 @@ foreach ($guide_ids as $guide_id){
     $req -> closeCursor();
 }
 
-$response["updateSuccess"] = "Excursion ".htmlentities($name)." modifiée";
+$response["updateSuccess"] = "Excursion ".htmlspecialchars($name)." modifiée";
 
 echo json_encode($response);

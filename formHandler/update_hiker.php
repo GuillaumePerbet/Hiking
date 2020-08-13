@@ -55,6 +55,6 @@ $req = $pdo ->prepare($sql);
 $req -> execute($params);
 $req -> closeCursor();
 
-$response["updateSuccess"] = "Membre ".htmlentities($first_name)." ".htmlentities($last_name)." modifié";
+$response["updateSuccess"] = "Membre ".htmlspecialchars($first_name)." ".htmlspecialchars($last_name)." modifié";
 
 echo json_encode($response);
