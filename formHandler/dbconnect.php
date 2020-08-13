@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "natural_coach";
+$dbname = "hiking";
 $user = "root";
 $password = "";
 $option = [
