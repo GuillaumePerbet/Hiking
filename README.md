@@ -1,17 +1,16 @@
 # Hiking
-Gestion des excursions et randonnées
-L’association « Natural Coach » est spécialisée dans l’organisation des excursions et randonnées dans la nature (montagnes, forêts, déserts…) dans différentes régions du Maroc (Nord, le Rif, le moyen Atlas, le Haut Atlas, les Oasis…).
+Hiking est un tableau de bord de gestion d'excursions développé dans le cadre d'un projet de formation à l'Access Code School de Besançon en 2020.
 
-Cette association compte un certain nombre d’abonnés, appelés aussi des « randonneurs » qui sont les seuls à pouvoir sortir en excursion.
+## Application
+L'application permet à un administrateur connecté de gérer les excursions en ajoutant, modifiant, supprimant des randonneurs, des guides, et des excursions.
+Les inscriptions suivent certaines règles:
+- un randonneur ne peut pas être insrit deux fois à la même excursion
+- chaque excursion doit être encadrée par un ou plusieurs guides
+- les excursions ont un nombre limité de places
 
-Les excursions sont organisées selon un planning très précis et prévu à l’avance, le principe d’organisation est le suivant :
+## Essayer
+L'application est en ligne à l'adresse hiking.guillaumeperbet.fr
+Les identifiants de connexions sont Administrateur | root
 
-Une excursion, fixée par une date de départ et une date de retour, porte un nom (Circuit du Toubkal, Oukaimiden, Sources Oum Rabie…) et elle possède un point de départ situé dans une région donnée et un point d’arrivée situé soit dans la même ou dans une autre région.
-
-Chaque excursion possède un tarif bien déterminé et un nombre maximum de randonneurs à ne pas dépasser.
-
-Un randonneur peut s’inscrire à plusieurs excursions s’il le souhaite.
-
-Enfin, une excursion est menée par un ou plusieurs guides, et chacun d’entre eux possède un numéro, un nom, et un téléphone portable pour être joignable à tout moment par les randonneurs.
-
-Avec login de gestion
+## Pour continuer...
+On pourrait ajouter une gestion des dates pour qu'un randonneur ou un guide ne soit pas sur deux excursions en même temps et afficher un planning sous forme de calendrier
